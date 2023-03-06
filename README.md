@@ -1,13 +1,14 @@
-##Finlit
+# Finlit
 
 Finlit is a personal finance app that allows users to track their incomes, savings, and bank balances. The app features a dashboard that displays users' savings in a visually appealing way, as well as a learning section where users can read flashcards to improve their knowledge of personal finance. Additionally, Finlit uses the OpenAI API to power a chatbot that can answer any questions users have about personal finance.
 
-#Getting Started
+## Getting Started
+
 To get started with Finlit, simply go to finlit.dev and sign up for an account. Once you're logged in, you can start entering your incomes, savings, and bank balances to get a comprehensive view of your financial situation.
 
-#Features
+## Features
 
-Finlit includes the following features:
+### Finlit includes the following features:
 
 - Dashboard: The dashboard displays users' savings in a visually appealing way, making it easy to see how much they're saving over time.
 
@@ -15,9 +16,9 @@ Finlit includes the following features:
 
 - Chatbot: Finlit's chatbot uses the OpenAI API to answer any questions users have about personal finance. Simply type in your question and the chatbot will provide an answer.
 
-#Technologies Used
+## Technologies Used
 
-Finlit was built using the following technologies:
+### Finlit was built using the following technologies:
 
 - PostgreSQL: A powerful, open source object-relational database system.
 
@@ -31,10 +32,10 @@ Finlit was built using the following technologies:
 
 - JavaScript: A programming language used for creating interactive web pages and applications.
 
-#Contributing
+## Contributing
 
 We welcome contributions from the community! If you'd like to contribute to Finlit, please fork this repository and submit a pull request.
 
-#License
+## License
 
 Finlit is licensed under the MIT License.
