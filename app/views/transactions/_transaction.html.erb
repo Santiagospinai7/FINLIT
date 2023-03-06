@@ -1,22 +1,8 @@
-<div id="<%= dom_id transaction %>">
+<div id="<%= dom_id transactions %>">
   <p>
-    <strong>Category:</strong>
-    <%= transaction.category %>
+    <strong>Category:</strong> <%= transactions.category %>,
+    <strong>Amount:</strong> <%= transactions.amount %>,
+    <strong>Date:</strong> <%= transactions.date %>,
+    <strong>Account:</strong> <%= transactions.account_id %>
   </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= transaction.amount %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= transaction.date %>
-  </p>
-
-  <p>
-    <strong>Account:</strong>
-    <%= transaction.account_id_id %>
-  </p>
-
 </div>

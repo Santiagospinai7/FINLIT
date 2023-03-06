@@ -2,6 +2,13 @@
 
 <%= render @account %>
 
+<h1>Transactions</h1>
+<% @transactions.each do |transaction| %>
+    <%= render partial: 'transactions/transaction', locals: { transactions: transaction } %>
+<% end %>
+<br>
+<%= button_to "+ record", new_account_transaction_path(@account), method: :get %>
+
 <div>
   <%= link_to "Edit this account", edit_account_path(@account) %> |
   <%= link_to "Back to accounts", accounts_path %>

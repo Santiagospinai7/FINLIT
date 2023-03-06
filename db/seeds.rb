@@ -9,17 +9,21 @@
 puts "create owners data"
 owners = [
   max = { first_name: "max", last_name: "whitehead", age: 22},
-  elizableth = { name: "elizabeth", last_name: "orji", age: 33},
-  amir = { name: "amir", last_name: "abdel nour", age: 23},
-  tim = { name: "tim", last_name: "popoola", age: 22},
-  santiago = { name: "santiago", last_name: "ospina", age: 21} 
+  elizableth = { first_name: "eliza", last_name: "orji", age: 33},
+  amir = { first_name: "amir", last_name: "abdel nour", age: 23},
+  tim = { first_name: "tim", last_name: "popoola", age: 22},
+  santiago = { first_name: "santiago", last_name: "ospina", age: 21} 
 ]
+
+
 
 owners.each do |owner|
   User.create!( 
     first_name: owner[:first_name],
     last_name: owner[:last_name],
     password: '123456',
-    email: name + '@finlit.dev',
+    email: "#{owner[:first_name]}@finlit.dev",
   )
 end
+
+puts "finalize seeds"

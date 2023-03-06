@@ -14,7 +14,7 @@ class TransactionsTest < ApplicationSystemTestCase
     visit transactions_url
     click_on "New transaction"
 
-    fill_in "Account id", with: @transaction.account_id_id
+    fill_in "Account id", with: @transaction.account_id
     fill_in "Amount", with: @transaction.amount
     fill_in "Category", with: @transaction.category
     fill_in "Date", with: @transaction.date
@@ -28,7 +28,7 @@ class TransactionsTest < ApplicationSystemTestCase
     visit transaction_url(@transaction)
     click_on "Edit this transaction", match: :first
 
-    fill_in "Account id", with: @transaction.account_id_id
+    fill_in "Account id", with: @transaction.account_id
     fill_in "Amount", with: @transaction.amount
     fill_in "Category", with: @transaction.category
     fill_in "Date", with: @transaction.date
