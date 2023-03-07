@@ -1,13 +1,9 @@
-<div class="add-accounts-master">
-  <div class="add-accounts-container">
-    <h1>New account</h1>
-    <br>
-    <div class="account-grid-container">
-      <%= render "form", account: @account %>
-    </div>
-    <br>
-    <div>
-      <%= link_to "< Back to accounts", accounts_path %>
-    </div>
-  </div>
+<h1>New account</h1>
+
+<%= render "form", account: @account %>
+
+<br>
+
+<div>
+  <%= link_to "Back to accounts", accounts_path %>
 </div>
