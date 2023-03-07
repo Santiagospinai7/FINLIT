@@ -27,9 +27,9 @@
               <div class="acc-btn-flex">
                 <%= button_to ">", account, :class => "acc-btn", :title => "See More", :method => :get %>
               </div>
-              <div class="account-grid-item">
+              <%= link_to account, class:"account-grid-item" do%>
                 <%= render account %>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
