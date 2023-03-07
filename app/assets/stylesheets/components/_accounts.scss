@@ -77,3 +77,178 @@
   justify-content: center;
   align-items: center;
 }
+
+
+// -------------- ACCOUNTS FORM --------------
+
+.add-accounts-master {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-accounts-master a {
+  text-decoration: none !important;
+  color: rgb(202, 202, 202) !important;
+}
+
+.add-accounts-container {
+  margin-top: 4%;
+  width: 40%;
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 3rem;
+  border-radius: 3rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  margin-bottom: 5rem;
+}
+
+#new_account {
+  width: 100%;
+}
+
+
+// ----------- ACCOUNTS GRID ------------
+
+
+.account-grid-container {
+  margin-top: 2rem !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.account-grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 1rem;
+  width: 15rem;
+  height: 15rem;
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+.account-card{
+  margin: auto;
+}
+
+.acc-btn-flex {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+  margin-bottom: -5%;
+}
+
+.acc-btn {
+  font-size: 1.2rem;
+  border: none;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.2rem;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
+.acc-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: -85%;
+  left: 100% !important;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #181818;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.acc-btn:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  transition: all 0.6s ease-in-out;
+}
+
+
+// ------------------------ BACKGROUND GRADIENT ACCOUNTS ------------------------
+
+.background-gradient-container-accounts {
+  z-index: -5;
+  position: absolute;
+  top: 20%;
+  height: 100%;
+  width: 95%;
+  margin-bottom: 2rem !important;
+  border-radius: 0 0 4rem 4rem ;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)110%);
+}
+
+// ------------------------ CREATE ACCOUNTS ------------------------
+
+#account_account_name {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#account_account_type {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#account_balance {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#account_account_number {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
