@@ -1,0 +1,101 @@
+.login-header {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  color: rgb(202, 202, 202);
+}
+
+.log-in-master {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-in-master a {
+  text-decoration: none !important;
+  color: rgb(202, 202, 202) !important;
+}
+
+.log-in-container {
+  margin-top: 8%;
+  width: 40%;
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 3rem;
+  border-radius: 3rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+.btn {
+  background-color:#232323 !important;
+  color: rgb(202, 202, 202);
+  text-decoration: none !important;
+  border-radius: 3rem !important;
+  padding: 0.5rem !important;
+  width: 8rem;
+  border: none !important;
+}
+
+.btn:hover {
+  background-color:#444444 !important;
+}
+
+#user_email {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#user_password {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.form-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.signup-links {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.signup-links a {
+  font-size: 1.2rem;
+  color: #3a3a3a !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.signup-links a:hover {
+  color: #9471b8 !important;
+}
+
+#user_first_name, #user_last_name, #user_age, #user_password_confirmation {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#user_remember_me {
+  background-color: #3a3a3a;
+}

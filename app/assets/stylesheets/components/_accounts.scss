@@ -1,0 +1,79 @@
+.accounts-title {
+  font-weight: bold;
+  text-align: left;
+  color: rgb(202, 202, 202);
+  z-index: 3;
+}
+
+.accounts-btn {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+// -------------- Add Button --------------
+
+.add-btn-flex {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+}
+
+.add-btn {
+  font-size: 1.8rem;
+  border: none;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.2rem;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
+.add-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: 15%;
+  left: -160%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #181818;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.add-btn:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  transition: all 0.6s ease-in-out;
+}
+
+.accounts-menu {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+
+
+// -------------- Gradient Control  --------------
+
+.background-gradient-master {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
