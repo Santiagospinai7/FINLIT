@@ -6,6 +6,13 @@
   margin-top: -2.5rem;
 }
 
+.logo-finlit:hover {
+  cursor: pointer;
+  scale: 1.04;
+  filter: brightness(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
 .logo-div {
   display: flex;
   justify-content: left;
