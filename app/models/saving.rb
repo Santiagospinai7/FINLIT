@@ -1,3 +1,3 @@
-class Saving < ApplicationRecord
-  belongs_to :user
+class Saving < Account
+  
 end
