@@ -3,7 +3,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="container form-inputs">
     <%= f.input :saving_name %>
     <%= f.input :saving_goal %>
     <%= f.input :current_balance %>
