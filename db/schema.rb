@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_172759) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,17 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_172759) do
     t.integer "account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_accounts_on_user_id"
-  end
-
-  create_table "savings", force: :cascade do |t|
-    t.string "saving_name"
     t.decimal "saving_goal"
-    t.decimal "current_balance"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_savings_on_user_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -61,6 +52,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_172759) do
   end
 
   add_foreign_key "accounts", "users"
-  add_foreign_key "savings", "users"
   add_foreign_key "transactions", "accounts"
 end
