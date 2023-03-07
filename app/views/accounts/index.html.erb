@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <div class="background-gradient-master">
-  <div class="background-gradient-container-top"></div>
+  <div class="background-gradient-container-accounts"></div>
   <div class="shadow-gradient"></div>
 </div>
     <div class="accounts-menu">
@@ -10,12 +10,18 @@
       </div>
     </div>
     <div id="accounts">
-      <% @accounts.each do |account| %>
-        <%= render account %>
-        <p>
-          <%= link_to "Show this account", account %>
-        </p>
-      <% end %>
+      <div class="account-grid-container">
+        <% @accounts.each do |account| %>
+          <div class="account-card">
+            <div class="acc-btn-flex">
+              <%= button_to ">", account, :class => "acc-btn", :title => "See More", :method => :get %>
+            </div>
+            <div class="account-grid-item">
+              <%= render account %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
