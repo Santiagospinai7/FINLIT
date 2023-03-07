@@ -7,4 +7,8 @@ class Account < ApplicationRecord
   def saving_goal_validation_check
     account_type == "savings" || require_validation
   end
+
+  def self.account_types
+    ["Current", "Saving", "Other"]
+  end
 end

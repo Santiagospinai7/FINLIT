@@ -14,6 +14,7 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   def new
     @account = Account.new
+    @account_type = ["Current account", "Saving", "Other"]
   end
 
   # GET /accounts/1/edit

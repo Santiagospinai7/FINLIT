@@ -1,5 +1,6 @@
 html {
   font-size: 16px;
+  height: 100vh;
 }
 
 body {
@@ -7,6 +8,7 @@ body {
 }
 
 .container-master {
+  z-index: -5 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,8 +68,8 @@ body {
 .hero-text {
   color: rgb(202, 202, 202);
   position: absolute;
-  top: 20%;
-  left: 15%;
+  top: 30%;
+  left: 13%;
 }
 
 .hero-h1 {
@@ -102,16 +104,16 @@ body {
 
 .hero-img {
   position: relative;
-  margin-top: -28%;
-  left: 35%;
-  width: 45%;
+  margin-top: -32%;
+  left: 32%;
+  width: 47%;
 }
 
 .hero-text-2 {
   color: rgb(202, 202, 202);
   position: absolute;
-  top: 30%;
-  left: 15%;
+  top: 11%;
+  left: 10%;
 }
 
 .hero2-span {
@@ -135,4 +137,38 @@ body {
   padding: 1rem;
   font-weight: 300;
   font-size: 1rem;
+}
+
+// -------------------- Mockup --------------------
+
+.mockup-master{
+  margin-top: -31%;
+}
+
+.mockup {
+  position: relative;
+  left: 40%;
+  width: 50%;
+}
+
+.mockup:hover {
+  filter: brightness(1.2);
+  transition: all 1s ease-in-out;
+}
+
+.mockup-info {
+  width: 90%;
+  text-align: left;
+}
+
+.mockup-info-span {
+  color: #7443ef;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  line-height: 3.5rem;
+}
+
+.mockup-info-span:hover {
+  filter: brightness(1.2);
 }
