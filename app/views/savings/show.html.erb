@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @saving %>
+
+<div>
+  <%= link_to "Edit this saving", edit_saving_path(@saving) %> |
+  <%= link_to "Back to savings", savings_path %>
+
+  <%= button_to "Destroy this saving", @saving, method: :delete %>
+</div>
