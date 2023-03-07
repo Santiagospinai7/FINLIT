@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Accounts</h1>
-
-<div id="accounts">
-  <% @accounts.each do |account| %>
-    <%= render account %>
-    <p>
-      <%= link_to "Show this account", account %>
-    </p>
-  <% end %>
+<div class="background-gradient-master">
+  <div class="background-gradient-container-top"></div>
+  <div class="shadow-gradient"></div>
 </div>
-
-<%= link_to "New account", new_account_path %>
+    <div class="accounts-menu">
+      <h1 class="accounts-title">Accounts</h1>
+      <div class="add-btn-flex">
+        <%= button_to "+", new_account_path, :class => "add-btn", :title => "Add an Account >", :method => :get %>
+      </div>
+    </div>
+    <div id="accounts">
+      <% @accounts.each do |account| %>
+        <%= render account %>
+        <p>
+          <%= link_to "Show this account", account %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
