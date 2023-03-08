@@ -3,26 +3,36 @@
   <div class="background-gradient-container-accounts"></div>
   <div class="shadow-gradient"></div>
 </div>
-    <div class="accounts-menu">
-      <h1 class="accounts-title">Accounts</h1>
-      <div class="add-btn-flex">
-        <%= button_to "+", new_account_path, :class => "add-btn", :title => "Add an Account >", :method => :get %>
+    <div data-controller="select-accounts">
+      <div class="accounts-menu">
+        <div class="accounts-title-row">
+          <div>
+            <h1 class="accounts-title" data-select-accounts-target="title">Accounts</h1>
+          </div>
+          <div>
+            <select data-select-accounts-target="switch" data-action="change->select-accounts#displayAccounts">
+                <option value="Acccounts">Accounts</option>
+                <option value="Savings">Savings</option>
+            </select>
+          </div>
+        </div>
+        <div class="add-btn-flex">
+          <%= button_to "+", new_account_path, :class => "add-btn", :title => "Add an Account >", :method => :get %>
+        </div>
       </div>
-    </div>
-    <div id="accounts">
-      <div class="account-grid-container">
-        <% @accounts.each do |account| %>
-          <div class="account-card">
-            <div class="acc-btn-flex">
-              <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
-            </div>
-            <div class="account-grid-item">
-              <%= link_to account, :class => "grid-item-link" do %>
+      <div id="accounts">
+        <div class="account-grid-container" data-select-accounts-target="grid">
+          <% @accounts.each do |account| %>
+            <div class="account-card">
+              <div class="acc-btn-flex">
+                <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
+              </div>
+              <%= link_to account, class:"account-grid-item" do%>
                 <%= render account %>
               <% end %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

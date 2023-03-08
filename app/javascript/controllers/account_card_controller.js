@@ -7,7 +7,7 @@ export default class extends Controller {
   connect() {
     console.log("connect")
     // console.log(this.formTarget)
-    // console.log(this.inputTarget)
+    console.log(this.inputTarget.innerHTML)
     // console.log(this.goalFieldTarget)
     this.goalFieldTarget.hidden = true
   }

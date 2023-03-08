@@ -68,6 +68,23 @@
   margin-left: 10%;
 }
 
+
+// -------------- Gradient Control  --------------
+
+.accounts-title-row {
+  display: inline-block;
+}
+
+// -------------- Gradient Control  --------------
+
+.background-gradient-master {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 // -------------- ACCOUNTS FORM --------------
 
 .add-accounts-master {
@@ -115,6 +132,7 @@
 }
 
 .account-grid-item {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
