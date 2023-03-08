@@ -3,55 +3,48 @@
   font-family: $headers-font;
 }
 
-.widgets {
+.row {
   display: flex;
-  padding-left: 15%;
+  flex-direction: row;
+  align-items: stretch; /* Ensures both columns have equal height */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 10px;
+}
+
+.card {
+  color: $finlit-white;
+  font-family: $body-font;
+  background-color: #333232;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.column:last-child .card:last-child {
+  flex-basis: 100%;
+}
+
+.widgets {
   padding-right: 15%;
+  padding-left: 15%;
 }
 
-.widgets:after {
-  display: table;
-  clear: both;
+.savings-card {
+  text-align: center;
 }
 
-.dashboard-font-color {
-  color: $finlit-white;
-}
-
-.ds-card-bg {
-  background-color: #333232;
+.balance-card {
+  background-color: #3C28B9;
   border-radius: 10px;
-}
-
-.ds-card {
-  float: left;
-  width: 50%;
-  flex: 50%;
-  margin: 5px;
-
-}
-
-.w-bg {
-  background-color: #333232;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.ds-card-col-1 {
-  display: grid;
-}
-
-.ds-accounts {
-  color: $finlit-white;
-  font-family: $body-font;
-}
-
-.ds-savings {
-  color: $finlit-white;
-  font-family: $body-font;
-}
-
-.ds-news {
-  color: $finlit-white;
-  font-family: $body-font;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
