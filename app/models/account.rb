@@ -1,6 +1,6 @@
 class Account < ApplicationRecord
   belongs_to :user
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   # validates :saving_goal, presence: true, if: :saving_goal_validation_check
 

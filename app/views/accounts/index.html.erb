@@ -10,10 +10,14 @@
             <h1 class="accounts-title" data-select-accounts-target="title">Accounts</h1>
           </div> %>
           <div>
-            <select class="account-switcher" data-select-accounts-target="switch" data-action="change->select-accounts#displayAccounts">
-                <option value="Accounts">Accounts</option>
-                <option value="Savings">Savings</option>
-            </select>
+            <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
+              <%= select_tag :query,
+                options_for_select([[@filter_option_1, @text_option_1], [@filter_option_2, @text_option_2]]),
+                data: { select_accounts_target: "switch", action: "change->select-accounts#displayAccounts" },
+                class: "account-switcher"
+              %>
+              <%= submit_tag "Filter", class: "btn btn-primary", data: { select_accounts_target: "btn" }%>
+            <% end %>
           </div>
         </div>
         <div class="add-btn-flex">
