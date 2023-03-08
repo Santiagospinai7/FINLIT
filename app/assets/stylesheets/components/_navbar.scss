@@ -1,9 +1,10 @@
 // ----------------------- Logo -----------------------
 
 .logo-finlit {
-  width: 15rem;
+  width: 8rem;
   position: absolute;
-  margin-top: -5.5rem;
+  margin-left: 5%;
+  z-index: 1;
 }
 
 .logo-finlit:hover {
@@ -37,7 +38,7 @@
   height: 3.5rem;
   border-radius: 50%;
   margin: 0.5rem;
-  top: 4.55%;
+  top: 5.5%;
   right: 5%;
 }
 

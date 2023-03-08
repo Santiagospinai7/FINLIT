@@ -4,11 +4,11 @@
   <div class="shadow-gradient"></div>
 </div>
 <h1 class="transactions-title">Account</h1>
-  <div class="return-btn-flex">
-    <%= button_to "<", accounts_path, class: "return-btn" %>
-  </div>
 <div class="account-flex">
   <div class="account-grid-item-transaction">
+    <div class="return-btn-flex">
+      <%= button_to "<", accounts_path, class: "return-btn" %>
+    </div>
     <img class="bank-avatar" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
     <%= render @account %>
     <div>
@@ -18,7 +18,7 @@
           <div href="#" class="btn-pluss">
             <ul>
               <li><%= link_to "✏️  |  Edit", edit_account_path(@account) %></li>
-              <li><%= link_to "🗑️  |  Delete", @account, method: :delete %></li>
+              <li><%= link_to "🗑️  |  Delete", account_path(@account), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
             </ul>
           </div>
         </nav>
@@ -37,6 +37,9 @@
 <div class="transactions-master">
   <div class="transactions-location-div">
     <% @transactions.each do |transaction| %>
+      <div class="transaction-btn-flex">
+        <button class="acc-btn-2" title="See More" type="submit">•••</button>
+      </div>
       <div class="transactions-list-master">
         <div class="transactions-card">
           <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
