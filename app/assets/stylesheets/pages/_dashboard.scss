@@ -1,0 +1,57 @@
+.dashboard-title {
+  color: $finlit-white;
+  font-family: $headers-font;
+}
+
+.widgets {
+  display: flex;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.widgets:after {
+  display: table;
+  clear: both;
+}
+
+.dashboard-font-color {
+  color: $finlit-white;
+}
+
+.ds-card-bg {
+  background-color: #333232;
+  border-radius: 10px;
+}
+
+.ds-card {
+  float: left;
+  width: 50%;
+  flex: 50%;
+  margin: 5px;
+
+}
+
+.w-bg {
+  background-color: #333232;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.ds-card-col-1 {
+  display: grid;
+}
+
+.ds-accounts {
+  color: $finlit-white;
+  font-family: $body-font;
+}
+
+.ds-savings {
+  color: $finlit-white;
+  font-family: $body-font;
+}
+
+.ds-news {
+  color: $finlit-white;
+  font-family: $body-font;
+}

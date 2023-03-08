@@ -31,17 +31,19 @@
 }
 
 .btn {
-  background-color:#232323 !important;
+  background-color:#323232 !important;
   color: rgb(202, 202, 202);
   text-decoration: none !important;
   border-radius: 3rem !important;
   padding: 0.5rem !important;
   width: 8rem;
   border: none !important;
+  border: 2px solid rgb(104, 104, 104) !important;
 }
 
 .btn:hover {
   background-color:#444444 !important;
+  border: 2px solid #570894 !important;
 }
 
 #user_email {
