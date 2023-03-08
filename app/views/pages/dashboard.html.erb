@@ -12,7 +12,7 @@
                 <h3>Accross accounts</h3>
                 <div class="balance-card">
                   <p>BALANCE</p>
-                  <p>4,897</p>
+                  <p><%= @accounts_money %></p>
                 </div>
               </div>
               <div class="card">
@@ -20,15 +20,16 @@
                 <p> The resent news</p>
                 <p> Read More </p>
               </div>
+
             </div>
             <div class="column">
               <div class="card savings-card">
-                <h3>Savings</h3>
+                <h3>Savings - <%= @saving_account.account_name %></h3>
                 <div id="char">
-                  <%= pie_chart @data, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+                  <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
                 </div>
                 <div class="saving-msg">
-                  <p id="amount"><strong>100,0</strong></p>
+                  <p id="amount"><strong><%= @saving_gap %></strong></p>
                   <p id="text">Remaining to rich your goal</p>
                   <p id="motivational-msg">You've got this! 🙌🏽</p>
                 </div>
