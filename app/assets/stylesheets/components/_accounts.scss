@@ -68,17 +68,6 @@
   margin-left: 10%;
 }
 
-
-// -------------- Gradient Control  --------------
-
-.background-gradient-master {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
 // -------------- ACCOUNTS FORM --------------
 
 .add-accounts-master {
@@ -130,9 +119,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  margin: 1rem;
-  width: 15rem;
-  height: 15rem;
+  margin: 2rem;
+  width: 25vw;
+  min-width: 25vw;
+  max-width: 25vw;
   background-color: #1d1d1d;
   color: rgb(202, 202, 202);
   padding: 2rem;
@@ -146,6 +136,8 @@
   margin: auto;
 }
 
+// ----------- ACC BTN ------------
+
 .acc-btn-flex {
   display: flex;
   justify-content: flex-end;
@@ -154,13 +146,13 @@
 }
 
 .acc-btn {
+  position: absolute;
   font-size: 1.2rem;
   border: none;
-  background-color: #181818;
+  background-color: #353535;
   color: #e0e0e0;
   font-weight: 900;
   margin-top: -0.2rem;
-  position: absolute;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -196,16 +188,31 @@
   transition: all 0.6s ease-in-out;
 }
 
+.grid-item-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(202, 202, 202);
+}
+
+.grid-item-link:hover {
+  color: rgb(202, 202, 202);
+}
 
 // ------------------------ BACKGROUND GRADIENT ACCOUNTS ------------------------
+
+.background-gradient-master-accounts {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .background-gradient-container-accounts {
   z-index: -5;
   position: absolute;
   top: 20%;
-  height: 100%;
+  height: 110%;
   width: 95%;
-  margin-bottom: 2rem !important;
   border-radius: 0 0 4rem 4rem ;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)110%);
@@ -251,4 +258,17 @@
   border-radius: 0 !important;
   padding: 0.5rem !important;
   margin-bottom: 1rem !important;
+}
+
+
+// --------------- ACCOUNT SHOW PAGE ---------------
+
+.account-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
 }

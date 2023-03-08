@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-<div class="background-gradient-master">
+<div class="background-gradient-master-accounts">
   <div class="background-gradient-container-accounts"></div>
   <div class="shadow-gradient"></div>
 </div>
@@ -14,10 +14,12 @@
         <% @accounts.each do |account| %>
           <div class="account-card">
             <div class="acc-btn-flex">
-              <%= button_to ">", account, :class => "acc-btn", :title => "See More", :method => :get %>
+              <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
             </div>
             <div class="account-grid-item">
-              <%= render account %>
+              <%= link_to account, :class => "grid-item-link" do %>
+                <%= render account %>
+              <% end %>
             </div>
           </div>
         <% end %>
