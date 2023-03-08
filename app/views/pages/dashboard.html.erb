@@ -17,11 +17,21 @@
               </div>
               <div class="card">
                 <h3>News</h3>
+                <p> The resent news</p>
+                <p> Read More </p>
               </div>
             </div>
             <div class="column">
               <div class="card savings-card">
-                <h3>Savings accounts</h3>
+                <h3>Savings</h3>
+                <div id="char">
+                  <%= pie_chart @data, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+                </div>
+                <div class="saving-msg">
+                  <p id="amount"><strong>100,0</strong></p>
+                  <p id="text">Remaining to rich your goal</p>
+                  <p id="motivational-msg">You've got this! 🙌🏽</p>
+                </div>
               </div>
             </div>
           </div>
@@ -29,4 +39,3 @@
       </div>
   </div>
 </div>
-

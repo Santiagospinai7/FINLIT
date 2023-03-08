@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    
+    @data = {"savings" => 30, "lack" => 70}
   end
 end
