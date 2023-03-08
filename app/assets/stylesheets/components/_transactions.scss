@@ -74,20 +74,23 @@
 }
 
 // -------- Return Btn --------
+
 .return-btn-flex {
-  position: absolute;
-  top: 33%;
-  left: 15%;
+  width: 120%;
+  margin: 0 auto;
+  display: flex;
+  margin-left: -3rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
 }
 
 .return-btn {
-  position: absolute;
+  position: relative;
   font-size: 1.2rem;
   border: none;
   background-color: #353535;
   color: #e0e0e0;
   font-weight: 900;
-  margin-top: -0.2rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -135,6 +138,8 @@
 }
 
 .transactions-title-lower {
+  position: absolute;
+  bottom: -11%;
   text-align: left;
   font-size: 2rem;
   font-weight: 600;
@@ -151,6 +156,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 2rem;
+  margin-top: -10%;
 }
 
 // ----- ADD BTN -----
@@ -208,7 +214,8 @@
 // ------------------- Transactions -------------------
 
 .transactions-location-div {
-  margin-top: 7%;
+  top: 120%;
+  position: absolute;
   justify-content: center;
   align-items: center;
 }
