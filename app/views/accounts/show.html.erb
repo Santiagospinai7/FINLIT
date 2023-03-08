@@ -1,17 +1,52 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @account %>
-
-<h1>Transactions</h1>
-<% @transactions.each do |transaction| %>
-    <%= render partial: 'transactions/transaction', locals: { transactions: transaction } %>
-<% end %>
-<br>
-<%= button_to "+ record", new_account_transaction_path(@account), method: :get %>
-
-<div>
-  <%= link_to "Edit this account", edit_account_path(@account) %> |
-  <%= link_to "Back to accounts", accounts_path %>
-
-  <%= button_to "Destroy this account", @account, method: :delete %>
+<div class="background-gradient-master-transactions">
+  <div class="background-gradient-container-transactions"></div>
+  <div class="shadow-gradient"></div>
+</div>
+<h1 class="transactions-title">Account</h1>
+  <div class="return-btn-flex">
+    <%= button_to "<", accounts_path, class: "return-btn" %>
+  </div>
+<div class="account-flex">
+  <div class="account-grid-item-transaction">
+    <img class="bank-avatar" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
+    <%= render @account %>
+    <div>
+      <%# ------------ %>
+      <div class="btn-pluss-master">
+        <nav class="btn-pluss-wrapper">
+          <div href="#" class="btn-pluss">
+            <ul>
+              <li><%= link_to "✏️  |  Edit", edit_account_path(@account) %></li>
+              <li><%= link_to "🗑️  |  Delete", @account, method: :delete %></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <%# ---------- %>
+    </div>
+  </div>
+  <div class="graph-img">
+    <img src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678231893/Screenshot_2023-03-07_at_23.31.07_fkmcfy.png">
+  </div>
+</div>
+<div class="background-gradient-master-transactions">
+  <div class="background-gradient-container-transactions-bottom"></div>
+</div>
+<h1 class="transactions-title-lower">Transactions</h1>
+<div class="transactions-master">
+  <div class="transactions-location-div">
+    <% @transactions.each do |transaction| %>
+      <div class="transactions-list-master">
+        <div class="transactions-card">
+          <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
+          <%= render partial: 'transactions/transaction', locals: { transactions: transaction } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="record-btn-flex">
+    <%= button_to "+", new_account_transaction_path(@account), class: "add-btn", title: "Add Transactions", method: :get %>
+  </div>
 </div>

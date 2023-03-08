@@ -5,7 +5,7 @@ class Account < ApplicationRecord
   # validates :saving_goal, presence: true, if: :saving_goal_validation_check
 
   # def saving_goal_validation_check
-  #   :account_type == "savings" || require_validation
+  #   account_type == "savings" || require_validation
   # end
 
   def self.account_types

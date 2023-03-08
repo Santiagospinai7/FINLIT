@@ -1,0 +1,384 @@
+
+// ---------------------- GRADIENT BACKGROUND ------------------------
+
+.background-gradient-master-transactions {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-gradient-container-transactions {
+  z-index: -5;
+  position: absolute;
+  top: 20%;
+  height: 72%;
+  width: 95%;
+  border-radius: 0 0 4rem 4rem ;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
+}
+
+.background-gradient-container-transactions-bottom {
+  z-index: -5;
+  position: absolute;
+  bottom: -100%;
+  height: 100%;
+  width: 95%;
+  border-radius: 4rem 4rem 0 0 ;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
+}
+
+
+// ---------------------- ACCOUNT CARD ------------------------
+
+// ------ Account Info and Graph -------
+
+.account-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.account-grid-item-transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 2rem;
+  width: 30%; /* Change the width to a percentage that will allow space for the graph image */
+  min-width: 300px; /* Set a minimum width to ensure it doesn't become too small */
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+.graph-img {
+  width: 55%; /* Set a width for the image container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph-img img {
+  max-width: 100%;
+  border-radius: 2rem;
+}
+
+// -------- Return Btn --------
+.return-btn-flex {
+  position: absolute;
+  top: 33%;
+  left: 15%;
+}
+
+.return-btn {
+  position: absolute;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #353535;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
+.return-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: -85%;
+  left: 100% !important;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #181818;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.return-btn:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  transition: all 0.6s ease-in-out;
+}
+
+// ----- TITLE -----
+
+.transactions-title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  color: rgb(202, 202, 202);
+}
+
+.transactions-title-lower {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 12%;
+  margin-left: 8%;
+  color: rgb(202, 202, 202);
+}
+
+// ----- BANK AVATAR -----
+
+.bank-avatar {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+// ----- ADD BTN -----
+
+.record-btn-flex {
+  position: absolute;
+  top: 105%;
+  right: 9%;
+}
+
+.add-btn {
+  font-size: 1.8rem;
+  border: none;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.2rem;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
+.add-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: 15%;
+  left: -160%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #181818;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.add-btn:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  transition: all 0.6s ease-in-out;
+}
+
+
+// ------------------- Transactions -------------------
+
+.transactions-location-div {
+  margin-top: 7%;
+  justify-content: center;
+  align-items: center;
+}
+
+.transactions-list-master {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto; /* Add this */
+}
+
+.transactions-card {
+  width: 100%;
+  padding: 2rem 0 1rem 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 6rem;
+  margin-bottom: 1rem;
+  background-color: rgba(43, 43, 43, 0.536);
+  color: rgb(202, 202, 202);
+}
+
+.bank-avatar-transaction {
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 5%;
+  margin-top: -1.1%;
+}
+
+// -------------- Transactions form --------------
+
+#transaction_category, #transaction_amount, #transaction_date {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.date {
+  // background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.form-select {
+  background-color: #515151 !important;
+  border-radius: 1rem;
+}
+
+
+// ---------------- BTN PLUS ----------------
+
+section{
+  position: relative;
+}
+
+.btn-pluss{
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 22px;
+  width: 4rem;
+  left: 0%;
+  background-color: rgb(63, 63, 63);
+  transition: width .3s .5s ease, border-radius 1.1s ease;
+  a{
+    display: block;
+    position: relative;
+    color: #d6d6d6;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover{
+      text-decoration: inherit;
+      color: white;
+      background-color: #7433a6;
+      transition: background-color .5s ease;
+    }
+  }
+  &:after{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #7433a6;
+    color: white;
+    transform: translateY(-50%) translateX(-50%);
+    transition: all .3s .5s ease;
+    cursor: pointer;
+    cursor: hand;
+  }
+  ul{
+    opacity: 0;
+  }
+  ul{
+    margin-top: 15px;
+    opacity: 0;
+    width: 100%;
+    margin-left: -1rem;
+    //height: 0;
+    transition: all .5s ease;
+    text-align: center;
+    font-size: 0.9rem;
+    li{
+      background-color: #4f4f4f;
+      margin-top: 5px;
+      border-radius: 5px;
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      transition: height 1s ease;
+    }
+  }
+  //
+}
+
+.btn-pluss-wrapper:hover{
+  .btn-pluss{
+    width: 150px;
+    //height: 120px;
+    border-radius: 15px;
+    padding-bottom: 5px;
+    transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+    &::after{
+      transition: all .3s ease;
+      left: 50%;
+      top: 10px;
+      transform: translateY(-5px) translateX(-50%);
+    }
+    ul{
+      opacity: 1;
+      //height: 100%;
+      margin-top: 30px;
+      transition: all 1s ease;
+    }
+    li{
+      height: 25px;
+      transition: height 1s ease;
+    }
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(3px)
+  }
+  50% {
+    transform: translateY(-15px)
+  }
+   100% {
+    transform: translateY(3px)
+  }
+}
