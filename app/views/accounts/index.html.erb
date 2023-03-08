@@ -6,14 +6,15 @@
     <div data-controller="select-accounts">
       <div class="accounts-menu">
         <div class="accounts-title-row">
-          <div>
-            <h1 class="accounts-title" data-select-accounts-target="title"><%= @selected_option %></h1>
-          </div>
+          <%# <div>
+            <h1 class="accounts-title" data-select-accounts-target="title">Accounts</h1>
+          </div> %>
           <div>
             <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
               <%= select_tag :query,
                 options_for_select([[@filter_option_1, @text_option_1], [@filter_option_2, @text_option_2]]),
-                data: { select_accounts_target: "switch", action: "change->select-accounts#displayAccounts" }
+                data: { select_accounts_target: "switch", action: "change->select-accounts#displayAccounts" },
+                class: "account-switcher"
               %>
               <%= submit_tag "Filter", class: "btn btn-primary", data: { select_accounts_target: "btn" }%>
             <% end %>
@@ -31,6 +32,7 @@
                 <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
               </div>
               <%= link_to account, class:"account-grid-item" do%>
+                <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
                 <%= render account %>
               <% end %>
             </div>

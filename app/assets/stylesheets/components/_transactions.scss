@@ -71,23 +71,30 @@
 .graph-img img {
   max-width: 100%;
   border-radius: 2rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
 }
 
+
 // -------- Return Btn --------
+
 .return-btn-flex {
-  position: absolute;
-  top: 33%;
-  left: 15%;
+  width: 120%;
+  margin: 0 auto;
+  display: flex;
+  margin-left: -3rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
 }
 
 .return-btn {
-  position: absolute;
+  position: relative;
   font-size: 1.2rem;
   border: none;
   background-color: #353535;
   color: #e0e0e0;
   font-weight: 900;
-  margin-top: -0.2rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -135,6 +142,8 @@
 }
 
 .transactions-title-lower {
+  position: absolute;
+  bottom: -11%;
   text-align: left;
   font-size: 2rem;
   font-weight: 600;
@@ -151,6 +160,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 2rem;
+  margin-top: -10%;
 }
 
 // ----- ADD BTN -----
@@ -208,7 +218,8 @@
 // ------------------- Transactions -------------------
 
 .transactions-location-div {
-  margin-top: 7%;
+  top: 120%;
+  position: absolute;
   justify-content: center;
   align-items: center;
 }
@@ -269,6 +280,26 @@
   border-radius: 1rem;
 }
 
+// -------------- DATA FORMATING --------------
+
+.transactions-list-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.transactions-list-data li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.transactions-price {
+  color: rgb(202, 202, 202);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
 
 // ---------------- BTN PLUS ----------------
 
@@ -381,4 +412,68 @@ section{
    100% {
     transform: translateY(3px)
   }
+}
+
+
+// ------------- Transactions Settings BTN -------------
+
+.transaction-btn {
+  font-size: 1.1rem;
+  border: none;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.5rem;
+  position: absolute;
+  top: -1%;
+  right: 14%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
+.transaction-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: 20%;
+  right: -210%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #181818;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.transaction-btn:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  transition: all 0.6s ease-in-out;
+}
+
+.acc-btn-2 {
+  font-size: 1.2rem;
+  border: none;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: -0.2rem;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+  right: 15%;
 }

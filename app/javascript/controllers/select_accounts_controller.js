@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="select-accounts"
 export default class extends Controller {
-  static targets = ["form", "switch", "title", "grid", "type", "btn"]
+  static targets = ["form", "switch", "grid", "type", "btn"]
 
   connect() {
     console.log("is connected to select account js")
@@ -19,7 +19,6 @@ export default class extends Controller {
   }
 
   displayAccounts() {
-    this.titleTarget.innerHTML = this.selectedOption
     this.btnTarget.click()
     // console.log(this.typeTarget.innerText)
   }
