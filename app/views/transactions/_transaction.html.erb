@@ -1,7 +1,7 @@
 <div id="<%= dom_id transactions %>">
-  <p>
-    <strong>Category:</strong> <%= transactions.category %> |
-    <strong>Date:</strong> <%= transactions.date %> |
-    <strong>Amount:</strong> <%= transactions.amount %>
-  </p>
+  <ul class="transactions-list-data">
+    <li><strong>Category:</strong><br><%= transactions.category %><li>
+    <li><strong>Date:</strong><br><%= transactions.date %><li>
+    <li><h5><span class="transactions-price">£ </span><%= transactions.amount %></h5><li>
+  </ul>
 </div>

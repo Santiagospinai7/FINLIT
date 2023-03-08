@@ -6,9 +6,9 @@
 <h1 class="transactions-title">Account</h1>
 <div class="account-flex">
   <div class="account-grid-item-transaction">
-  <div class="return-btn-flex">
-    <%= button_to "<", accounts_path, class: "return-btn" %>
-  </div>
+    <div class="return-btn-flex">
+      <%= button_to "<", accounts_path, class: "return-btn" %>
+    </div>
     <img class="bank-avatar" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
     <%= render @account %>
     <div>
@@ -37,6 +37,9 @@
 <div class="transactions-master">
   <div class="transactions-location-div">
     <% @transactions.each do |transaction| %>
+      <div class="transaction-btn-flex">
+        <button class="acc-btn-2" title="See More" type="submit">•••</button>
+      </div>
       <div class="transactions-list-master">
         <div class="transactions-card">
           <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>

@@ -6,12 +6,12 @@
     <div data-controller="select-accounts">
       <div class="accounts-menu">
         <div class="accounts-title-row">
-          <div>
+          <%# <div>
             <h1 class="accounts-title" data-select-accounts-target="title">Accounts</h1>
-          </div>
+          </div> %>
           <div>
-            <select data-select-accounts-target="switch" data-action="change->select-accounts#displayAccounts">
-                <option value="Acccounts">Accounts</option>
+            <select class="account-switcher" data-select-accounts-target="switch" data-action="change->select-accounts#displayAccounts">
+                <option value="Accounts">Accounts</option>
                 <option value="Savings">Savings</option>
             </select>
           </div>
@@ -28,6 +28,7 @@
                 <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
               </div>
               <%= link_to account, class:"account-grid-item" do%>
+                <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
                 <%= render account %>
               <% end %>
             </div>
