@@ -18,7 +18,7 @@
           <div href="#" class="btn-pluss">
             <ul>
               <li><%= link_to "✏️  |  Edit", edit_account_path(@account) %></li>
-              <li><%= link_to "🗑️  |  Delete", @account, method: :delete %></li>
+              <li><%= link_to "🗑️  |  Delete", account_path(@account), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
             </ul>
           </div>
         </nav>
