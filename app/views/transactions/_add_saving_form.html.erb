@@ -1,0 +1,5 @@
+<%= simple_form_for [account, transaction] do |f| %>
+  <%= f.input :amount %>
+  <%= f.input :date, as: :date %>
+  <%= f.button :submit, value: "Add" %>
+<% end %>
