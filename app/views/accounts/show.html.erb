@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="graph-img">
-    <img src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678231893/Screenshot_2023-03-07_at_23.31.07_fkmcfy.png">
+    <%= line_chart Transaction.line_chart(@account), colors: ["#6610f2"]  %>
   </div>
 </div>
 <div class="background-gradient-master-transactions">
