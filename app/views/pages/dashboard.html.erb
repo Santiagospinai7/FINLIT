@@ -17,7 +17,7 @@
               </div>
               <div class="card">
                 <h3>News</h3>
-                <p> The resent news</p>
+                <p> Recent news</p>
                 <p> Read More </p>
               </div>
 
@@ -36,8 +36,9 @@
                   </div>
                 <% else %>
                   <h3>Savings<h3>
-                  <p>Let's create a new Saving!</p>
-                  <%= link_to "Create Savings", new_account_path %>
+                  <p>Let's make more Savings!</p>
+                  <%= link_to "Save Money", new_account_path , class: 'button-create'%>
+
                 <% end %>
               </div>
             </div>
