@@ -12,7 +12,7 @@
                 <h3>Accross accounts</h3>
                 <div class="balance-card">
                   <p>BALANCE</p>
-                  <p><%= "£ #{@accounts_money}" %></p>
+                  <p><%= "£ #{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
                 </div>
               </div>
               <div class="card">
