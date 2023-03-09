@@ -195,3 +195,26 @@ $borderW: 0.3rem;
     }
   }
 }
+
+// ------------------ CHAT MESSAGES ------------------
+
+.chat-bubble {
+  display: inline-block;
+  max-width: 75%;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.chat-bubble-user {
+  background-color: #f1f0f0;
+  float: left;
+}
+
+.chat-bubble-assistant {
+  background-color: #007bff;
+  color: #fff;
+  float: right;
+}
