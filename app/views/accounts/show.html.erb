@@ -38,7 +38,18 @@
   <div class="transactions-location-div">
     <% @transactions.each do |transaction| %>
       <div class="transaction-btn-flex">
-        <button class="acc-btn-2" title="See More" type="submit">•••</button>
+      <%# ---------- %>
+      <div class="btn-pluss-transactions-master">
+        <div class="btn-pluss-wrapper-transactions">
+          <div href="#" class="btn-pluss-transactions">
+            <ul>
+              <li><%= link_to "✏️  |  Edit" %></li>
+              <li><%= link_to "🗑️  |  Delete", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%# ---------- %>
       </div>
       <div class="transactions-list-master">
         <div class="transactions-card">
