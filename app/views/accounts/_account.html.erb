@@ -1,14 +1,14 @@
 <div id="<%= dom_id account %>">
   <p data-select-accounts-target="type">
-    <%= account.account_type %>
+    <strong>Type:</strong> <%= account.account_type %>
   </p>
   <p data-select-accounts-target="type">
-    <%= account.account_name %>
+    <strong>Name:</strong> <%= account.account_name %>
   </p>
   <p data-select-accounts-target="type">
-    <%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %>
+    <strong>Number:</strong> <%= account.account_number %>
   </p>
   <p data-select-accounts-target="type">
-    <%= "#{number_with_delimiter(account.saving_goal, :delimiter => ',')}" %>
+    <strong>Balance:</strong> <%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %>
   </p>
 </div>
