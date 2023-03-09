@@ -20,4 +20,8 @@ class Account < ApplicationRecord
     return {"savings" => balance, "lack" => gap}
   end
 
+  def self.get_porcentage(account)
+    return (account.balance / account.saving_goal) * 100
+  end
+
 end
