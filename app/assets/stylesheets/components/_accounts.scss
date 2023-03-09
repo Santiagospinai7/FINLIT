@@ -179,6 +179,11 @@
   flex-wrap: wrap;
 }
 
+.account-link {
+  text-decoration: none;
+  color: rgb(202, 202, 202);
+}
+
 .account-grid-item {
   text-decoration: none;
   display: flex;
@@ -237,6 +242,7 @@
   width: 40%;
   z-index: 17;
 }
+
 
 .card-action-buttons:hover {
   background-color: #531cc95d;

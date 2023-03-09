@@ -1,6 +1,6 @@
 <div class="container-master">
     <div class="background-gradient-container-top">
-    <div class="shadow-gradient"></div>
+    <%# <div class="shadow-gradient"></div> %>
       <div class="container dashboard">
         <div id="title">
           <h1 class=" dashboard-title">Your<br>Dashboard</h1>
@@ -17,10 +17,9 @@
               </div>
               <div class="card">
                 <h3>News</h3>
-                <p> The resent news</p>
+                <p> Recent news</p>
                 <p> Read More </p>
               </div>
-
             </div>
             <div class="column">
               <div class="card savings-card">
@@ -35,9 +34,11 @@
                     <p id="motivational-msg">You've got this! 🙌🏽</p>
                   </div>
                 <% else %>
-                  <h3>Savings<h3>
-                  <p>Let's create a new Saving!</p>
-                  <%= link_to "Create Savings", new_account_path %>
+
+                    <h3>Savings<h3>
+                    <p>Let's make more Savings!</p>
+                    <p><%= link_to "Save Money", new_account_path , class: 'button-create'%></p>
+
                 <% end %>
               </div>
             </div>

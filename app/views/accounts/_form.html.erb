@@ -11,7 +11,9 @@
                       prompt: "Select a type",
                       input_html: { data: { account_card_target: 'input', action: "change->account-card#accountType" } } %>
           <%= f.input :balance %>
-          <%= f.input :account_number %>
+          <div data-account-card-target="accountNumber">
+            <%= f.input :account_number  %>
+          </div>
           <div data-account-card-target="goalField" >
             <%= f.input :saving_goal %>
           </div>
