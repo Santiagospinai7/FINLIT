@@ -11,4 +11,13 @@ class Account < ApplicationRecord
   def self.account_types
     ["Current", "Saving", "Other"]
   end
+
+  def self.saving_chart(account)
+    balance = account.balance
+    goal = account.saving_goal
+    gap = goal - balance
+
+    return {"savings" => balance, "lack" => gap}
+  end
+
 end
