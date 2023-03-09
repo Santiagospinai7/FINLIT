@@ -42,7 +42,6 @@
                 </div>
                <%# ---------- %>
               </div>
-                
                 <% if account.account_type != "Savings" %>
                   <%= render "accounts_card", account: account %>
                 <% elsif account.account_type == "Savings" %>
