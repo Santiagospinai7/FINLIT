@@ -200,17 +200,16 @@
   font-weight: 300;
 }
 
-.card-action-buttons-master {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .card-action-buttons {
   background-color: #531cc937;
   border: 1px solid #531cc9c7;
+  color: #d6d6d6;
   border-radius: 1rem;
-  padding: 0.6rem;
+  padding: 0.6rem 0;
+  position: relative;
+  left: 0%;
+  width: 40%;
+  z-index: 17;
 }
 
 .card-action-buttons:hover {
