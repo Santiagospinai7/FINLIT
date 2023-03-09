@@ -12,7 +12,7 @@
                 <h3>Accross accounts</h3>
                 <div class="balance-card">
                   <p>BALANCE</p>
-                  <p><%= @accounts_money %></p>
+                  <p><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
                 </div>
               </div>
               <div class="card">
@@ -24,20 +24,15 @@
             </div>
             <div class="column">
               <div class="card savings-card">
-                <% if @savings.length > 0 %>
-                  <h3>Savings - <%= @saving_account.account_name %></h3>
-                  <div id="char">
-                    <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
-                  </div>
-                  <div class="saving-msg">
-                    <p id="amount"><strong><%= @saving_gap %></strong></p>
-                    <p id="text">Remaining to rich your goal</p>
-                    <p id="motivational-msg">You've got this! 🙌🏽</p>
-                  </div>
-                <% else %>
-                  <h3>Let's create a Saving!</h3>
-                  <p>Button</p>
-                <% end %>
+                <h3>Savings - <%= @saving_account.account_name %></h3>
+                <div id="char">
+                  <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+                </div>
+                <div class="saving-msg">
+                  <p id="amount"><strong><%= "£#{number_with_delimiter(@saving_gap, :delimiter => ',')}" %></strong></p>
+                  <p id="text">Remaining to reach your goal</p>
+                  <p id="motivational-msg">You've got this! 🙌🏽</p>
+                </div>
               </div>
             </div>
           </div>
