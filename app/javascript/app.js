@@ -1,5 +1,18 @@
 import { completion } from "./openai";
 
+const searchLabel = document.querySelector('.search__label-init');
+const submitBtn = document.querySelector('#submit-btn');
+
+searchLabel.addEventListener('click', () => {
+  setTimeout(() => {
+    submitBtn.style.display = 'block';
+  }, 2000);
+});
+
+submitBtn.addEventListener('click', () => {
+  submitBtn.style.display = 'none';
+});
+
 const form = document.querySelector('chat-form');
 const userInput = document.getElementById('user-input');
 const chatContainer = document.getElementById('chat-container');
