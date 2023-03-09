@@ -29,11 +29,25 @@
           <% @accounts.each do |account| %>
             <div class="account-card">
               <div class="acc-btn-flex">
-                <%= button_to "•••", account, :class => "acc-btn", :title => "See More", :method => :get %>
+                <%# ---------- %>
+                <div class="btn-pluss-master">
+                  <nav class="btn-pluss-wrapper-accounts">
+                    <div href="#" class="btn-pluss-accounts">
+                      <ul>
+                        <li><%= link_to "✏️  |  Edit", account %></li>
+                        <li><%= link_to "🗑️  |  Delete", account_path(account), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+               <%# ---------- %>
               </div>
               <%= link_to account, class:"account-grid-item" do%>
-                <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
-                <%= render account %>
+                <% if account.account_type != "Savings" %>
+                  <%= render "accounts_card", account: account %>
+                <% elsif account.account_type == "Savings" %>
+                  <%= render "savings_card", account: account %>
+                <% end %>
               <% end %>
             </div>
           <% end %>

@@ -1,0 +1,14 @@
+.chat-form-master {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+#user-input {
+  width: 150%;
+  background-color: rgba(140, 140, 140, 0.384);
+  border: 2px solid #5623a9;
+  border-radius: 2rem;
+}
