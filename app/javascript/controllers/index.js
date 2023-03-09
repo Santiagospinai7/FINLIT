@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import SelectAccountsController from "./select_accounts_controller"
 application.register("select-accounts", SelectAccountsController)
+
+import SelectTransactionsController from "./select_transactions_controller"
+application.register("select-transactions", SelectTransactionsController)

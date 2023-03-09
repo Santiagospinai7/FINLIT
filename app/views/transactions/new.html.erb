@@ -5,14 +5,25 @@
     <% if @account.account_type == "Savings" %>
       <%= render "add_saving_form", account: @account, transaction: @transaction %>
     <% else %>
+    <div data-controller="select-transactions">
       <%= simple_form_for [@account, @transaction] do |f| %>
-        <%= f.input :category, collection: ['Groceries', 'Transportation', 'Entertainment', 'Utilities', 'Other'], prompt: "Select a category" %>
+        <%= f.input :category, collection: ['Groceries', 'Transportation', 'Entertainment', 'Utilities', 'Other'], prompt: "Select a category",
+
+          input_html: {
+            data: {
+              select_transactions_target: "categories",
+                        action: "change->select-transactions#listenToSelection"
+                      }
+              }
+
+        %>
         <%= f.input :amount %>
         <%= f.input :date, as: :date %>
         <%= f.button :submit, value: "Add" %>
       <% end %>
+    </div>
     <% end %>
-    
+
     <br>
     <div>
       <%= link_to "< Back to account", account_path(@account) %>
