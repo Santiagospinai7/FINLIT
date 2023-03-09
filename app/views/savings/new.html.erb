@@ -1,9 +1,14 @@
-<h1>New saving</h1>
+<body>
+  <div class="card-1-savings">
+    <div class="container-main">
+        <h1>New saving</h1>
+          <%= render "form", saving: @saving %>
 
-<%= render "form", saving: @saving %>
+          <br>
 
-<br>
-
-<div>
-  <%= link_to "Back to savings", savings_path %>
-</div>
+        <div>
+          <%= link_to "Back to savings", savings_path %>
+      </div>
+    </div>
+  </div>
+</body>
