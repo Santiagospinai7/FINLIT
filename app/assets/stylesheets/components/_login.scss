@@ -31,14 +31,14 @@
 }
 
 .btn {
-  background-color:#323232 !important;
-  color: rgb(202, 202, 202);
-  text-decoration: none !important;
-  border-radius: 3rem !important;
-  padding: 0.5rem !important;
-  width: 8rem;
-  border: none !important;
-  border: 2px solid rgb(104, 104, 104) !important;
+  background-color: rgba(19, 19, 19, 0);
+  color: rgb(142, 142, 142);
+  font-weight: 900;
+  text-decoration: none;
+  border: 2px solid rgb(68, 68, 68);
+  background-color: rgba(102, 102, 102, 0.369);
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 .btn:hover {
