@@ -42,13 +42,13 @@
                 </div>
                <%# ---------- %>
               </div>
-              <%= link_to account, class:"account-grid-item" do%>
-                <% if account.account_type != "Savings" %>
-                  <%= render "accounts_card", account: account %>
-                <% elsif account.account_type == "Savings" %>
-                  <%= render "savings_card", account: account %>
+                <%= link_to account, class:"account-grid-item" do%>
+                  <% if account.account_type != "Savings" %>
+                    <%= render "accounts_card", account: account %>
+                  <% elsif account.account_type == "Savings" %>
+                    <%= render "savings_card", account: account %>
+                  <% end %>
                 <% end %>
-              <% end %>
             </div>
           <% end %>
         </div>

@@ -24,15 +24,21 @@
             </div>
             <div class="column">
               <div class="card savings-card">
-                <h3>Savings - <%= @saving_account.account_name %></h3>
-                <div id="char">
-                  <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
-                </div>
-                <div class="saving-msg">
-                  <p id="amount"><strong><%= "£#{number_with_delimiter(@saving_gap, :delimiter => ',')}" %></strong></p>
-                  <p id="text">Remaining to reach your goal</p>
-                  <p id="motivational-msg">You've got this! 🙌🏽</p>
-                </div>
+                <% if @savings.length > 0 %>
+                  <h3>Savings - <%= @saving_account.account_name %></h3>
+                  <div id="char">
+                    <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+                  </div>
+                  <div class="saving-msg">
+                    <p id="amount"><strong><%= "£#{number_with_delimiter(@saving_gap, :delimiter => ',')}" %></strong></p>
+                    <p id="text">Remaining to reach your goal</p>
+                    <p id="motivational-msg">You've got this! 🙌🏽</p>
+                  </div>
+                <% else %>
+                  <h3>Savings<h3>
+                  <p>Let's create a new Saving!</p>
+                  <%= link_to "Create Savings", new_account_path %>
+                <% end %>
               </div>
             </div>
           </div>
