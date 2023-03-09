@@ -4,10 +4,10 @@
   <% end %>
   <div class="navbar-finlit">
     <ul class="nav-elements">
-      <li class="nav-item"><%= link_to "Dashboard", dashboard_path %></li>
-      <li class="nav-item"><%= link_to "Accounts", accounts_path %></li>
-      <li class="nav-item"><%= link_to "Discover", "#" %></li>
-      <li class="nav-item"><%= link_to "Suggestions", suggestions_path %></li>
+      <%= link_to dashboard_path, class: "nav-buttons" do %><li class="nav-item">Dashboard</li><% end%>
+      <%= link_to accounts_path, class: "nav-buttons" do %><li class="nav-item">Accounts</li><% end%>
+      <%= link_to "#", class: "nav-buttons" do %><li class="nav-item">Discover</li><% end%>
+      <%= link_to suggestions_path, class: "nav-buttons" do %><li class="nav-item">Suggestions</li><% end%>
     </ul>
   </div>
   <div class="avatar-nav">
