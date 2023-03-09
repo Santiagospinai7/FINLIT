@@ -1,46 +1,74 @@
 
 <body>
   <div class="container-main">
-
-      <div class= "text"><h1>Savings</h1></div>
+    <div class= "text"><h1>Savings</h1></div>
     <div class="d-flex">
-      <h2 class= "card"> <i class="fas fa-car-side fa-3x" style="color:#d9534f"></i> &nbsp; Car </h3>
-      <br>
-      <h3>Current balance : $1,200
+
+      <div class="savings-card">
+        <div>
+          <h2 class= "card"> <i class="fas fa-car-side fa-3x" style="color:#d9534f"></i> &nbsp; Car </h2>
+        </div>
+        <br>
+        <div class= "circle">
+          <h3>Balance  $1,200</h3>
           <div class="ui-widgets">
             <div class="ui-values">20%</div>
             <div class="ui-labels">Saved</div>
           </div>
-       Goal : $5000</h3>
-      <h2 class= "card"> <i class="fas fa-house fa-3x" style="color:#d9534f"></i> &nbsp; House</h2>
-      <br>
-      <h3>Current balance : $62,000
-          <div class="ui-widgets">
-            <div class="ui-values">20%</div>
-            <div class="ui-labels">Saved</div>
-         </div>
-      Goal : $250,000</h3>
-      <h2 class= "card"> <i class="fa fa-mars-double fa-3x" aria-hidden="true" style="color:#d9534f"></i> &nbsp; Marriage </h2>
-      <br>
-      <h3>Current balance : $19,000
+          <h3>Goal $5000</h3>
+        </div>
+          <div class="motivate">
+            <h3 class= "card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
+          </div>
+      </div>
+
+      <div class="savings-card">
+        <div>
+          <h2 class= "card"> <i class="fas fa-house fa-3x" style="color:#d9534f"></i> &nbsp; House</h2>
+        </div>
+        <br>
+        <div class= "circle">
+          <h3>Balance $62,000 <h3>
           <div class="ui-widgets">
             <div class="ui-values">20%</div>
             <div class="ui-labels">Saved</div>
           </div>
-      Goal : $70,000</h3>
+          <h3>Goal $250,000</h3>
+        </div>
+          <div class="motivate">
+            <h3 class= "card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
+          </div>
+      </div>
+
+        <div class="savings-card">
+        <div>
+          <h2 class= "card"> <i class="fa fa-mars-double fa-3x" style="color:#d9534f"></i> &nbsp; Marriage</h2>
+        </div>
+        <br>
+        <div class= "circle">
+          <h3>Balance  $19,000 <h3>
+          <div class="ui-widgets">
+            <div class="ui-values">20%</div>
+            <div class="ui-labels">Saved</div>
+          </div>
+          <h3>Goal $70,000</h3>
+        </div>
+          <div class="motivate">
+            <h3 class= "card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
+          </div>
+      </div>
+
+
     </div>
-        <p style="color: green"><%= notice %></p>
-
-      <div id="savings">
-        <% @savings.each do |saving| %>
-          <%= render saving %>
-          <p>
-            <%= link_to a"Show this saving", saving %>
-          </p>
-        <% end %>
-      </div>
-
-      <%= link_to "New saving", new_saving_path %>
-      </div>
+    <p style="color: green"><%= notice %></p>
+    <div id="savings">
+      <% @savings.each do |saving| %>
+        <%= render saving %>
+        <p>
+          <%= link_to a"Show this saving", saving %>
+        </p>
+      <% end %>
+    </div>
+    <%= link_to "New saving", new_saving_path %>
   </div>
 </body>
