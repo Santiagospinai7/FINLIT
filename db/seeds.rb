@@ -9,16 +9,16 @@
 puts "create owners data"
 owners = [
   max = { first_name: "max", last_name: "whitehead", age: 22},
-  elizableth = { first_name: "eliza", last_name: "orji", age: 33},
+  elizabeth = { first_name: "eliza", last_name: "orji", age: 33},
   amir = { first_name: "amir", last_name: "abdel nour", age: 23},
   tim = { first_name: "tim", last_name: "popoola", age: 22},
-  santiago = { first_name: "santiago", last_name: "ospina", age: 21} 
+  santiago = { first_name: "santiago", last_name: "ospina", age: 21}
 ]
 
 
 
 owners.each do |owner|
-  User.create!( 
+  User.create!(
     first_name: owner[:first_name],
     last_name: owner[:last_name],
     password: '123456',
