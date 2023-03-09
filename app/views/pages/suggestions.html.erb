@@ -1,7 +1,45 @@
-<div class="chat-form-master">
-  <form id="chat-form">
-    <input type="text" id="user-input" placeholder="Type your message here...">
-    <button type="submit" id="submit-btn">Send</button>
-  </form>
+<script>
+  window.onload = function() {
+    const searchLabel = document.querySelector('.search__label-init');
+    const submitBtn = document.querySelector('#submit-btn');
+    const cancelLabel = document.querySelector('.search__label-active');
+
+    searchLabel.addEventListener('click', () => {
+      setTimeout(() => {
+        submitBtn.style.display = 'block';
+      }, 500);
+    });
+
+    submitBtn.addEventListener('click', () => {
+      submitBtn.style.display = 'none';
+    });
+
+    cancelLabel.addEventListener('click', () => {
+      submitBtn.style.display = 'none';
+    });
+  };
+</script>
+<div class="search-header">
+  <h1 class="transactions-title">Suggestions</h1>
 </div>
+<div class="background-gradient-master-transactions">
+  <div class="background-gradient-container-transactions"></div>
+  <div class="shadow-gradient"></div>
+</div>
+<div class="search-container">
+  <div class="chat-form-master">
+    <form id="chat-form">
+      <div class="search">
+        <input type="checkbox" id="trigger" class="search__checkbox" />
+        <label class="search__label-init" for="trigger"></label>
+        <label class="search__label-active" for="trigger"></label>
+        <div class="search__border"></div>
+          <input type="text" class="search__input" id="user-input" />
+          <button type="submit" id="submit-btn" style="display:none"><img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png"></button>
+        <div class="search__close"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
 <div id="chat-container"></div>
