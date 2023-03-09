@@ -8,7 +8,7 @@ body {
 }
 
 .container-master {
-  // z-index: -5 !important;
+  z-index: -5 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
 }
 
 .background-gradient-container-top {
-  // z-index: -5 // this moves the element behind the body element
+  z-index: -5; // this moves the element behind the body element
   position: absolute;
   top: 20%;
   height: 70vh;
@@ -42,7 +42,7 @@ body {
 // ------------- Shadow gradients -------------
 
 .shadow-gradient {
-  // z-index: -3; // this moves the element behind the body element
+  z-index: -3; // this moves the element behind the body element
   position: absolute;
   width: 100%;
   max-width: 100vw;
