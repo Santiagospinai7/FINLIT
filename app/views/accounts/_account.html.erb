@@ -6,9 +6,9 @@
     <%= account.account_name %>
   </p>
   <p data-select-accounts-target="type">
-    <%= account.balance %>
+    <%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %>
   </p>
   <p data-select-accounts-target="type">
-    <%= account.saving_goal %>
+    <%= "#{number_with_delimiter(account.saving_goal, :delimiter => ',')}" %>
   </p>
 </div>
