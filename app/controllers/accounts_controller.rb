@@ -31,12 +31,23 @@ class AccountsController < ApplicationController
       @filter_option_1 = "Savings"
       @filter_option_2 = "Accounts"
       @accounts = Account.where(account_type: "Savings")
+
+      # if @accounts.length > 0
+
+      #   @saving_balance = @ccoun.balance
+      #   @saving_goal = @saving_account.saving_goal
+      #   @saving_gap = @saving_goal - @saving_balance
+  
+      #   @saving_chart = {"savings" => @saving_balance, "lack" => @saving_gap}
+      # end
+
     else
       # Handle no filter selected
       @filter_option_1 = "Accounts"
       @filter_option_2 = "Savings"
       @accounts = Account.where.not(account_type: "Savings")
     end
+
   end
 
   # GET /accounts/1 or /accounts/1.json

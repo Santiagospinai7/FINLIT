@@ -104,3 +104,31 @@ h2.savings-card{
   align-items: center;
   padding: 8px;
 }
+
+// ------------------- Savings Card -------------------
+
+.savings-card-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.savings-message-card {
+  background-color: rgba(63, 63, 63, 0.694);
+  border-radius: 1rem;
+  padding: 1.4rem 1rem 0.5rem 1rem;
+  width: 90%;
+  text-align: center;
+}
+
+.savings-message-card p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.motivational-message-span {
+  font-weight: 600;
+  font-size: 1rem;
+}
