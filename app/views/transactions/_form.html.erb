@@ -1,16 +1,19 @@
+<div class="log-in-master">
+  <div class="log-in-container">
+    <h2>Edit Acount</h2>
+    <div data-controller="account-card">
+      <%= simple_form_for [@account, @transaction] do |f| %>
 
-<%= simple_form_for(@transaction) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-inputs">
+          <%= f.input :category %>
+          <%= f.input :amount %>
+          <%= f.input :date %>
+        </div>
 
-  <div class="form-inputs">
-    <%= f.input :category %>
-    <%= f.input :amount %>
-    <%= f.input :date %>
-    <%= f.association :account_id %>
+        <div class="form-actions">
+          <%= f.button :submit, value: "Update" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>

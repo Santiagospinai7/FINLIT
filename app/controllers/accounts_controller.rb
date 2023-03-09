@@ -63,7 +63,7 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1/edit
   def edit
-    @account = Account.find(params[:id])
+    # @account = Account.find(params[:id])
   end
 
   # POST /accounts or /accounts.json
@@ -77,8 +77,8 @@ class AccountsController < ApplicationController
 
   # PATCH/PUT /accounts/1 or /accounts/1.json
   def update
-    account = Account.find(params[:id])
-    account.update(account_params)
+    # account = Account.find(params[:id])
+    @account.update(account_params)
 
     redirect_to accounts_path
   end

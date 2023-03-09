@@ -43,8 +43,8 @@
         <div class="btn-pluss-wrapper-transactions">
           <div href="#" class="btn-pluss-transactions">
             <ul>
-              <li><%= link_to "✏️  |  Edit" %></li>
-              <li><%= link_to "🗑️  |  Delete", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+              <li><%= link_to "✏️  |  edit", edit_account_transaction_path(@account, transaction) %></li>
+              <li><%= link_to "🗑️  |  Delete", account_transaction_path(@account, transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
             </ul>
           </div>
         </div>
