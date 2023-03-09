@@ -21,7 +21,7 @@ class Account < ApplicationRecord
   end
 
   def self.get_porcentage(account)
-    return (account.balance / account.saving_goal) * 100
+    return ((account.balance / account.saving_goal) * 100).round(2)
   end
 
 end
