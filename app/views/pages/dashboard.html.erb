@@ -20,7 +20,7 @@
           <h3>News</h3>
           <button data-action="news#refresh" id="refresh-btn">⟳</button>
           <p data-news-target="title" id="news-title"></p>
-          <%# <a data-news-target="link" id="news-link" href=""></a> %>
+          <a data-news-target="link" id="news-link" href="">Read More...</a>
         </div>
       </div>
       <div class="column">
@@ -40,21 +40,6 @@
             <h3>Savings<h3>
             <p>Let's make more Savings!</p>
             <%= link_to "Save Money", new_account_path , class: 'button-create'%>
-          <% end %>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card savings-card">
-          <% if @savings.length > 0 %>
-            <h3 class="h3-dashboard">Balances</h3>
-            <br>
-            <div>
-              <%# <%= line_chart line_chart(@account), colors: ["#6610f2"]  %> %>
-            </div>
-          <% else %>
-            <h3>Balances<h3>
-            <p>Add your accounts now!</p>
-            <%= link_to "+ add", new_account_path , class: 'button-create'%>
           <% end %>
         </div>
       </div>

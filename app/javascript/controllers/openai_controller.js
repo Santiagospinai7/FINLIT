@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import openai from "openai";
 
 export default class extends Controller {
   static targets = ["chatForm", "userInput", "chatContainer"];

@@ -1,0 +1,49 @@
+Arguments: 
+  /Users/maxwtd/.nvm/versions/node/v16.15.1/bin/node /Users/maxwtd/.nvm/versions/node/v16.15.1/bin/yarn install
+
+PATH: 
+  ./bin:./node_modules/.bin:/Users/maxwtd/.nvm/versions/node/v16.15.1/bin:/Users/maxwtd/.rbenv/shims:/Users/maxwtd/.rbenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/maxwtd/.pyenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/maxwtd/code/mxwtd/FINLIT/package.json: Unexpected token / in JSON at position 276
+      at JSON.parse (<anonymous>)
+      at /Users/maxwtd/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/maxwtd/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/maxwtd/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "app",
+    "private": "true",
+    "dependencies": {
+      "@hotwired/stimulus": "^3.2.1",
+      "@hotwired/turbo-rails": "^7.3.0",
+      "@popperjs/core": "^2.11.6",
+      "bootstrap": "^5.2.3",
+      "buffer": "^6.0.3",
+      "chart.js": "^4.2.1",
+      "chartkick": "^5.0.1",
+      // "node-fetch": "^3.3.0",
+      "webpack": "^5.75.0",
+      "webpack-cli": "^5.0.1"
+    },
+    "scripts": {
+      "build": "webpack --config webpack.config.js"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

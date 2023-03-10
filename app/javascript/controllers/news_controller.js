@@ -1,9 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "title" ]
+  static targets = [ "title", "link" ]
+  data = [];
 
   connect() {
+    console.log("Hello from Stimulus!", this.linkTarget);
     fetch("https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news", {
       method: "GET",
       headers: {
@@ -13,12 +15,21 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data.items[0])
-        // const firstNewsItem = data.items[0]
-        // this.titleTarget.textContent = firstNewsItem.title
-        // this.linkTarget.textContent = firstNewsItem.link
-        // this.linkTarget.href = firstNewsItem.link
+        this.data = data;
+        const firstNewsItem = data[0];
+        const firstNewsLink = data[0].link;
+        this.titleTarget.innerText = firstNewsItem.title;
+        this.linkTarget.href = firstNewsLink;
       })
-      .catch(error => console.error(error))
+      .catch(error => console.error(error));
+  }
+
+  refresh() {
+    console.log("click");
+    const randomIndex = Math.floor(Math.random() * this.data.length);
+    const randomNewsItem = this.data[randomIndex];
+    const randomNewsLink = randomNewsItem.link;
+    this.titleTarget.innerText = randomNewsItem.title;
+    this.linkTarget.href = randomNewsLink;
   }
 }
