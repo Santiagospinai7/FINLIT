@@ -1,4 +1,4 @@
-<div class = "account-grid-item">  
+<div class = "account-grid-item">
   <%= link_to account, class: "account-link" do %>
     <div class="intro-accounts-card">
         <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
@@ -6,7 +6,5 @@
     </div>
     <p>Balance<br><span class="account-card-balance"><%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %></span></p>
   <% end %>
-  <%= button_to "Add", new_account_transaction_path(account), class:"card-action-buttons",  :method => :get %>
+  <%= button_to "+ Add", new_account_transaction_path(account), class:"card-action-buttons",  :method => :get %>
 </div>
-
-

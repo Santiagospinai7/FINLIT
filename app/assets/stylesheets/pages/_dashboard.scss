@@ -1,6 +1,7 @@
 .dashboard-title {
   color: $finlit-white;
   font-family: $headers-font;
+  margin-left: 10%;
 }
 
 .row {
@@ -14,6 +15,7 @@
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  z-index: 0;
 }
 
 .card {
@@ -22,8 +24,11 @@
   background-color: #333232;
   padding: 20px;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  width: 95%;
+  height: 100%;
 }
 
 .column:last-child .card:last-child {
@@ -31,9 +36,11 @@
 }
 
 .widgets {
-  padding-right: 15%;
-  padding-left: 15%;
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .savings-card {
@@ -52,6 +59,10 @@
   justify-content: space-between;
   padding: 1rem;
   // top: 50%;
+}
+
+.balance-card:hover {
+  background-color: #4f3ccc;
 }
 
 .saving-msg {
@@ -94,4 +105,44 @@
   padding: 8px;
   font-size: large;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 18 !important;
+}
+
+.container-master-dashboard {
+  width: 95%;
+  z-index: 0 !important;
+}
+
+.h3-dashboard {
+  margin-bottom: 1.8rem;
+}
+
+// --------- NEWS WIDGET ------------
+
+.news-title {
+  color: $finlit-white;
+  font-family: $headers-font;
+  margin-left: 10%;
+}
+
+#refresh-btn {
+  position: absolute;
+  top: 7%;
+  left: 80%;
+  background-color: transparent;
+  border: none;
+  color: rgb(202, 202, 202);
+  font-size: 1.5rem;
+}
+
+#refresh-btn:hover {
+  color: rgba(202, 202, 202, 0.593);
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

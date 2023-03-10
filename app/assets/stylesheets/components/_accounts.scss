@@ -138,6 +138,34 @@
   width: 100%;
 }
 
+.back-account-btn {
+  position: absolute;
+  top: 23%;
+  left: 5%;
+  font-size: 0.8rem;
+
+  background-color: rgba(19, 19, 19, 0);
+  color: rgb(142, 142, 142);
+  font-weight: 900;
+  text-decoration: none;
+  border: 2px solid rgb(68, 68, 68);
+  background-color: rgba(102, 102, 102, 0.369);
+  border-radius: 1rem;
+  padding: 0.5rem;
+
+}
+
+.back-account-btn:hover {
+  cursor: pointer;
+  color: rgb(202, 202, 202);
+  border: 2px solid rgb(101, 32, 198);
+  transition: all 0.6s ease-in-out;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+
 
 // ----------- ACCOUNTS GRID ------------
 
@@ -193,6 +221,12 @@
 
 .intro-accounts-card p {
   margin-top: 0.7rem;
+}
+
+.account-link:hover {
+  cursor: pointer;
+  color: rgba(202, 202, 202, 0.687);
+  transition: all 0.3s ease-in-out;
 }
 
 .account-card-balance {
@@ -432,17 +466,17 @@ section{
   border-bottom: 1px solid rgb(202, 202, 202) !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 
 #account_account_type {
   background-color: #1d1d1d !important;
-  color: rgb(202, 202, 202) !important;
+  color: rgb(130, 130, 130) !important;
   border: none !important;
   border-bottom: 1px solid rgb(202, 202, 202) !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 
 #account_balance {
@@ -452,7 +486,7 @@ section{
   border-bottom: 1px solid rgb(202, 202, 202) !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 
 #account_account_number {
@@ -462,7 +496,29 @@ section{
   border-bottom: 1px solid rgb(202, 202, 202) !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 2rem !important;
+}
+
+#account_saving_goal {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.create-account-container {
+  margin-top: 3%;
+  width: 40%;
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 3rem;
+  border-radius: 3rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
 }
 
 
