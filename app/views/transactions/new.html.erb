@@ -22,7 +22,7 @@
       <%= render "add_saving_form", account: @account, transaction: @transaction %>
     <% else %>
       <%= simple_form_for [@account, @transaction] do |f| %>
-        <%= f.input :category, collection: ['Groceries', 'Transportation', 'Entertainment', 'Utilities', 'Other'], prompt: "Select a category" %>
+        <%= f.input :category, collection: Transaction.categories, prompt: "Select a category" %>
         <%= f.input :amount, input_html: { data: { set_amount_target: "amountInput"}} %>
         <%= f.input :date, as: :date %>
         <%= f.button :submit, value: "Add", class: "add-btn-new-transactions" %>

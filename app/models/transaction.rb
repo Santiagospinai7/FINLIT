@@ -11,4 +11,8 @@ class Transaction < ApplicationRecord
 
     return formatted_transactions_by_date
   end
+
+  def self.categories
+    return ['Food & Drinks', 'Income', 'Investments', 'Shopping' , 'Housing', 'Transportation', 'Vehicle', 'Life & Entertainment', 'Financial expenses']
+  end
 end

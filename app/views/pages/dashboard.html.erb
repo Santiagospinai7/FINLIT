@@ -4,17 +4,19 @@
 </div>
 <div class="container-dashboard">
   <div id="title">
-    <h1 class="dashboard-title">Hey <%= (current_user.first_name).capitalize %> <br>Your Dashboard:</h1>
+    <h1 class="dashboard-title">Hey <%= (current_user.first_name).capitalize %>, <br>Your Dashboard:</h1>
   </div>
   <div class="widgets">
     <div class="row">
       <div class="column">
         <div class="card">
           <h3 class="h3-dashboard">Accross accounts</h3>
-          <div class="balance-card">
-            <p>Balance</p>
-            <p><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
-          </div>
+          <%= link_to accounts_path, class: "account-link" do %>
+            <div class="balance-card">
+              <p>Balance</p>
+              <p><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
+            </div>
+          <% end %>
         </div>
         <div class="card" data-controller="news">
           <h3>News</h3>
@@ -39,7 +41,7 @@
           <% else %>
             <h3>Savings<h3>
             <p>Let's make more Savings!</p>
-            <%= link_to "Save Money", new_account_path , class: 'button-create'%>
+            <%= link_to "Save Money", new_account_path , class: 'button-create-saving'%>
           <% end %>
         </div>
       </div>
