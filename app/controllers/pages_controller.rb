@@ -5,14 +5,15 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @accounts = Account.where.not(account_type: "Savings")
+    user_accounts = Account.where(user_id: current_user.id)
+    @accounts = user_accounts.where.not(account_type: "Savings")
     @accounts_money = 0
 
     @accounts.each do |account|
       @accounts_money += account.balance
     end
 
-    @savings = Account.where(account_type: "Savings")
+    @savings = user_accounts.where(account_type: "Savings")
 
 
     if @savings.length > 0
