@@ -16,8 +16,8 @@ application.register("hello", HelloController)
 import NewsController from "./news_controller"
 application.register("news", NewsController)
 
-import OpenaiController from "./openai_controller"
-application.register("openai", OpenaiController)
+// import OpenaiController from "./openai_controller"
+// application.register("openai", OpenaiController)
 
 import SelectAccountsController from "./select_accounts_controller"
 application.register("select-accounts", SelectAccountsController)
