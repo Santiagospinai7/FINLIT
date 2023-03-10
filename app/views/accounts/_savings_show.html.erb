@@ -7,7 +7,7 @@
 <div class="account-flex">
   <div class="account-grid-item-transaction">
     <div class="return-btn-flex">
-      <%= button_to "<", accounts_path, class: "return-btn" %>
+       <%= button_to "<", accounts_path, class:"return-btn",  :method => :get %>
     </div>
     <%= render "saving" %>
     <div>
