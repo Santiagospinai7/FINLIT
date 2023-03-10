@@ -30,7 +30,7 @@
     <%= line_chart Transaction.line_chart(@account), colors: ["#6610f2"]  %>
   </div>
 </div>
-<div class="background-gradient-master-transactions">
+<div class="background-gradient-master-transactions-bottom">
   <div class="background-gradient-container-transactions-bottom"></div>
 </div>
 <h1 class="transactions-title-lower">Transactions</h1>
@@ -60,6 +60,7 @@
     <% end %>
   </div>
   <br>
+  <%# <%= button_to "+ Add", new_account_transaction_path(@account), class:"card-action-buttons",  :method => :get %> %>
   <div class="record-btn-flex">
     <%= button_to "+", new_account_transaction_path(@account), class: "add-btn", title: "Add Transactions", method: :get %>
   </div>

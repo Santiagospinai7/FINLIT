@@ -8,12 +8,15 @@
   display: flex;
   flex-direction: row;
   align-items: stretch; /* Ensures both columns have equal height */
+  min-width: 80%;
+  max-width: 80%;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   z-index: 0;
 }
@@ -27,8 +30,8 @@
   border-radius: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 0;
-  min-width: 85%;
-  max-width: 85%;
+  min-width: 95%;
+  max-width: 95%;
   height: 100%;
 }
 
@@ -130,7 +133,7 @@
 #refresh-btn {
   position: absolute;
   top: 7%;
-  left: 80%;
+  left: 90%;
   background-color: transparent;
   border: none;
   color: rgb(202, 202, 202);
