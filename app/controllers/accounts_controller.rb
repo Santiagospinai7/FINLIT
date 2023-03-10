@@ -3,8 +3,9 @@ class AccountsController < ApplicationController
 
   # GET /accounts or /accounts.json
   def index
-  
     @selected_option = params[:query]
+    # user_account = current_user.id
+    user_accounts = Account.where(user_id: current_user.id)
 
     if @selected_option == "Accounts"
       @text_option_1 = "Accounts"
@@ -24,13 +25,13 @@ class AccountsController < ApplicationController
       # @selected_option = params[:query]
       @filter_option_1 = "Accounts"
       @filter_option_2 = "Savings"
-      @accounts = Account.where.not(account_type: "Savings")
+      @accounts = user_accounts.where.not(account_type: "Savings")
     elsif params[:query] == "Savings"
       # Handle filter option 2
       # @selected_option = params[:query]
       @filter_option_1 = "Savings"
       @filter_option_2 = "Accounts"
-      @accounts = Account.where(account_type: "Savings")
+      @accounts = user_accounts.where(account_type: "Savings")
 
       # if @accounts.length > 0
 
@@ -45,14 +46,16 @@ class AccountsController < ApplicationController
       # Handle no filter selected
       @filter_option_1 = "Accounts"
       @filter_option_2 = "Savings"
-      @accounts = Account.where.not(account_type: "Savings")
+      @accounts = user_accounts.where.not(account_type: "Savings")
     end
 
   end
 
   # GET /accounts/1 or /accounts/1.json
   def show
-    @transactions = @account.transactions
+    if current_user.id == @account.user_id
+      @transactions = @account.transactions
+    end
   end
 
   # GET /accounts/new
@@ -78,15 +81,19 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1 or /accounts/1.json
   def update
     # account = Account.find(params[:id])
-    @account.update(account_params)
+    if current_user.id == @account.user_id
+      @account.update(account_params)
 
-    redirect_to accounts_path
+      redirect_to accounts_path
+    end
   end
 
   # DELETE /accounts/1 or /accounts/1.json
   def destroy
-    @account.destroy
-  
+    if current_user.id == @account.user_id
+      @account.destroy
+    end
+
     redirect_to accounts_path, status: :see_other
   end
 
