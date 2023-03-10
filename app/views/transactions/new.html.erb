@@ -1,5 +1,5 @@
 <div class="log-in-master">
-  <div  data-controller="set-amount"class="log-in-container">
+  <div  data-controller="set-amount"class="create-account-container">
     <h1 class="title-text">New Transaction</h1>
 
     <div class="container">
@@ -25,13 +25,13 @@
         <%= f.input :category, collection: ['Groceries', 'Transportation', 'Entertainment', 'Utilities', 'Other'], prompt: "Select a category" %>
         <%= f.input :amount, input_html: { data: { set_amount_target: "amountInput"}} %>
         <%= f.input :date, as: :date %>
-        <%= f.button :submit, value: "Add" %>
+        <%= f.button :submit, value: "Add", class: "add-btn-new-transactions" %>
       <% end %>
     <% end %>
-    
+
     <br>
     <div>
-      <%= link_to "< Back to account", account_path(@account) %>
+      <%= link_to "< Back to account", account_path(@account), class: "back-account-btn" %>
     </div>
   </div>
 </div>

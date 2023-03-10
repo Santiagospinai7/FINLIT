@@ -165,6 +165,8 @@
   box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
 }
 
+
+
 // ----------- ACCOUNTS GRID ------------
 
 
@@ -219,6 +221,12 @@
 
 .intro-accounts-card p {
   margin-top: 0.7rem;
+}
+
+.account-link:hover {
+  cursor: pointer;
+  color: rgba(202, 202, 202, 0.687);
+  transition: all 0.3s ease-in-out;
 }
 
 .account-card-balance {
@@ -482,6 +490,16 @@ section{
 }
 
 #account_account_number {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+#account_saving_goal {
   background-color: #1d1d1d !important;
   color: rgb(202, 202, 202) !important;
   border: none !important;

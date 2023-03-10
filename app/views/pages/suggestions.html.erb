@@ -28,50 +28,23 @@
 </div>
 <div class="search-container">
   <div class="chat-form-master">
-    <form id="chat-form">
+    <form id="chat-form" data-controller="openai" data-action="submit->openai#submitForm">
       <div class="search">
         <input type="checkbox" id="trigger" class="search__checkbox" />
         <label class="search__label-init" for="trigger"></label>
         <label class="search__label-active" for="trigger"></label>
         <div class="search__border"></div>
-          <input type="text" class="search__input" id="user-input" />
-          <button type="submit" id="submit-btn" style="display:none"><img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png"></button>
+        <input type="text" class="search__input" id="user-input" data-openai-target="userInput"/>
+        <button type="submit" id="submit-btn" style="display:none">
+          <img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png">
+        </button>
         <div class="search__close"></div>
       </div>
     </form>
   </div>
 </div>
 
-<div id="chat-container"></div>
+<div id="chat-container" data-openai-target="chatContainer">
+  <!-- Chat messages will be inserted here -->
+</div>
 
-<script>
-  const OPENAI_API_KEY = "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";
-  const { Configuration, OpenAIApi } = require("openai");
-
-  const configuration = new Configuration({
-    apiKey: OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
-
-  const form = document.querySelector('#chat-form');
-  const userInput = document.querySelector('#user-input');
-  const chatContainer = document.querySelector('#chat-container');
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const input = userInput.value;
-
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{role: "user", content: input}],
-    });
-
-    const chatBubbleUser = `<div class="chat-bubble chat-bubble-user">${input}</div>`;
-    const chatBubbleAssistant = `<div class="chat-bubble chat-bubble-assistant">${completion.choices[0].text}</div>`;
-
-    chatContainer.innerHTML += chatBubbleUser + chatBubbleAssistant;
-
-    userInput.value = '';
-  });
-</script>

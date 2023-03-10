@@ -4,8 +4,8 @@ import "./controllers"
 import "bootstrap"
 import "chartkick/chart.js"
 import "chartkick"
+import "node-fetch"
 
 
 //= require chartkick
 //= require Chart.bundle
-
