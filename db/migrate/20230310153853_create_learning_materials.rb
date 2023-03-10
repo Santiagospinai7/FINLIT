@@ -5,9 +5,7 @@ class CreateLearningMaterials < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.string :url
-      t.references :quiz, null: false, foreign_key: true
-      t.string :favorite
-      t.references :topic_material, null: false, foreign_key: true
+      t.string :favourite
 
       t.timestamps
     end

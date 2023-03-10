@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_154829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,50 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
     t.datetime "updated_at", null: false
     t.decimal "saving_goal"
     t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "learning_materials", force: :cascade do |t|
+    t.string "material_type"
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.string "favourite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "topic_material_id", null: false
+    t.bigint "quiz_id", null: false
+    t.index ["quiz_id"], name: "index_learning_materials_on_quiz_id"
+    t.index ["topic_material_id"], name: "index_learning_materials_on_topic_material_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "saved_learning_materials", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "learning_material_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["learning_material_id"], name: "index_saved_learning_materials_on_learning_material_id"
+    t.index ["user_id"], name: "index_saved_learning_materials_on_user_id"
+  end
+
+  create_table "topic_materials", force: :cascade do |t|
+    t.string "topic_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -52,5 +96,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "learning_materials", "quizzes"
+  add_foreign_key "learning_materials", "topic_materials"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "saved_learning_materials", "learning_materials"
+  add_foreign_key "saved_learning_materials", "users"
   add_foreign_key "transactions", "accounts"
 end
