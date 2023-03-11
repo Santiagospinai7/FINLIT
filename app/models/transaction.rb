@@ -4,10 +4,11 @@ class Transaction < ApplicationRecord
   
   validates :operation_type, presence: true
   # validates :date, presence: true
-  validates :amount, presence: true, numericality: { other_than: 0 }
+  # validates :amount, presence: true, numericality: { other_than: 0 }
+  validates :amount, presence: true
   validate :account_or_saving_present
 
-  validates :category, presence: true, if: :account_present
+  # validates :category, presence: true, if: :account_present
 
   def self.line_chart(account)
     transactions = account.transactions
@@ -34,9 +35,9 @@ class Transaction < ApplicationRecord
     end
   end
 
-  def account_present
-    if account_id.blank?
-      errors.add(:base, "Transaction should have a category")
-    end
-  end
+  # def account_present
+  #   if !(account_id.blank?)
+  #     errors.add(:base, "Transaction should have a category")
+  #   end
+  # end
 end

@@ -11,11 +11,19 @@
       <div class="column">
         <div class="card">
           <h3 class="h3-dashboard">Accross accounts</h3>
-          <%= link_to accounts_path, class: "account-link" do %>
-            <div class="balance-card">
-              <p>Balance</p>
-              <p><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
-            </div>
+          <% if @accounts.length > 0 %>
+            <%= link_to accounts_path, class: "account-link" do %>
+              <div class="balance-card">
+                <p>Balance</p>
+                <p><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to new_account_path, class: "account-link" do %>
+              <div class="balance-card">
+                <p>Let's create an Account. <strong>Click here</strong></p>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <div class="card" data-controller="news">
@@ -28,7 +36,7 @@
       <div class="column">
         <div class="card savings-card">
           <% if @savings.length > 0 %>
-            <h3 class="h3-dashboard">Savings - <%= @saving_account.account_name %></h3>
+            <h3 class="h3-dashboard">Savings - <%= @saving_account.saving_name %></h3>
             <br>
             <div id="char">
               <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
@@ -41,7 +49,7 @@
           <% else %>
             <h3>Savings<h3>
             <p>Let's make more Savings!</p>
-            <%= link_to "Save Money", new_account_path , class: 'button-create-saving'%>
+            <%= link_to "Save Money", new_saving_path , class: 'button-create-saving'%>
           <% end %>
         </div>
       </div>

@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     user_accounts = Account.where(user_id: current_user.id)
+    user_savings = Saving.where(user_id: current_user.id)
     @accounts = user_accounts.where.not(account_type: "Savings")
     @accounts_money = 0
 
@@ -13,7 +14,7 @@ class PagesController < ApplicationController
       @accounts_money += account.balance
     end
 
-    @savings = user_accounts.where(account_type: "Savings")
+    @savings = user_savings.all
 
 
     if @savings.length > 0

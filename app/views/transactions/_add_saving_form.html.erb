@@ -2,5 +2,7 @@
   <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
   <%= f.input :amount %>
   <%= f.input :date, as: :date %>
-  <%= f.button :submit, value: "Add" %>
+  <div class="form-actions">
+    <%= f.button :submit, value: "Add" %>
+  </div>
 <% end %>
