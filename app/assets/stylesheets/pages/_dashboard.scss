@@ -156,9 +156,9 @@
 }
 
 #refresh-btn {
-  position: fixed;
-  top: 51%;
-  left: 47.5%;
+  position: absolute;
+  top: -465%;
+  left: 120%;
   background-color: transparent;
   border: none;
   color: rgb(202, 202, 202);
@@ -169,7 +169,14 @@
   color: rgba(202, 202, 202, 0.593);
   animation-name: spin;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+}
+
+#refresh-btn:active {
+  color: rgba(119, 62, 205, 0.593);
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 @keyframes spin {
