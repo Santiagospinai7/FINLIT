@@ -12,6 +12,26 @@
   max-width: 80%;
 }
 
+.saving-card-action-button {
+  background-color: #3C28B9;
+  border: 1px solid #3C28B9;
+  color: #d6d6d6;
+  border-radius: 1rem;
+  padding: 0.6rem 0;
+  position: relative;
+  left: 0%;
+  width: 40%;
+  z-index: 17;
+}
+
+
+.saving-card-action-button:hover {
+  background-color: #3C28B9;
+  border: 1px solid #3C28B9;
+  filter: brightness(1.2);
+  scale: 1.05;
+}
+
 .column {
   display: flex;
   flex-direction: column;
