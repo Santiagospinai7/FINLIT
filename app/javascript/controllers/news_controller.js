@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+require('dotenv').config();
 
 export default class extends Controller {
   static targets = [ "title", "link", "source"]
@@ -7,10 +8,11 @@ export default class extends Controller {
   connect() {
     console.log("Searching for News!");
     const rapidKey = process.env.RAPID_ACCESS_KEY;
+    console.log(rapidKey);
     fetch("https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news", {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": `${rapidKey}`,
+        "X-RapidAPI-Key": rapidKey,
         "X-RapidAPI-Host": "yahoo-finance15.p.rapidapi.com"
       }
     })

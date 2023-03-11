@@ -1,15 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// // Connects to data-controller="hover3d"
-// export default class extends Controller {
-//   static target = [ "3dcard" ]
-
-//   connect() {
-//     console.log("HELLO 3D!");
-//   }
-// }
-
-// Connects to data-controller="hover3d"
 export default class extends Controller {
   static targets = ["card"]
   static classes = ["hovered"]
@@ -52,4 +42,3 @@ export default class extends Controller {
     this.cardTarget.classList.remove(this.hoveredClass)
   }
 }
-
