@@ -21,7 +21,7 @@ body {
   z-index: -5; // this moves the element behind the body element
   position: absolute;
   top: 20%;
-  height: 70vh;
+  height: 65vh;
   width: 95%;
   border-radius: 0 0 4rem 4rem ;
   background: rgb(0,0,0);
@@ -56,7 +56,7 @@ body {
   rotate: 180deg;
   z-index: -3;
   position: absolute;
-  width: 100%;
+  width: 101%;
   bottom: 0;
   height: 81vh;
   background: rgb(107,107,107);
@@ -68,8 +68,8 @@ body {
 .hero-text {
   color: rgb(202, 202, 202);
   position: absolute;
-  top: 30%;
-  left: 13%;
+  top: 27%;
+  left: 16%;
 }
 
 .hero-h1 {
@@ -102,11 +102,107 @@ body {
   z-index: 7;
 }
 
+.hero-landing-page {
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+}
+
 .hero-img {
+  z-index: 7;
+  width: 45%;
+  max-width: 130rem;
+  margin-top: 6%;
+  margin-left: 35%;
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.hero-img.hovered {
+  transform: rotateX(0) rotateY(0) scale(1.05);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.card-3d {
+  transition: transform 0.1s ease-in-out;
+}
+
+// .hero-img:hover {
+//   scale: 1.05;
+//   transition: all 1s ease-in-out;
+// }
+
+// ------------------ MOUSE SCROLLER ANIMATION START ------------------
+.scroll-down.mouse {
+  height: 100px;
+}
+.scroll-down.mouse span {
   position: relative;
-  margin-top: -28%;
-  left: 32%;
-  width: 47%;
+  display: inline-block;
+  width: 30px;
+  height: 60px;
+  border: 2px solid rgba(202, 202, 202, 0.63);
+  border-radius: 50px;
+  top: 3rem;
+}
+
+/* Effect 3 */
+.scroll-down.mouse.effect1 span::after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: rgba(202, 202, 202, 0.63);
+  animation: animateMousePointer 1.5s infinite;
+}
+@keyframes animateMousePointer {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: .7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.scroller-wheel {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+#scroll-p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(202, 202, 202, 0.63);
+}
+#scroll-p, .scroller-wheel {
+  display: none;
 }
 
 // -------------- HERO SECTION 2 --------------
@@ -189,4 +285,79 @@ body {
   filter: brightness(1.2);
   scale: 1.05;
   transition: all 1s ease-in-out;
+}
+@media screen and (min-width: 1700px) {
+
+  .hero-text {
+    top: 27%;
+    left: 20%;
+  }
+
+  .hero-h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-h4 {
+    font-size: 1.5rem !important;
+    max-width: 60%;
+  }
+
+  .hero-img {
+    z-index: 7;
+    width: 45%;
+    max-width: 160rem;
+    margin-top: 2%;
+    margin-left: 40%;
+  }
+
+  .hero-img:hover {
+    scale: 1.05;
+    transition: all 1s ease-in-out;
+  }
+
+  .mockup {
+    margin-top: 8%;
+    width: 45%;
+  }
+
+  .hero2-h1 {
+    font-size: 3rem !important;
+    margin-left: 5%;
+  }
+
+  .hero-btn2 {
+    margin-left: 5%;
+  }
+
+  .hero-btn2:hover {
+    border: 1px solid #414141;
+    color: rgb(152, 152, 152);
+    text-decoration: none;
+    border-radius: 3rem;
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .hero2-span {
+    color: #7443ef;
+  }
+
+  .shadow-gradient-bottom {
+    height: 80vh;
+  }
+
+  .mockup-info {
+    width: 40rem;
+    font-size: 3rem;
+    margin-right: 5%;
+  }
+
+  .mockup-info-span {
+    font-size: 3rem;
+  }
+
+  .mock-up-iphone {
+    margin-left: 5%;
+  }
 }
