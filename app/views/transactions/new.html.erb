@@ -2,7 +2,7 @@
   <div  data-controller="set-amount"class="create-account-container">
     <h1 class="title-text">New Transaction</h1>
 
-    <div class="container">
+    <%# <div class="container">
 
         <form class="toggle">
 
@@ -16,6 +16,15 @@
 
         </form>
 
+    </div> %>
+
+    <div class="switch-button-transaction">
+      <div class="switch-option">
+        <input type="radio" name="switch-option" id="income-option" checked>
+        <label class="option-label-transaction-income" for="income-option">Income</label>
+        <input type="radio" name="switch-option" id="expense-option">
+        <label class="option-label-transaction-expense" for="expense-option">Expense</label>
+      </div>
     </div>
 
     <% if @account.account_type == "Savings" %>
@@ -23,7 +32,8 @@
     <% else %>
       <%= simple_form_for [@account, @transaction] do |f| %>
         <%= f.input :category, collection: Transaction.categories, prompt: "Select a category" %>
-        <%= f.input :amount, input_html: { data: { set_amount_target: "amountInput"}} %>
+        <%= f.input :amount, input_html: { data: { set_amount_target: "amountInput", action:"input->set-amount#amountChanging"}} %>
+        <p data></p>
         <%= f.input :date, as: :date %>
         <%= f.button :submit, value: "Add", class: "add-btn-new-transactions" %>
       <% end %>
