@@ -6,7 +6,7 @@
       <h1 class="title-text">New Transaction</h1>
     <% end %>
 
-    <div class="container">
+    <%# <div class="container">
         <form class="toggle">
             <input type="radio" id="choice1" name="choice" value="creative">
             <label data-action="click->set-amount#setExpense" data-set-amount-target="income-label" class="Income-text" for="choice1">Income</label>
@@ -14,6 +14,14 @@
             <label data-action="click->set-amount#setIncome" data-set-amount-target="expense-label"class="Expense-text" for="choice2">Expense</label>
             <div id="flap"><span class="content"></span></div>
         </form>
+    </div> %>
+    <div class="switch-button-transaction">
+      <div class="switch-option">
+        <input type="radio" name="switch-option" id="income-option" checked>
+        <label class="option-label-transaction-income" for="income-option">Income</label>
+        <input type="radio" name="switch-option" id="expense-option">
+        <label class="option-label-transaction-expense" for="expense-option">Expense</label>
+      </div>
     </div>
 
     <% if @account.class == Saving %>
@@ -21,9 +29,5 @@
     <% else %>
       <%= render "account_form", account: @account, transaction: @transaction %>
     <% end %>
-    <br>
-    <div>
-      <%= link_to "< Back to account", account_path(@account), class: "back-account-btn" %>
-    </div>
   </div>
 </div>

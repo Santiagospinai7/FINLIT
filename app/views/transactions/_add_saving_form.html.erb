@@ -1,3 +1,6 @@
+<div>
+  <%= link_to "< Back", :before, class: "back-account-btn" %>
+</div>
 <%= simple_form_for [account, transaction] do |f| %>
   <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
   <%= f.input :amount %>
