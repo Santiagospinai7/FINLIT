@@ -13,7 +13,11 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @account = Account.find(params[:account_id])
+    if params[:account_id].blank?
+      @account = Saving.find(params[:saving_id])
+    else 
+      @account = Account.find(params[:account_id])
+    end
     @transaction = @account.transactions.new
   end
 
@@ -24,9 +28,17 @@ class TransactionsController < ApplicationController
 
   # POST /transactions or /transactions.json
   def create
-    account = Account.find(params[:account_id])
-    @transaction = Transaction.new(transaction_params)
-    @transaction.account_id = account.id
+    
+    if params[:account_id].nil?
+      account = Saving.find(params[:saving_id])
+      @transaction = Transaction.new(transaction_params_saving)
+      @transaction.saving = account
+    else
+      account = Account.find(params[:account_id])
+      @transaction = Transaction.new(transaction_params_account)
+      @transaction.account = account
+    end
+    
     @transaction.save
 
     #update account balance
@@ -59,7 +71,11 @@ class TransactionsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def transaction_params
-      params.require(:transaction).permit(:category, :amount, :date)
+    def transaction_params_account
+      params.require(:transaction).permit(:operation_type, :category, :amount, :date)
+    end
+
+    def transaction_params_saving
+      params.require(:transaction).permit(:operation_type, :amount, :date)
     end
 end

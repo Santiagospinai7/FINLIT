@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_11_115550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,18 +22,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
     t.integer "account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "saving_goal"
     t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "time_goal"
+    t.decimal "balance"
+    t.decimal "saving_goal"
+    t.string "saving_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.string "category"
-    t.integer "amount"
+    t.decimal "amount"
     t.date "date"
-    t.bigint "account_id", null: false
+    t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "operation_type"
+    t.bigint "saving_id"
     t.index ["account_id"], name: "index_transactions_on_account_id"
+    t.index ["saving_id"], name: "index_transactions_on_saving_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,5 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141718) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "savings", "users"
   add_foreign_key "transactions", "accounts"
+  add_foreign_key "transactions", "savings"
 end

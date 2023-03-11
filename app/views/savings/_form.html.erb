@@ -1,16 +1,15 @@
 
-<%= simple_form_for(@saving) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div>
+    <%= simple_form_for @saving do |f| %>
+    <div class="form-inputs">
+        <%= f.input :saving_name %>
+        <%= f.input :balance %>
+        <%= f.input :saving_goal %>
+        <%= f.input :time_goal, as: :date %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :saving_name %>
-    <%= f.input :saving_goal %>
-    <%= f.input :current_balance %>
-    <%= f.association :user %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+        <%= f.button :submit %>
+    </div>
+    <% end %>
+</div>

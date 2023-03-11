@@ -1,4 +1,5 @@
 <%= simple_form_for [account, transaction] do |f| %>
+  <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
   <%= f.input :amount %>
   <%= f.input :date, as: :date %>
   <%= f.button :submit, value: "Add" %>
