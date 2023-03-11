@@ -19,15 +19,27 @@
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
 }
 
+.background-gradient-master-transactions-bottom {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .background-gradient-container-transactions-bottom {
   z-index: -5;
-  position: absolute;
-  bottom: -100%;
-  height: 100%;
-  width: 95%;
-  border-radius: 4rem 4rem 0 0 ;
+  // position: absolute;
+  // bottom: -100%;
+  // height: 100vh;
+  // min-height: 100vh;
+  // width: 95%;
+  // border-radius: 4rem 4rem 0 0 ;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 
@@ -187,6 +199,16 @@
   margin-top: -10%;
 }
 
+.bank-avatar-transaction {
+  width: 5%;
+  max-width: 5%;
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  left: 18%;
+  margin-top: -2%;
+}
+
 // ----- ADD BTN -----
 
 .record-btn-flex {
@@ -241,11 +263,22 @@
 
 // ------------------- Transactions -------------------
 
+.transactions-master {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .transactions-location-div {
   top: 120%;
   position: absolute;
   justify-content: center;
   align-items: center;
+  background-color: #18181883;
+  width: 80%;
+  padding: 4rem 0;
+  border-radius: 2rem;
 }
 
 .transactions-list-master {
@@ -269,14 +302,7 @@
   color: rgb(202, 202, 202);
 }
 
-.bank-avatar-transaction {
-  width: 5%;
-  height: 5%;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-left: 5%;
-  margin-top: -1.1%;
-}
+
 
 // -------------- Transactions form --------------
 
@@ -312,6 +338,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 3.5rem;
+  margin-left: 30%;
 }
 
 .transactions-list-data li {
