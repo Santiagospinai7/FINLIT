@@ -2,7 +2,11 @@
   <%= link_to "< Back", account_path(account), class: "back-account-btn" %>
 </div>
 <%= simple_form_for [account, @transaction] do |f| %>
-  <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
+  <%# <div class="switch-button-transaction"> %>
+    <%# <div class="switch-option"> %>
+      <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
+    <%# </div> %>
+  <%# </div> %>
   <%= f.input :category, collection: Transaction.categories, prompt: "Select a category" %>
   <%= f.input :amount, as: :decimal, input_html: { data: { set_amount_target: "amountInput"}} %>
   <%= f.input :date, as: :date %>
