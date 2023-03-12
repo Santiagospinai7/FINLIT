@@ -1,25 +1,10 @@
-<script>
-  window.onload = function() {
-    const searchLabel = document.querySelector('.search__label-init');
-    const submitBtn = document.querySelector('#submit-btn');
-    const cancelLabel = document.querySelector('.search__label-active');
-
-    searchLabel.addEventListener('click', () => {
-      setTimeout(() => {
-        submitBtn.style.display = 'block';
-      }, 500);
-    });
-
-    submitBtn.addEventListener('click', () => {
-      submitBtn.style.display = 'none';
-    });
-
-    cancelLabel.addEventListener('click', () => {
-      submitBtn.style.display = 'none';
-    });
-  };
-</script>
-<div class="search-header">
+<div data-controller="openai">
+  <div data-openai-target="container">
+  </div>
+  <div data-openai-target="chat">
+  </div>
+</div>
+<%# <div class="search-header">
   <h1 class="transactions-title">Suggestions</h1>
 </div>
 <div class="background-gradient-master-transactions">
@@ -28,13 +13,13 @@
 </div>
 <div class="search-container">
   <div class="chat-form-master">
-    <form id="chat-form" data-controller="openai" data-action="submit->openai#submitForm">
+    <form id="chat-form">
       <div class="search">
-        <input type="checkbox" id="trigger" class="search__checkbox" />
+        <input type="checkbox" id="trigger" class="search__checkbox"/>
         <label class="search__label-init" for="trigger"></label>
         <label class="search__label-active" for="trigger"></label>
         <div class="search__border"></div>
-        <input type="text" class="search__input" id="user-input" data-openai-target="userInput"/>
+        <input type="text" class="search__input" id="user-input"/>
         <button type="submit" id="submit-btn" style="display:none">
           <img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png">
         </button>
@@ -42,9 +27,4 @@
       </div>
     </form>
   </div>
-</div>
-
-<div id="chat-container" data-openai-target="chatContainer">
-  <!-- Chat messages will be inserted here -->
-</div>
-
+</div> %>

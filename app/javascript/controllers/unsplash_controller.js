@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-require('dotenv').config();
 
 export default class extends Controller {
   static targets = [ "image" ]
