@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @transaction %>
+<% if @transaction.account_id == nil %>
+  
+<% else %>
+    <%= render @transaction %>
+<% end %>
 
 <div>
   <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |

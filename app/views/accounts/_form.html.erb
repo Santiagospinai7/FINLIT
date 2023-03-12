@@ -7,15 +7,12 @@
         <div class="form-inputs">
           <%= f.input :account_name %>
           <%= f.input :account_type,
-                      collection: ['Current account', 'Savings', 'Cash', 'Credit card', 'Investment'],
+                      collection: ['Current account', 'Cash', 'Credit card', 'Investment'],
                       prompt: "Select a type",
                       input_html: { data: { account_card_target: 'input', action: "change->account-card#accountType" } } %>
           <%= f.input :balance %>
           <div data-account-card-target="accountNumber">
             <%= f.input :account_number  %>
-          </div>
-          <div data-account-card-target="goalField" >
-            <%= f.input :saving_goal %>
           </div>
         </div>
 

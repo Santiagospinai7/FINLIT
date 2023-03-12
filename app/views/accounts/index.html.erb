@@ -12,7 +12,7 @@
           <div>
             <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
               <%= select_tag :query,
-                options_for_select([[@filter_option_1, @text_option_1], [@filter_option_2, @text_option_2]]),
+                options_for_select([["Accounts", "Accounts"], ["Savings", "Savings"]]),
                 data: { select_accounts_target: "switch", action: "change->select-accounts#displayAccounts" },
                 class: "account-switcher"
               %>
@@ -34,7 +34,7 @@
                   <nav class="btn-pluss-wrapper-accounts">
                     <div href="#" class="btn-pluss-accounts">
                       <ul>
-                        <li><%= link_to "✏️  |  Edit", account %></li>
+                        <li><%= link_to "✏️  |  Edit", edit_account_path(account) %></li>
                         <li><%= link_to "🗑️  |  Delete", account_path(account), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
                       </ul>
                     </div>
@@ -42,11 +42,7 @@
                 </div>
                <%# ---------- %>
               </div>
-                <% if account.account_type != "Savings" %>
-                  <%= render "accounts_card", account: account %>
-                <% elsif account.account_type == "Savings" %>
-                  <%= render "savings_card", account: account %>
-                <% end %>
+                <%= render "accounts_card", account: account %>
             </div>
           <% end %>
         </div>

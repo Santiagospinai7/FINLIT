@@ -1,52 +1,21 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[ show edit update destroy ]
+  before_action :set_balance, only: %i[ show edit update destroy ]
 
   # GET /accounts or /accounts.json
   def index
     @selected_option = params[:query]
     # user_account = current_user.id
-    user_accounts = Account.where(user_id: current_user.id)
-
-    if @selected_option == "Accounts"
-      @text_option_1 = "Accounts"
-      @text_option_2 = "Savings"
-    elsif @selected_option == "Savings"
-      @text_option_1 = "Savings"
-      @text_option_2 = "Accounts"
-    else
-      @text_option_1 = "Accounts"
-      @text_option_2 = "Savings"
-    end
-
     @selected_option = "Accounts" if @selected_option == nil
 
+    user_accounts = Account.where(user_id: current_user.id)
+    @accounts = user_accounts.all
+
     if params[:query] == "Accounts"
-      # Handle filter option 1
-      # @selected_option = params[:query]
-      @filter_option_1 = "Accounts"
-      @filter_option_2 = "Savings"
-      @accounts = user_accounts.where.not(account_type: "Savings")
+      @accounts = user_accounts.all
+      redirect_to controller: :accounts, action: :index 
     elsif params[:query] == "Savings"
-      # Handle filter option 2
-      # @selected_option = params[:query]
-      @filter_option_1 = "Savings"
-      @filter_option_2 = "Accounts"
-      @accounts = user_accounts.where(account_type: "Savings")
-
-      # if @accounts.length > 0
-
-      #   @saving_balance = @ccoun.balance
-      #   @saving_goal = @saving_account.saving_goal
-      #   @saving_gap = @saving_goal - @saving_balance
-  
-      #   @saving_chart = {"savings" => @saving_balance, "lack" => @saving_gap}
-      # end
-
-    else
-      # Handle no filter selected
-      @filter_option_1 = "Accounts"
-      @filter_option_2 = "Savings"
-      @accounts = user_accounts.where.not(account_type: "Savings")
+      redirect_to controller: :savings, action: :index  
     end
 
   end
@@ -105,6 +74,11 @@ class AccountsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def account_params
-      params.require(:account).permit(:account_name, :account_type, :balance, :user_id, :account_number, :saving_goal)
+      params.require(:account).permit(:account_name, :account_type, :balance, :user_id, :account_number)
+    end
+
+    def set_balance
+      @account = Account.find(params[:id])
+      @account.updateBalance
     end
 end

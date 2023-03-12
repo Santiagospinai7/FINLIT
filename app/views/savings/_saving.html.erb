@@ -1,22 +1,11 @@
 <div id="<%= dom_id saving %>">
-  <p>
-    <strong>Saving name:</strong>
-    <%= saving.saving_name %>
-  </p>
-
-  <p>
-    <strong>Saving goal:</strong>
-    <%= saving.saving_goal %>
-  </p>
-
-  <p>
-    <strong>Current balance:</strong>
-    <%= saving.current_balance %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= saving.user_id %>
-  </p>
-
+  <div class="intro-accounts-card">
+      <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
+      <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
+  </div>
+  <div>
+  <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
+  <p>Goal: <%= "£#{number_with_delimiter(saving.saving_goal, :delimiter => ',')}" %></p>
+  <p>Saved: <%= Saving.get_porcentage(saving) %>%</p>
+  </div>
 </div>
