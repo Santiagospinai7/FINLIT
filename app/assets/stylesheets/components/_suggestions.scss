@@ -218,3 +218,19 @@ $borderW: 0.3rem;
   color: #fff;
   float: right;
 }
+
+#chat-content {
+  text-align: center;
+  color: #fff;
+  width: 70%;
+  background-color: #53535370;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.chat-conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

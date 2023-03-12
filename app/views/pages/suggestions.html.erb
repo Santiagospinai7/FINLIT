@@ -1,10 +1,4 @@
-<div data-controller="openai">
-  <div data-openai-target="container">
-  </div>
-  <div data-openai-target="chat">
-  </div>
-</div>
-<%# <div class="search-header">
+<div class="search-header">
   <h1 class="transactions-title">Suggestions</h1>
 </div>
 <div class="background-gradient-master-transactions">
@@ -19,12 +13,17 @@
         <label class="search__label-init" for="trigger"></label>
         <label class="search__label-active" for="trigger"></label>
         <div class="search__border"></div>
-        <input type="text" class="search__input" id="user-input"/>
-        <button type="submit" id="submit-btn" style="display:none">
+        <input type="text" class="search__input" data-openai-target="input" id="user-input"/>
+        <button type="submit" id="submit-btn">
           <img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png">
         </button>
         <div class="search__close"></div>
       </div>
     </form>
   </div>
-</div> %>
+</div>
+<div data-controller="openai">
+  <div class="chat-conatiner">
+    <p data-openai-target="chat" id="chat-content"></p>
+  </div>
+</div>
