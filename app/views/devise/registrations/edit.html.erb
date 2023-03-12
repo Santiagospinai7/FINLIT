@@ -1,5 +1,9 @@
 <div class="log-in-master">
   <div class="log-in-container">
+    <div class="add-account-bank-avatar-master">
+      <img class="add-account-bank-avatar" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1677950556/max-whitehead-IkjGJX81z_U-unsplash_dw5jiv.png">
+      <button class="modify-btn" title="Update Profile Picture">+</button>
+    </div>
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -41,4 +45,4 @@
 
 <>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
 
-<%= link_to "Back", :back %>
+<%= link_to "< Back", :back, class: "back-account-btn" %>
