@@ -1,8 +1,13 @@
 class SavingsController < ApplicationController
   before_action :set_saving, only: %i[ show edit update destroy ]
+  before_action :set_balance, only: %i[ show edit update destroy ]
 
   def index
     @savings = Saving.where(user_id: current_user.id)
+
+    @savings.each do |saving|
+      saving.updateBalance
+    end
   end
 
   def show
@@ -52,5 +57,10 @@ class SavingsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def saving_params
     params.require(:saving).permit(:saving_name, :saving_goal, :balance, :user_id, :time_goal)
+  end
+
+  def set_balance
+    @saving = Saving.find(params[:id])
+    @saving.updateBalance
   end
 end

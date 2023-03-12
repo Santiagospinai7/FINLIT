@@ -11,6 +11,7 @@
   </div>
   <div class="savings-card-data">
     <div class="savings-message-card">
+      <% saving.updateBalance %>
       <p>You've saved <span class="motivational-message-span"><%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></span><br>Keep it up 🙌</p>
     </div>
   </div>

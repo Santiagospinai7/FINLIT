@@ -8,4 +8,11 @@ class Account < ApplicationRecord
     ["Current", "Saving", "Other"]
   end
 
+  def updateBalance
+    transactions = self.transactions
+    transactions.each do |transaction|
+      self.balance += transaction.amount
+    end
+  end
+
 end

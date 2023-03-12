@@ -15,4 +15,11 @@ class Saving < ApplicationRecord
   def self.get_porcentage(account)
     return ((account.balance / account.saving_goal) * 100).round(2)
   end
+
+  def updateBalance
+    transactions = self.transactions
+    transactions.each do |transaction|
+      self.balance += transaction.amount
+    end
+  end
 end

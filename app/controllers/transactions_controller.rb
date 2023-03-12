@@ -25,21 +25,23 @@ class TransactionsController < ApplicationController
   def create
     
     if params[:account_id].nil?
-      @transaction = Transaction.new(transaction_params_saving)
+      @transaction = Transaction.new(transaction_params)
       @transaction.saving = @account
-    else
-      @transaction = Transaction.new(transaction_params_account)
-      @transaction.account = @account
-    end
-    
-    @transaction.save
+      @transaction.save
 
-    redirect_to account_path(@account.id)
+      redirect_to saving_path(@account.id)
+    else
+      @transaction = Transaction.new(transaction_params)
+      @transaction.account = @account
+      @transaction.save
+
+      redirect_to account_path(@account.id)
+    end
   end
 
   # PATCH/PUT /transactions/1 or /transactions/1.json
   def update
-    @transaction.update(transaction_params_account)
+    @transaction.update(transaction_params)
 
     if @account.class == Saving
       # @account = Saving.find(params[:account_id])
@@ -71,13 +73,13 @@ class TransactionsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def transaction_params_account
+    def transaction_params
       params.require(:transaction).permit(:operation_type, :category, :amount, :date)
     end
 
-    def transaction_params_saving
-      params.require(:transaction).permit(:operation_type, :amount, :date)
-    end
+    # def transaction_params_saving
+    #   params.require(:transaction).permit(:operation_type, :amount, :date)
+    # end
 
     def set_type_account
       if params[:account_id].nil?

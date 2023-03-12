@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[ show edit update destroy ]
+  before_action :set_balance, only: %i[ show edit update destroy ]
 
   # GET /accounts or /accounts.json
   def index
@@ -74,5 +75,10 @@ class AccountsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def account_params
       params.require(:account).permit(:account_name, :account_type, :balance, :user_id, :account_number)
+    end
+
+    def set_balance
+      @account = Account.find(params[:id])
+      @account.updateBalance
     end
 end
