@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_112534) do
     t.string "title"
     t.text "description"
     t.string "explanation"
-    t.string "favorite"
+    t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "topic_material_id", null: false
