@@ -111,7 +111,7 @@ crypto_guide = TopicMaterial.create(topic_name: "cryptocurrency")
 LearningMaterial.create(title: "Crypto for dummies",
   description: "A short introduction to cryptocurrencies. Fully Idiot Proof.",
   topic_material_id: crypto_guide.id,
-  explanation: "",
+  explanation: "a digital currency in which transactions are verified and records maintained by a decentralized system using cryptography, rather than by a centralized authority.",
 )
 
 investment = TopicMaterial.create(topic_name: "investments")
@@ -119,7 +119,7 @@ investment = TopicMaterial.create(topic_name: "investments")
 LearningMaterial.create(title: "In it For the Long Run",
   description: " A detailed look into the intricacies of the stock market and how you can win over 5-10 years.",
   topic_material_id: investment.id,
-  explanation: "",
+  explanation: "Higher returns from the markets can never be guaranteed. But a long-term approach should give your investments time to adjust to market highs and lows and ultimately deliver positive growth with a chance of beating inflation in the process.",
 )
 
 debt_management_plans = TopicMaterial.create(topic_name: "debt")
@@ -128,7 +128,7 @@ debt_management_plans = TopicMaterial.create(topic_name: "debt")
 LearningMaterial.create(title: "Becoming Debt Free!",
   description: "An article about debt management plans and how you can use them to manage your debt...",
   topic_material_id: debt_management_plans.id,
-  explanation: "",
+  explanation: "A Debt Management Plan is an agreement between you and your creditors to pay all of your debts. Debt management plans are usually used when either: you can only afford to pay creditors a small amount each month. you have debt problems but will be able to make repayments in a few months.",
 )
 
 
@@ -145,7 +145,10 @@ LearningMaterial.create(title: "12 principles
 LearningMaterial.create(title: "What can I do With £50?",
   description: "An insight into the volatile world of penny stocks and the money you can make with just £50",
   topic_material_id: investment.id,
-  explanation: "",
+  explanation: "Saving means not spending a portion of your
+  income, in other words putting some money aside.
+  Your money is therefore safe and available, but
+  its value decreases each year by the level of inflation",
 )
 
 banking = TopicMaterial.create(topic_name: "banking")
@@ -153,7 +156,7 @@ banking = TopicMaterial.create(topic_name: "banking")
 LearningMaterial.create(title: "Banking overview",
   description: "An overview of the Financial Services",
   topic_material_id: banking.id,
-  explanation: "dcgud",
+  explanation: "",
 )
 
 LearningMaterial.create(title: "How to retire at 40",
