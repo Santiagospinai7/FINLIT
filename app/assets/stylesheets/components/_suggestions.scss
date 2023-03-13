@@ -1,14 +1,19 @@
 // ------------ Gradient Background ------------
 
+.background-gradient-container-suggestions-master {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .background-gradient-container-suggestions {
   z-index: -5;
-  position: absolute;
-  top: 20%;
-  height: 100vh;
-  width: 95%;
-  border-radius: 0 0 4rem 4rem ;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 // ------------ Master DIVs ------------
@@ -42,7 +47,7 @@
   justify-content: center;
   align-items: center;
   height: 45vh;
-  margin-top: -5%;
+  margin-top: -9%;
 }
 
 *, *:before, *:after {
@@ -228,6 +233,13 @@ $borderW: 0.3rem;
   line-height: 1.4;
 }
 
+.chat-bubbles {
+  max-width: 73%;
+  background-color: #3838388c;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
 .chat-bubble-user {
   background-color: #f1f0f0;
   float: left;
@@ -245,33 +257,85 @@ $borderW: 0.3rem;
   text-align: left;
   font-size: 2rem;
   color: #fff;
-  background-color: #06060670;
-  border: $borderW solid #535353;
-  border-radius: 2rem;
   padding: 1rem;
-  padding-top: 20rem;
 }
 
-.chat-container {
+.chat-container-master {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.chat-container {
+  margin-top: 15%;
+  width: 170%;
+  color: #fff;
+  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1678617678/pattern_circles-4_1_1_20-20_0_1__ffffff00_8059d436_aj75q1.png");
+  background-size: 50%;
+  border: $borderW solid #535353;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
 .budgetbot {
-  position: absolute;
   width: 30%;
-  left: -40%;
+  background-color: #535353ac;
+  border-radius: 2rem;
 }
 
 .intro-msg {
   font-size: 3.5rem;
   font-weight: 500;
-  color: #5609a8;
+}
+
+.intro-msg-master {
+  background-color: #535353ac;
+  border-radius: 2rem;
 }
 
 .intro-msg-content {
   font-size: 2.5rem;
   font-weight: 400;
+  max-width: 75%;
+}
+
+
+.loader {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  background: #FFF;
+  box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+  position: fixed;
+  bottom: 4.5%;
+  left: 88.5%;
+}
+
+.loader-text {
+  position: fixed;
+  bottom: 7%;
+  left: 86.5%;
+  color: #FFF;
+  font-size: 0.8rem;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #FFF;
+    box-shadow: -24px 0 #31bd4f, 24px 0 #FFF;
+  }
+  66% {
+    background: #31bd4f;
+    box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  }
+  100% {
+    background: #FFF;
+    box-shadow: -24px 0 #FFF, 24px 0 #31bd4f;
+  }
 }

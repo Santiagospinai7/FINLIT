@@ -26,17 +26,17 @@
             <% end %>
           <% end %>
         </div>
-        <div class="card card-spec" data-controller="unsplash">
+        <div class="card card-spec" data-controller="unsplash" data-unsplash-key-value="<%= ENV['UNSPLASH_ACCESS_KEY'] %>">
           <div class="img-card">
             <h3 class="news-header">News</h3>
             <%# -------------------- UNSPLASH SRC LINK IN SRC BELOW >>>>>>> %>
             <img class="news-img" data-unsplash-target="image" src="https://images.unsplash.com/photo-1511883040705-6011fad9edfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"/>
           </div>
-          <div class="news-card" data-controller="news">
-            <button data-action="news#refresh unsplash#refresh" id="refresh-btn" title="Refresh News">⟳</button>
+          <div class="news-card" data-controller="news" data-news-key-value="<%= ENV['RAPID_ACCESS_KEY'] %>">
             <h6 data-news-target="source" id="news-source"></h6>
             <p data-news-target="title" id="news-title"></p>
             <a data-news-target="link" id="news-link" class="news-link" target="_blank" href="">➔</a>
+            <button data-action="news#refresh unsplash#refresh" id="refresh-btn" title="Refresh News">⟳</button>
           </div>
         </div>
       </div>
