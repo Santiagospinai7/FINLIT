@@ -110,7 +110,7 @@ crypto_guide = TopicMaterial.create(topic_name: "cryptocurrency")
 
 LearningMaterial.create(title: "Crypto for dummies",
   description: "A short introduction to cryptocurrencies. Fully Idiot Proof.",
-  topic_material_id: crypto_guide.id
+  topic_material_id: crypto_guide.id,
   explanation: "",
 )
 
@@ -118,7 +118,7 @@ investment = TopicMaterial.create(topic_name: "investments")
 
 LearningMaterial.create(title: "In it For the Long Run",
   description: " A detailed look into the intricacies of the stock market and how you can win over 5-10 years.",
-  topic_material_id: investment.id
+  topic_material_id: investment.id,
   explanation: "",
 )
 
@@ -127,7 +127,7 @@ debt_management_plans = TopicMaterial.create(topic_name: "debt")
 
 LearningMaterial.create(title: "Becoming Debt Free!",
   description: "An article about debt management plans and how you can use them to manage your debt...",
-  topic_material_id: debt_management_plans.id
+  topic_material_id: debt_management_plans.id,
   explanation: "",
 )
 
@@ -137,14 +137,14 @@ saving_principles = TopicMaterial.create(topic_name: "saving")
 LearningMaterial.create(title: "12 principles
   for saving and investing",
   description: "an article about 12 principles for saving. a short guide.",
-  topic_material_id: saving_principles.id
+  topic_material_id: saving_principles.id,
   explanation: "",
 
 )
 
 LearningMaterial.create(title: "What can I do With £50?",
   description: "An insight into the volatile world of penny stocks and the money you can make with just £50",
-  topic_material_id: investment.id
+  topic_material_id: investment.id,
   explanation: "",
 )
 
@@ -152,13 +152,13 @@ banking = TopicMaterial.create(topic_name: "banking")
 
 LearningMaterial.create(title: "Banking overview",
   description: "An overview of the Financial Services",
-  topic_material_id: banking.id
+  topic_material_id: banking.id,
   explanation: "dcgud",
 )
 
 LearningMaterial.create(title: "How to retire at 40",
   description: "A quick look at how to compound your assets using indexes",
-  topic_material_id: investment.id
+  topic_material_id: investment.id,
   explanation: "",
 )
 
@@ -166,7 +166,7 @@ spending = TopicMaterial.create(topic_name: "spending")
 
 LearningMaterial.create(title: "Best Ways to Spend Your Money in 2023",
   description: "No More Gadgets!!! This article gives you a look into the best things to spend money on in 2023",
-  topic_material_id: spending.id
+  topic_material_id: spending.id,
   explanation: "",
 )
 
@@ -174,7 +174,7 @@ finlit = TopicMaterial.create(topic_name: "Tech")
 
 LearningMaterial.create(title: "Investment apps you need in 2023",
   description: "A deep dive into the must-have finance apps in 2023 including a new high-flyer called FinLit",
-  topic_material_id: finlit.id
+  topic_material_id: finlit.id,
   explanation: "",
 )
 
@@ -183,7 +183,7 @@ LearningMaterial.create(title: "Investment apps you need in 2023",
 
 LearningMaterial.create(title: "Top 5 stocks to buy now",
   description: "A look at all the companies on the market with great fundamentals that will double your money in 2 years",
-  topic_material_id: investment.id
+  topic_material_id: investment.id,
   explanation: "",
 )
 
