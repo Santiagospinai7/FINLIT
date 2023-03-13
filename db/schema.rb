@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_103636) do
     t.string "account_name"
     t.string "account_type"
     t.decimal "balance"
-    t.string "icon"
     t.bigint "user_id", null: false
     t.integer "account_number"
     t.datetime "created_at", null: false

@@ -67,42 +67,50 @@ puts "users created"
 account_types = ["current", "savings", "student"]
 random_names = ["Bestie", "BFF", "Queen", "Senorita", "Girly", "Gal", "Friend", "Forever", "Soul Sister", "Sis", "Chica", "Missy", "Ride or die", "Homegirl"]
 
-Account.create!(
-  account_type: account_types.sample,
-  account_name: random_names.sample,
-  balance: rand(1000),
-  account_number: rand(10000000..19999999),
-  user_id: user1.id
+# Account.create!(
+#   account_type: account_types.sample,
+#   account_name: random_names.sample,
+#   balance: rand(1000),
+#   account_number: rand(10000000..19999999),
+#   user_id: user1.id
+# )
+
+# Account.create!(
+#   account_type: account_types.sample,
+#   account_name: random_names.sample,
+#   balance: rand(1000),
+#   account_number: rand(10000000..19999999),
+#   user_id: user2.id
+# )
+
+# Account.create!(
+#   account_type: account_types.sample,
+#   account_name: random_names.sample,
+#   balance: rand(1000),
+#   account_number: rand(10000000..19999999),
+#   user_id: user3.id
+# )
+
+# Account.create!(
+#   account_type: account_types.sample,
+#   account_name: random_names.sample,
+#   balance: rand(1000),
+#   account_number: rand(10000000..19999999),
+#   user_id: user4.id
+# )
+# Account.create!(
+#   account_type: account_types.sample,
+#   account_name: random_names.sample,
+#   balance: rand(1000),
+#   account_number: rand(10000000..19999999),
+#   user_id: user5.id
+# )
+
+investment = TopicMaterial.create(topic_name: "investment")
+
+LearningMaterial.create(title: "how can you invest",
+  description: "An explanation...",
+  topic_material_id: investment.id
 )
 
-Account.create!(
-  account_type: account_types.sample,
-  account_name: random_names.sample,
-  balance: rand(1000),
-  account_number: rand(10000000..19999999),
-  user_id: user2.id
-)
-
-Account.create!(
-  account_type: account_types.sample,
-  account_name: random_names.sample,
-  balance: rand(1000),
-  account_number: rand(10000000..19999999),
-  user_id: user3.id
-)
-
-Account.create!(
-  account_type: account_types.sample,
-  account_name: random_names.sample,
-  balance: rand(1000),
-  account_number: rand(10000000..19999999),
-  user_id: user4.id
-)
-Account.create!(
-  account_type: account_types.sample,
-  account_name: random_names.sample,
-  balance: rand(1000),
-  account_number: rand(10000000..19999999),
-  user_id: user5.id
-)
 puts "finalize seeds"
