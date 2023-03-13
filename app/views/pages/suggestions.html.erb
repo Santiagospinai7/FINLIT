@@ -6,7 +6,7 @@
   <div class="shadow-gradient"></div>
 </div>
 <div class="search-container">
-  <div class="chat-form-master" data-controller="openai">
+  <div class="chat-form-master" data-controller="openai" data-openai-key-value="<%= ENV['OPEN_ACCESS_KEY'] %>">
     <form id="chat-form" data-openai-target="form">
       <div class="search">
         <input type="checkbox" id="trigger" class="search__checkbox"/>
@@ -18,9 +18,14 @@
           <img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png" hidden>
         </button>
         <div class="search__close"></div>
-        <div class="chat-container">
-          <img class="budgetbot" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678661063/original-035e87c5a88c791e04d7aa20039bcc55_2-2_gweqmn.png">
-          <p data-openai-target="chat" id="chat-content"><span class="intro-msg">Hi, I'm BudgetBot!</span><br><span class="intro-msg-content">Ask me anything related to personal finance, investing or budgeting!</span></p>
+        <div class="chat-container-master">
+          <div className="loader">
+              <p className="loader-text"></p>
+          </div>
+          <div class="chat-container">
+            <img class="budgetbot" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678661063/original-035e87c5a88c791e04d7aa20039bcc55_2-2_gweqmn.png">
+            <p data-openai-target="chat" id="chat-content"><span class="intro-msg">Hi, I'm BudgetBot!</span><br><span class="intro-msg-content">Ask me anything related to personal finance, investing or budgeting!</span></p>
+          </div>
         </div>
       </div>
     </form>
