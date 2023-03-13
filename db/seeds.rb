@@ -106,6 +106,8 @@ random_names = ["Bestie", "BFF", "Queen", "Senorita", "Girly", "Gal", "Friend", 
 #   user_id: user5.id
 # )
 
+puts "creating learning materials"
+
 crypto_guide = TopicMaterial.create(topic_name: "cryptocurrency")
 
 LearningMaterial.create(title: "Crypto for dummies",
@@ -230,6 +232,7 @@ LearningMaterial.create(title: "investment banking",
   explanation: "Investment banking deals primarily with raising money for companies, governments, and other entities. Investment banking activities include underwriting new debt and equity securities for all types of corporations.",
 )
 
+puts "learning materials created"
 
 
 
