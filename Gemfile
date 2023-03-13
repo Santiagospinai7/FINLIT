@@ -81,3 +81,4 @@ gem "chartkick"
 gem 'compass'
 
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
