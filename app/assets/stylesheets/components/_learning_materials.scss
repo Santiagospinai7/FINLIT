@@ -1,0 +1,38 @@
+.learning-title{
+  background-color: #06060670;
+  margin-top: 5%;
+  width: 50vw;
+  text-align: left;
+  font-size: 2rem;
+  color: #fff;
+  border: 0.3rem solid #535353;
+  border-radius: 2rem;
+  padding: 1rem;
+  padding-top: 10rem;
+}
+
+.learning-subtitle{
+  background-color: #3C28B9;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px;
+  text-align-last: justify;
+  margin: 8px;
+  border-bottom: solid black 4px;
+}
+
+.learning-description{
+  background-color: #3C28B9;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px;
+  text-align-last: justify;
+  margin: 8px;
+}
+
+.icon-plus{
+  background-color: #3C28B9;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+}
