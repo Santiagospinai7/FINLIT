@@ -231,4 +231,6 @@ LearningMaterial.create(title: "investment banking",
 )
 
 
+
+
 puts "finalize seeds"
