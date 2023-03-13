@@ -156,13 +156,13 @@ banking = TopicMaterial.create(topic_name: "banking")
 LearningMaterial.create(title: "Banking overview",
   description: "An overview of the Financial Services",
   topic_material_id: banking.id,
-  explanation: "",
+  explanation: "The economy is made up of many different segments called sectors. These sectors are comprised of different businesses that provide goods and services to consumers. The variety of services offered by lending institutions, brokerage firms, and other businesses are collectively referred to as the financial services sector.",
 )
 
 LearningMaterial.create(title: "How to retire at 40",
   description: "A quick look at how to compound your assets using indexes",
   topic_material_id: investment.id,
-  explanation: "",
+  explanation: "Most experts agree that index funds are very good investments for long-term investors. They are low-cost options for obtaining a well-diversified portfolio that passively tracks an index.",
 )
 
 spending = TopicMaterial.create(topic_name: "spending")
@@ -170,7 +170,7 @@ spending = TopicMaterial.create(topic_name: "spending")
 LearningMaterial.create(title: "Best Ways to Spend Your Money in 2023",
   description: "No More Gadgets!!! This article gives you a look into the best things to spend money on in 2023",
   topic_material_id: spending.id,
-  explanation: "",
+  explanation: "It's easy to fall into the habit of buying expensive coffee every day. Many of us eat out or order in every day, and we've all bought groceries that we've ended up throwing out.",
 )
 
 finlit = TopicMaterial.create(topic_name: "Tech")
@@ -178,16 +178,57 @@ finlit = TopicMaterial.create(topic_name: "Tech")
 LearningMaterial.create(title: "Investment apps you need in 2023",
   description: "A deep dive into the must-have finance apps in 2023 including a new high-flyer called FinLit",
   topic_material_id: finlit.id,
-  explanation: "",
+  explanation: "A  personal finance app can help track your spending, saving, investing, and bill payments while keeping you updated on credit score changes. You can connect personal finance apps to your financial institutions to see where the money from your bank account is being spent.",
 )
 
+tech1 = TopicMaterial.create(topic_name: "Tech")
 
-
-
-LearningMaterial.create(title: "Top 5 stocks to buy now",
-  description: "A look at all the companies on the market with great fundamentals that will double your money in 2 years",
-  topic_material_id: investment.id,
-  explanation: "",
+LearningMaterial.create(title: "Next-Gen banking",
+  description: "Looking into the future of banking",
+  topic_material_id: tech1.id,
+  explanation: " Globally, banking is a sector that has grappled with technology.
+  Despite hefty investments, banks of all kinds have struggled to leverage technology to their full advantage, falling short against the expectations of today’s digitally-savvy customers.",
 )
+
+tech2 = TopicMaterial.create(topic_name: "Tech")
+
+LearningMaterial.create(title: "Future of FinTech",
+  description: "Exploring the future of FinTech",
+  topic_material_id: tech2.id,
+  explanation: "FinTechs are disrupting established markets and creating an uproar with customer-friendly solutions. According to McKinsey, technologies such as AI, Blockchain, Cloud, and IoT will drive business model reinventions",
+)
+
+tech3 = TopicMaterial.create(topic_name: "Tech")
+
+LearningMaterial.create(title: "Impact of tech in Banking",
+  description: "having a Detailed Look at the Impact of Tech in Banking",
+  topic_material_id: tech3.id,
+  explanation: "The impact of technology on the banking industry is manifold and can be witnessed with the speed at which banks operate in the country today",
+)
+
+banking1 = TopicMaterial.create(topic_name: "Tech")
+
+LearningMaterial.create(title: "types of retail banking",
+  description: "overview of the types of retail banks",
+  topic_material_id: banking1.id,
+  explanation: "Retail banking, also known as consumer banking or personal banking, is banking that provides financial services to individual consumers rather than businesses.",
+)
+
+banking2 = TopicMaterial.create(topic_name: "Tech")
+
+LearningMaterial.create(title: "types of retail banking",
+  description: "overview of commercial banking",
+  topic_material_id: banking2.id,
+  explanation: "A commercial bank is a financial institution that provides services like loans, certificates of deposits, savings bank accounts bank overdrafts, etc. to its customers",
+)
+
+banking3 = TopicMaterial.create(topic_name: "Tech")
+
+LearningMaterial.create(title: "investment banking",
+  description: "overview of investment banking",
+  topic_material_id: banking3.id,
+  explanation: "Investment banking deals primarily with raising money for companies, governments, and other entities. Investment banking activities include underwriting new debt and equity securities for all types of corporations.",
+)
+
 
 puts "finalize seeds"
