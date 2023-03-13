@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-require('dotenv').config();
 
 export default class extends Controller {
   static targets = [ "image" ]
@@ -7,8 +6,8 @@ export default class extends Controller {
   connect() {
       console.log("REEEEEEE!");
       this.imageTarget = this.imageTarget || this.targets.find("image");
-      const accessKey = process.env.UNSPLASH_ACCESS_KEY;
-      const apiUrl = 'https://api.unsplash.com/photos/random?query=finance';
+      const accessKey = "FboSVqbKlq0wIqv_ySxZklvUI6C6yqj0ooTP4gh9Ugg";
+      const apiUrl = '';
       fetch(apiUrl, {
         headers: {
           'Accept-Version': 'v1',
@@ -25,8 +24,8 @@ export default class extends Controller {
 
   refresh() {
     console.log("click");
-    const accessKey = process.env.UNSPLASH_ACCESS_KEY;
-    const apiUrl = 'https://api.unsplash.com/photos/random?query=finance';
+    const accessKey = "FboSVqbKlq0wIqv_ySxZklvUI6C6yqj0ooTP4gh9Ugg";
+    const apiUrl = '';
     fetch(apiUrl, {
       headers: {
         'Accept-Version': 'v1',

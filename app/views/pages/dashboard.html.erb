@@ -10,7 +10,7 @@
     <div class="row">
       <div class="column">
         <div class="card">
-          <h3 class="h3-dashboard">Accross accounts</h3>
+          <h3 class="h3-dashboard">Across accounts</h3>
           <% if @accounts.length > 0 %>
             <%= link_to accounts_path, class: "account-link" do %>
               <div class="balance-card">
@@ -43,7 +43,7 @@
         <div class="column">
           <%# <%= link_to saving_path(@saving_account), class: "account-link" do %>
             <div class="card savings-card">
-              <% if @savings.length > 0 %>         
+              <% if @savings.length > 0 %>
                   <h3 class="h3-dashboard">Savings - <%= @saving_account.saving_name %></h3>
                   <br>
                   <div id="char">

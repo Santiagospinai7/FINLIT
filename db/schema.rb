@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_115550) do
     t.integer "account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "saving_goal"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
@@ -38,9 +39,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_115550) do
 
   create_table "transactions", force: :cascade do |t|
     t.string "category"
-    t.decimal "amount"
+    t.integer "amount"
     t.date "date"
-    t.bigint "account_id"
+    t.bigint "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "operation_type"

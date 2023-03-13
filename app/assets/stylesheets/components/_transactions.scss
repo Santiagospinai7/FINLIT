@@ -84,6 +84,7 @@
   -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
   -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
   box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  padding: 1rem;
 }
 
 .graph-pie {
@@ -200,13 +201,13 @@
 }
 
 .bank-avatar-transaction {
-  width: 5%;
-  max-width: 5%;
+  width: 4%;
+  max-width: 4%;
   position: absolute;
   border-radius: 50%;
   object-fit: cover;
   left: 18%;
-  margin-top: -2%;
+  margin-top: -1%;
 }
 
 // ----- ADD BTN -----
@@ -291,7 +292,7 @@
 
 .transactions-card {
   width: 100%;
-  padding: 2rem 0 1rem 0;
+  padding: 3rem 0 2rem 0;
   border-radius: 1rem;
   display: flex;
   justify-content: start;
@@ -306,7 +307,7 @@
 
 // -------------- Transactions form --------------
 
-#transaction_category, #transaction_amount, #transaction_date {
+#transaction_amount, #transaction_date {
   background-color: #1d1d1d !important;
   color: rgb(202, 202, 202) !important;
   border: none !important;
@@ -316,10 +317,17 @@
   margin-bottom: 1rem !important;
 }
 
+#transaction_category, #transaction_operation_type {
+  color: rgb(202, 202, 202) !important;
+}
+
+#transaction_date_1i, #transaction_date_2i, #transaction_date_3i {
+  border-radius: 1rem !important;
+}
+
 .date {
   // background-color: #1d1d1d !important;
   color: rgb(202, 202, 202) !important;
-  border: none !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
   margin-bottom: 1rem !important;
@@ -328,6 +336,7 @@
 .form-select {
   background-color: #515151 !important;
   border-radius: 1rem;
+  border: 1px solid #cacaca;
 }
 
 // -------------- DATA FORMATING --------------
@@ -337,7 +346,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 3.5rem;
+  gap: 5rem;
   margin-left: 30%;
 }
 
@@ -350,6 +359,21 @@
   color: rgb(202, 202, 202);
   font-size: 0.7rem;
   font-weight: 400;
+}
+
+.transactions-price-master {
+  position: absolute;
+  right: 25%
+}
+
+.transactions-date-master {
+  position: absolute;
+  right: 45%
+}
+
+.transactions-category-master {
+  position: absolute;
+  left: 25%;
 }
 
 // ---------------- BTN PLUS ----------------

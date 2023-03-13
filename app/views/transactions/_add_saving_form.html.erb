@@ -1,5 +1,5 @@
 <div>
-  <%= link_to "< Back", savings_path, class: "back-account-btn" %>
+  <%= link_to "< Back to Accounts", savings_path, class: "back-account-btn" %>
 </div>
 <%= simple_form_for [account, transaction] do |f| %>
   <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
