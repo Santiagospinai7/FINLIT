@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :savings do
     resources :transactions
   end
+
+  resources :learning_materials
 end
