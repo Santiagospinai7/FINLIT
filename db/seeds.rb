@@ -192,7 +192,6 @@ LearningMaterial.create(title: "Next-Gen banking",
   Despite hefty investments, banks of all kinds have struggled to leverage technology to their full advantage, falling short against the expectations of today’s digitally-savvy customers.",
 )
 
-tech2 = TopicMaterial.create(topic_name: "Tech")
 
 LearningMaterial.create(title: "Future of FinTech",
   description: "Exploring the future of FinTech",
@@ -200,7 +199,7 @@ LearningMaterial.create(title: "Future of FinTech",
   explanation: "FinTechs are disrupting established markets and creating an uproar with customer-friendly solutions. According to McKinsey, technologies such as AI, Blockchain, Cloud, and IoT will drive business model reinventions",
 )
 
-tech3 = TopicMaterial.create(topic_name: "Tech")
+
 
 LearningMaterial.create(title: "Impact of tech in Banking",
   description: "having a Detailed Look at the Impact of Tech in Banking",
