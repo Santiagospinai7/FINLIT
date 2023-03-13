@@ -113,11 +113,11 @@ LearningMaterial.create(title: "Crypto for dummies",
   topic_material_id: crypto_guide.id
 )
 
-long_term_investing = TopicMaterial.create(topic_name: "investments")
+investment = TopicMaterial.create(topic_name: "investments")
 
 LearningMaterial.create(title: "In it For the Long Run",
   description: " A detailed look into the intricacies of the stock market and how you can win over 5-10 years.",
-  topic_material_id: long_term_investing.id
+  topic_material_id: investment.id
 )
 
 debt_management_plans = TopicMaterial.create(topic_name: "debt")
@@ -137,11 +137,10 @@ LearningMaterial.create(title: "12 principles
   topic_material_id: saving_principles.id
 )
 
-penny_stocks = TopicMaterial.create(topic_name: "investments")
-
 LearningMaterial.create(title: "What can I do With £50?",
   description: "An insight into the volatile world of penny stocks and the money you can make with just £50",
-  topic_material_id: penny_stocks.id
+  ex
+  topic_material_id: investment.id
 )
 
 banking = TopicMaterial.create(topic_name: "banking")
@@ -151,11 +150,9 @@ LearningMaterial.create(title: "Banking overview",
   topic_material_id: banking.id
 )
 
-indexes = TopicMaterial.create(topic_name: "investments")
-
 LearningMaterial.create(title: "How to retire at 40",
   description: "A quick look at how to compound your assets using indexes",
-  topic_material_id: indexes.id
+  topic_material_id: investment.id
 )
 
 spending = TopicMaterial.create(topic_name: "spending")
@@ -172,13 +169,9 @@ LearningMaterial.create(title: "Investment apps you need in 2023",
   topic_material_id: finlit.id
 )
 
-stonks = TopicMaterial.create(topic_name: "investments")
-
 LearningMaterial.create(title: "Top 5 stocks to buy now",
   description: "A look at all the companies on the market with great fundamentals that will double your money in 2 years",
-  topic_material_id: stonks.id
+  topic_material_id: investment.id
 )
-
-
 
 puts "finalize seeds"
