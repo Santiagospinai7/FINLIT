@@ -23,5 +23,7 @@ Rails.application.routes.draw do
     resources :transactions
   end
 
-  resources :learning_materials
+  resources :learning_materials do
+    resources :quizzes
+  end
 end
