@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'savings/index'
+  get 'savings/show'
+  get 'savings/new'
+  get 'savings/edit'
+  get 'savings/create'
+  get 'savings/update'
+  get 'savings/destroy'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,4 +18,10 @@ Rails.application.routes.draw do
   resources :accounts do
     resources :transactions
   end
+
+  resources :savings do
+    resources :transactions
+  end
+
+  resources :learning_materials
 end

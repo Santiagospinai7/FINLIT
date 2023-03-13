@@ -2,18 +2,43 @@
   color: $finlit-white;
   font-family: $headers-font;
   margin-left: 10%;
+  margin-bottom: 5%;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   align-items: stretch; /* Ensures both columns have equal height */
+  min-width: 80%;
+  max-width: 80%;
+  margin-top: -2%;
+}
+
+.saving-card-action-button {
+  background-color: #3C28B9;
+  border: 1px solid #3C28B9;
+  color: #d6d6d6;
+  border-radius: 1rem;
+  padding: 0.6rem 0;
+  position: relative;
+  left: 0%;
+  width: 40%;
+  z-index: 17;
+}
+
+
+.saving-card-action-button:hover {
+  background-color: #3C28B9;
+  border: 1px solid #3C28B9;
+  filter: brightness(1.2);
+  scale: 1.05;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   z-index: 0;
 }
@@ -21,15 +46,21 @@
 .card {
   color: $finlit-white;
   font-family: $body-font;
-  background-color: #333232;
+  background-color: #1d1d1d;
+  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1678617678/pattern_circles-4_1_1_20-20_0_1__ffffff00_8059d436_aj75q1.png");
+  background-size: 50%;
   padding: 20px;
   margin-bottom: 10px;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 0;
-  min-width: 85%;
-  max-width: 85%;
+  min-width: 95%;
+  max-width: 95%;
   height: 100%;
+}
+
+.card-spec {
+  height: 19rem;
 }
 
 .column:last-child .card:last-child {
@@ -56,15 +87,28 @@
   display: flex;
   align-items: center; /* vertically center the content */
   height: 50px;
+  min-width: 96%;
+  max-width: 96%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.8rem;
+  margin-left: 2%;
   // top: 50%;
 }
 
 .balance-card:hover {
   background-color: #4f3ccc;
+}
+
+.balance-title-card {
+  font-size: 1.5rem;
+  color: rgba(202, 202, 202, 0.666);
+}
+
+.balance-total-card {
+  font-size: 1.8rem;
+  color: rgb(202, 202, 202);
 }
 
 .saving-msg {
@@ -100,12 +144,14 @@
   margin: 0 !important;
 }
 
-.button-create{
+.button-create-saving{
+  text-decoration: none;
   background-color: #3C28B9;
   border-radius: 10px;
   color: white;
   padding: 8px;
   font-size: large;
+  padding: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 18 !important;
 }
@@ -121,6 +167,10 @@
 
 // --------- NEWS WIDGET ------------
 
+.news-header {
+  margin-bottom: 1rem;
+}
+
 .news-title {
   color: $finlit-white;
   font-family: $headers-font;
@@ -129,8 +179,8 @@
 
 #refresh-btn {
   position: absolute;
-  top: 7%;
-  left: 80%;
+  top: -465%;
+  left: 120%;
   background-color: transparent;
   border: none;
   color: rgb(202, 202, 202);
@@ -141,7 +191,14 @@
   color: rgba(202, 202, 202, 0.593);
   animation-name: spin;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+}
+
+#refresh-btn:active {
+  color: rgba(119, 62, 205, 0.593);
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 @keyframes spin {
@@ -151,10 +208,51 @@
 
 #news-link {
   background-color: #3C28B9;
-  width: 60%;
-  padding: 0.6rem;
+  font-size: 1rem;
+  width: 50%;
+  padding: 0.5rem;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   color: rgb(202, 202, 202);
   text-decoration: none;
+}
+
+#news-link:hover {
+  background-color: #4f3ccc;
+}
+
+.news-card {
+  position: absolute;
+  width: 65%;
+  bottom: 14%;
+  left: 12%;
+}
+
+#news-source {
+  font-size: 1.2rem;
+  color: rgb(202, 202, 202);
+}
+
+
+// ------------- UNSPLASH API -------------
+
+.img-card {
+  width: 95%;
+  min-width: 95%;
+  max-width: 95%;
+  height: 75%;
+  min-height: 75%;
+  max-height: 75%;
+  margin: 1rem;
+}
+
+.img-card img {
+  width: 100%; /* make the image fill the container */
+  height: 100%; /* make the image fill the container */
+  object-fit: cover; /* zoom in to fit, without distorting the image */
+}
+
+.news-img {
+  border-radius: 1rem;
+  filter: brightness(0.4) saturate(1.2) blur(0.5px);
 }

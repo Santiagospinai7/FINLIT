@@ -1,37 +1,24 @@
 <div class="log-in-master">
   <div  data-controller="set-amount"class="create-account-container">
-    <h1 class="title-text">New Transaction</h1>
-
-    <div class="container">
-
-        <form class="toggle">
-
-            <input type="radio" id="choice1" name="choice" value="creative">
-            <label data-action="click->set-amount#setExpense" data-set-amount-target="income-label" class="Income-text" for="choice1">Income</label>
-
-            <input type="radio" id="choice2" name="choice" value="productive">
-            <label data-action="click->set-amount#setIncome" data-set-amount-target="expense-label"class="Expense-text" for="choice2">Expense</label>
-
-            <div id="flap"><span class="content"></span></div>
-
-        </form>
-
-    </div>
-
-    <% if @account.account_type == "Savings" %>
-      <%= render "add_saving_form", account: @account, transaction: @transaction %>
+    <% if @account.class == Saving %>
+      <h1 class="title-text">New Record</h1>
     <% else %>
-      <%= simple_form_for [@account, @transaction] do |f| %>
-        <%= f.input :category, collection: ['Groceries', 'Transportation', 'Entertainment', 'Utilities', 'Other'], prompt: "Select a category" %>
-        <%= f.input :amount, input_html: { data: { set_amount_target: "amountInput"}} %>
-        <%= f.input :date, as: :date %>
-        <%= f.button :submit, value: "Add", class: "add-btn-new-transactions" %>
-      <% end %>
+      <h1 class="title-text">New Transaction</h1>
     <% end %>
 
-    <br>
-    <div>
-      <%= link_to "< Back to account", account_path(@account), class: "back-account-btn" %>
+    <div class="switch-button-transaction">
+      <div class="switch-option">
+        <input type="radio" name="switch-option" id="income-option" checked>
+        <label class="option-label-transaction-income" for="income-option">Income</label>
+        <input type="radio" name="switch-option" id="expense-option">
+        <label class="option-label-transaction-expense" for="expense-option">Expense</label>
+      </div>
     </div>
+
+    <% if @account.class == Saving %>
+      <%= render "add_saving_form", account: @account, transaction: @transaction %>
+    <% else %>
+      <%= render "account_form", account: @account, transaction: @transaction %>
+    <% end %>
   </div>
 </div>

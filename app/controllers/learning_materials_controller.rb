@@ -1,19 +1,19 @@
 class LearningMaterialsController < ApplicationController
 
   def index
-    @learning_materials = Learning_materials.all
+    @learning_materials = LearningMaterial.all
   end
 
   def show
-    @learning_materials = Learning_materials.find(params[:id])
+    @learning_materials = LearningMaterial.find(params[:id])
   end
 
   def new
-    @learning_materials = Learning_materials.new
+    @learning_materials = LearningMaterial.new
   end
 
   def create
-    @learning_materials = Learning_materials.new(learning_materials_params)
+    @learning_materials = LearningMaterial.new(learning_materials_params)
     if @learning_materials.save
       redirect_to learning_materials_path(@learning_materials)
     else
@@ -22,11 +22,11 @@ class LearningMaterialsController < ApplicationController
   end
 
   def edit
-    @learning_materials = Learning_materials.find(params[:id])
+    @learning_materials = LearningMaterial.find(params[:id])
   end
 
   def updated
-    learning_materials = Learning_materials.find(params[:id])
+    learning_materials = LearningMaterial.find(params[:id])
     learning_materials.update(learning_materials_params)
 
     redirect_to learning_materials_path
@@ -34,7 +34,7 @@ class LearningMaterialsController < ApplicationController
   end
 
   def destroy
-    learning_materials = Learning_materials.find(params[:id])
+    learning_materials = LearningMaterial.find(params[:id])
     learning_materials.destroy
   end
 

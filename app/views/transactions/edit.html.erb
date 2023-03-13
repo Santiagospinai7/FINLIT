@@ -1,2 +1,6 @@
-<%= render "form", transaction: @transaction %>
+<% if @transaction.account_id == nil %>
+  <%= render "edit_saving", transaction: @transaction %>
+<% else %>
+  <%= render "edit_account", transaction: @transaction %>
+<% end %>
 

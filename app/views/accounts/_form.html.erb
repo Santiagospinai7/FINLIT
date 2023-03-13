@@ -1,21 +1,22 @@
 <div class="log-in-master">
   <div class="create-account-container">
-    <h2>Create an Acount</h2>
+  <div class="add-account-bank-avatar-master">
+    <img class="add-account-bank-avatar" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png">
+    <button class="modify-btn" title="Update Account Picture">+</button>
+  </div>
+    <h2 class="add-account-h2">Add an Account</h2>
     <br>
     <div data-controller="account-card">
       <%= simple_form_for @account, data: { account_card_target: "form" } do |f| %>
         <div class="form-inputs">
           <%= f.input :account_name %>
           <%= f.input :account_type,
-                      collection: ['Current account', 'Savings', 'Cash', 'Credit card', 'Investment'],
+                      collection: ['Current account', 'Cash', 'Credit card', 'Investment'],
                       prompt: "Select a type",
                       input_html: { data: { account_card_target: 'input', action: "change->account-card#accountType" } } %>
           <%= f.input :balance %>
           <div data-account-card-target="accountNumber">
             <%= f.input :account_number  %>
-          </div>
-          <div data-account-card-target="goalField" >
-            <%= f.input :saving_goal %>
           </div>
         </div>
 

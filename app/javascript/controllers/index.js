@@ -13,14 +13,20 @@ application.register("comma-separator", CommaSeparatorController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import Hover3dController from "./hover3d_controller"
+application.register("hover3d", Hover3dController)
+
 import NewsController from "./news_controller"
 application.register("news", NewsController)
 
-// import OpenaiController from "./openai_controller"
-// application.register("openai", OpenaiController)
+import OpenaiController from "./openai_controller"
+application.register("openai", OpenaiController)
 
 import SelectAccountsController from "./select_accounts_controller"
 application.register("select-accounts", SelectAccountsController)
 
 import SetAmountController from "./set_amount_controller"
 application.register("set-amount", SetAmountController)
+
+import UnsplashController from "./unsplash_controller"
+application.register("unsplash", UnsplashController)

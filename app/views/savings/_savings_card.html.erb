@@ -1,0 +1,18 @@
+<%= link_to saving, class:"account-grid-item" do%>
+  <div class="intro-accounts-card">
+      <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
+      <p><strong>Savings:</strong><br><%= saving.saving_name %></p>
+  </div>
+  <div class="savings-card-data">
+    <div id="savings-card-data-chart">
+      <%= pie_chart Saving.saving_chart(saving), donut: true, height: '100px', width: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+    </div>
+    <p>Saved<br><span class="account-card-balance"><%= Saving.get_porcentage(saving) %>%</span></p>
+  </div>
+  <div class="savings-card-data">
+    <div class="savings-message-card">
+      <% saving.updateBalance %>
+      <p>You've saved <span class="motivational-message-span"><%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></span><br>Keep it up 🙌</p>
+    </div>
+  </div>
+<% end %>

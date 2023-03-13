@@ -15,8 +15,6 @@ owners = [
   santiago = { first_name: "santiago", last_name: "ospina", age: 21}
 ]
 
-
-
 owners.each do |owner|
   User.create!(
     first_name: owner[:first_name],

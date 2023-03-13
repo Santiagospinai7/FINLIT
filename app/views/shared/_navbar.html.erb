@@ -6,7 +6,8 @@
     <ul class="nav-elements">
       <%= link_to dashboard_path, class: "nav-buttons" do %><li class="nav-item">Dashboard</li><% end%>
       <%= link_to accounts_path, class: "nav-buttons" do %><li class="nav-item">Accounts</li><% end%>
-      <%= link_to "#", class: "nav-buttons" do %><li class="nav-item">Discover</li><% end%>
+      <%= link_to savings_path, class: "nav-buttons" do %><li class="nav-item">Savings</li><% end%>
+      <%= link_to "#", class: "nav-buttons" do %><li class="nav-item">Learning</li><% end%>
       <%= link_to suggestions_path, class: "nav-buttons" do %><li class="nav-item">Suggestions</li><% end%>
     </ul>
   </div>
@@ -14,9 +15,21 @@
     <div class="avatar-location">
     <img class="avatar dropdown-toggle" class="avatar-reg" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1677950556/max-whitehead-IkjGJX81z_U-unsplash_dw5jiv.png" />
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Accounts</a>
-      <a class="dropdown-item" href="#">Profile</a>
-      <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+      <%= link_to "Accounts", accounts_path, class: "dropdown-item" %>
+      <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+      <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+    </div>
+  </div>
+  <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
     </div>
   </div>
 </div>

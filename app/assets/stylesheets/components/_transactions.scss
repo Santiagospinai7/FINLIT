@@ -19,15 +19,27 @@
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
 }
 
+.background-gradient-master-transactions-bottom {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .background-gradient-container-transactions-bottom {
   z-index: -5;
-  position: absolute;
-  bottom: -100%;
-  height: 100%;
-  width: 95%;
-  border-radius: 4rem 4rem 0 0 ;
+  // position: absolute;
+  // bottom: -100%;
+  // height: 100vh;
+  // min-height: 100vh;
+  // width: 95%;
+  // border-radius: 4rem 4rem 0 0 ;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 
@@ -72,6 +84,7 @@
   -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
   -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
   box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  padding: 1rem;
 }
 
 .graph-pie {
@@ -187,6 +200,16 @@
   margin-top: -10%;
 }
 
+.bank-avatar-transaction {
+  width: 4%;
+  max-width: 4%;
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  left: 18%;
+  margin-top: -1%;
+}
+
 // ----- ADD BTN -----
 
 .record-btn-flex {
@@ -241,11 +264,22 @@
 
 // ------------------- Transactions -------------------
 
+.transactions-master {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .transactions-location-div {
   top: 120%;
   position: absolute;
   justify-content: center;
   align-items: center;
+  background-color: #18181883;
+  width: 80%;
+  padding: 4rem 0;
+  border-radius: 2rem;
 }
 
 .transactions-list-master {
@@ -258,7 +292,7 @@
 
 .transactions-card {
   width: 100%;
-  padding: 2rem 0 1rem 0;
+  padding: 3rem 0 2rem 0;
   border-radius: 1rem;
   display: flex;
   justify-content: start;
@@ -269,18 +303,11 @@
   color: rgb(202, 202, 202);
 }
 
-.bank-avatar-transaction {
-  width: 5%;
-  height: 5%;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-left: 5%;
-  margin-top: -1.1%;
-}
+
 
 // -------------- Transactions form --------------
 
-#transaction_category, #transaction_amount, #transaction_date {
+#transaction_amount, #transaction_date {
   background-color: #1d1d1d !important;
   color: rgb(202, 202, 202) !important;
   border: none !important;
@@ -290,10 +317,17 @@
   margin-bottom: 1rem !important;
 }
 
+#transaction_category, #transaction_operation_type {
+  color: rgb(202, 202, 202) !important;
+}
+
+#transaction_date_1i, #transaction_date_2i, #transaction_date_3i {
+  border-radius: 1rem !important;
+}
+
 .date {
   // background-color: #1d1d1d !important;
   color: rgb(202, 202, 202) !important;
-  border: none !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
   margin-bottom: 1rem !important;
@@ -302,6 +336,7 @@
 .form-select {
   background-color: #515151 !important;
   border-radius: 1rem;
+  border: 1px solid #cacaca;
 }
 
 // -------------- DATA FORMATING --------------
@@ -311,7 +346,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 3.5rem;
+  gap: 5rem;
+  margin-left: 30%;
 }
 
 .transactions-list-data li {
@@ -323,6 +359,21 @@
   color: rgb(202, 202, 202);
   font-size: 0.7rem;
   font-weight: 400;
+}
+
+.transactions-price-master {
+  position: absolute;
+  right: 25%
+}
+
+.transactions-date-master {
+  position: absolute;
+  right: 45%
+}
+
+.transactions-category-master {
+  position: absolute;
+  left: 25%;
 }
 
 // ---------------- BTN PLUS ----------------

@@ -33,4 +33,8 @@ export default class extends Controller {
 
 
   }
+
+  amountChanging() {
+    console.log("change");
+  }
 }

@@ -1,74 +1,49 @@
-
-<body>
-  <div class="container-main-savings">
-    <div class= "text"><h1 style= "padding-top: 30px">Savings</h1></div>
-    <div class="d-flex">
-
-      <div class="savings-card">
-        <div class= "icon" style= "background-color: #1D1D1D">
-          <h2 class= "savings-card"> <i class="fas fa-car-side fa-2x" style="color: #570894"></i> &nbsp; Car </h2>
-        </div>
-        <br>
-        <div class= "circle">
-          <h3>Balance  $1,200</h3>
-          <div class="ui-widgets">
-            <div class="ui-values">20%</div>
-            <div class="ui-labels">Saved</div>
+<p style="color: green"><%= notice %></p>
+<div class="background-gradient-master-accounts">
+  <div class="background-gradient-container-accounts"></div>
+  <div class="shadow-gradient"></div>
+</div>
+    <div data-controller="select-accounts">
+      <div class="accounts-menu">
+        <div class="accounts-title-row">
+          <div>
+            <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
+              <%= select_tag :query,
+                options_for_select([["Savings", "Savings"], ["Accounts", "Accounts"]]),
+                data: { select_accounts_target: "switch", action: "change->select-accounts#displayAccounts" },
+                class: "account-switcher"
+              %>
+              <%= submit_tag "Filter", class: "btn btn-primary", data: { select_accounts_target: "btn" }%>
+            <% end %>
           </div>
-          <h3>Goal $5000</h3>
         </div>
-          <div class="motivate">
-            <h3 class= "savings-card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
-          </div>
+        <div class="add-btn-flex">
+          <%= button_to "+", new_saving_path, :class => "add-btn", :title => "Add a Saving >", :method => :get %>
+        </div>
       </div>
-
-      <div class="savings-card">
-        <div class= "icon">
-          <h2 class= "card"> <i class="fas fa-house fa-2x" style="color: #570894"></i> &nbsp; House</h2>
+      <div id="accounts">
+        <div class="account-grid-container" data-select-accounts-target="grid">
+          <% @savings.each do |saving| %>
+            <div class="account-card">
+              <div class="acc-btn-flex">
+                <%# ---------- %>
+                <div class="btn-pluss-master">
+                  <nav class="btn-pluss-wrapper-accounts">
+                    <div href="#" class="btn-pluss-accounts">
+                      <ul>
+                        <li><%= link_to "✏️  |  Edit", edit_saving_path(saving) %></li>
+                        <li><%= link_to "🗑️  |  Delete", saving_path(saving), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+               <%# ---------- %>
+              </div>
+                  <%= render "savings_card", saving: saving %>
+            </div>
+          <% end %>
         </div>
-        <br>
-        <div class= "circle">
-          <h3>Balance $62,000 <h3>
-          <div class="ui-widgets">
-            <div class="ui-values">20%</div>
-            <div class="ui-labels">Saved</div>
-          </div>
-          <h3>Goal $250,000</h3>
-        </div>
-          <div class="motivate">
-            <h3 class= "savings-card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
-          </div>
       </div>
-
-        <div class="savings-card">
-        <div class= "icon">
-          <h2 class= "savings-card"> <i class="fa fa-mars-double fa-2x" style="color: #570894"></i> &nbsp; Marriage</h2>
-        </div>
-        <br>
-        <div class= "circle">
-          <h3>Balance  $19,000 <h3>
-          <div class="ui-widgets">
-            <div class="ui-values">20%</div>
-            <div class="ui-labels">Saved</div>
-          </div>
-          <h3>Goal $70,000</h3>
-        </div>
-          <div class="motivate">
-            <h3 class= "savings-card-1"> It's impressive how much you have saved so far, keep saving some more. Your goal is closer than you think!.</h3>
-          </div>
-      </div>
-
-
     </div>
-    <p style="color: green"><%= notice %></p>
-    <div id="savings">
-      <% @savings.each do |saving| %>
-        <%= render saving %>
-        <p>
-          <%= link_to a"Show this saving", saving %>
-        </p>
-      <% end %>
-    </div>
-    <%= link_to "New saving", new_saving_path, class: 'button' %>
   </div>
-</body>
+</div>
