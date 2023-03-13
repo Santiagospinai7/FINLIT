@@ -177,10 +177,13 @@
   margin-left: 10%;
 }
 
+.news-card p {
+  font-size: 0.85rem;
+}
+
 #refresh-btn {
-  position: absolute;
-  top: -465%;
-  left: 120%;
+  position: relative;
+  right: -100%;
   background-color: transparent;
   border: none;
   color: rgb(202, 202, 202);
