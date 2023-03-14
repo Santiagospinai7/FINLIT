@@ -8,13 +8,13 @@
             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Investment</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-savings-tab" data-bs-toggle="pill" data-bs-target="#pills-savings" type="button" role="tab" aria-controls="pills-savings" aria-selected="false">Savings</button>
+            <button class="nav-link" id="pills-saving-tab" data-bs-toggle="pill" data-bs-target="#pills-saving" type="button" role="tab" aria-controls="pills-savings" aria-selected="false">Saving</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-loan-tab" data-bs-toggle="pill" data-bs-target="#pills-loan" type="button" role="tab" aria-controls="pills-loan" aria-selected="false">Loan</button>
+            <button class="nav-link" id="pills-banking-tab" data-bs-toggle="pill" data-bs-target="#pills-banking" type="button" role="tab" aria-controls="pills-banking" aria-selected="false">Banking</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-invest-tab" data-bs-toggle="pill" data-bs-target="#pills-invest" type="button" role="tab" aria-controls="pills-invest" aria-selected="false">Invest</button>
+            <button class="nav-link" id="pills-debt-tab" data-bs-toggle="pill" data-bs-target="#pills-debt" type="button" role="tab" aria-controls="pills-debt" aria-selected="false">Debt</button>
           </li>
         </ul>
       </h2>
@@ -47,14 +47,14 @@
         </div>
       </div>
   </div>
-  <div class="tab-pane" id="pills-savings" role="tabpanel" aria-labelledby="pills-savings-tab" tabindex="0">
+  <div class="tab-pane" id="pills-saving" role="tabpanel" aria-labelledby="pills-saving-tab" tabindex="0">
     <div class="sub-learning">
       <div class="learning-description">
         <h3 class="title-learning">
-          Title SAVINGS
+          Title: <%= material.title %>
           <br>
           <br>
-          Description
+          Description: <%= material.description %>
           <i class="fas fa-coins"></i>
           </h3>
       </div>
@@ -71,14 +71,14 @@
     </div>
   </div>
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane" id="pills-loan" role="tabpanel" aria-labelledby="pills-loan-tab" tabindex="0">
+    <div class="tab-pane" id="pills-banking" role="tabpanel" aria-labelledby="pills-banking-tab" tabindex="0">
       <div class="sub-learning">
           <div class="learning-description">
             <h3 class="title-learning">
-              Title LOAN
+              Title: <%= material.title %>
               <br>
               <br>
-              Description
+              Description: <%= material.description %>
               <i class="fas fa-coins"></i>
               </h3>
           </div>
@@ -95,15 +95,15 @@
         </div>
       </div>
   </div>
-  <% end  %>
-  <div class="tab-pane" id="pills-invest" role="tabpanel" aria-labelledby="pills-invest-tab" tabindex="0">
+
+  <div class="tab-pane" id="pills-debt" role="tabpanel" aria-labelledby="pills-debt-tab" tabindex="0">
       <div class="sub-learning">
         <div class="learning-description">
           <h3 class="title-learning">
-            Title INVEST
+            Title: <%= material.title %>
             <br>
             <br>
-            Description
+            Description: <%= material.description %>
             <i class="fas fa-coins"></i>
             </h3>
         </div>
@@ -120,3 +120,4 @@
       </div>
   </div>
 </div>
+<% end  %>
