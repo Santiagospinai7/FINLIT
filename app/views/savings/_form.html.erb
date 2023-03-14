@@ -6,8 +6,14 @@
         <%= f.input :balance %>
         <%= f.input :saving_goal %>
         <%= f.input :time_goal, as: :date %>
+        <%= f.association :icon,
+                        as: :radio_buttons,
+                        collection: Icon.all.map { |icon| [".", " ", style: "background-image: url(#{cl_image_path(icon.url)});"] },                       
+                        input_html: { 
+                        class: "icon-radio"
+                        }
+        %>
     </div>
-
     <div class="form-actions">
         <%= f.button :submit %>
     </div>

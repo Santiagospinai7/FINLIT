@@ -40,7 +40,11 @@ class AccountsController < ApplicationController
 
   # POST /accounts or /accounts.json
   def create
+    # raise
     @account = Account.new(account_params)
+    icon_id = params[:account]["icon_ids"]
+    icon = icon_id.blank? ? (Icon.all).sample : Icon.find(icon_id)
+    @account.icon_id = icon.id
     @account.user_id = current_user.id
     @account.save
 
