@@ -26,7 +26,7 @@ class SavingsController < ApplicationController
 
   def create
     @saving = Saving.new(saving_params)
-    icon_id = params[:saving]["icon_id"]
+    icon_id = params[:saving][:icon_id]
     icon = icon_id.blank? ? (Icon.all).sample : Icon.find(icon_id)
     @saving.icon_id = icon.id
     @saving.user_id = current_user.id
@@ -59,7 +59,7 @@ class SavingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def saving_params
-    params.require(:saving).permit(:saving_name, :saving_goal, :balance, :user_id, :time_goal)
+    params.require(:saving).permit(:saving_name, :saving_goal, :balance, :user_id, :time_goal, :icon_id)
   end
 
   def set_balance

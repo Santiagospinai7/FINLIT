@@ -6,12 +6,6 @@ class Account < ApplicationRecord
   # validates :balance, numericality: { greater_than_or_equal_to: 0 }
   validates :balance, presence: true
 
-  after_initialize :init
-
-  def init         #will set the default value only if it's nil
-    self.icon_id ||= Icon.where(url: "wallet_icon") #let's you set a default association
-  end
-
   def self.account_types
     ["Current", "Saving", "Other"]
   end
