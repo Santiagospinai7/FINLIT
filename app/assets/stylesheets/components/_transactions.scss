@@ -203,8 +203,10 @@
 }
 
 .bank-avatar-transaction {
-  width: 4%;
-  max-width: 4%;
+  // width: 4%;
+  // max-width: 4%;
+  width: 3rem;
+  height: 3rem;
   position: absolute;
   border-radius: 50%;
   object-fit: cover;
@@ -577,7 +579,7 @@ section{
 
 .btn-pluss-wrapper-transactions:hover{
   .btn-pluss-transactions{
-    width: 120px;
+    width: 140px;
     //height: 120px;
     border-radius: 15px;
     padding-bottom: 5px;

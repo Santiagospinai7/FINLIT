@@ -53,8 +53,8 @@
       </div>
       <div class="transactions-list-master">
         <div class="transactions-card">
-          <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
-
+          <%# <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/> %>
+          <%= cl_image_tag Icon.find(@saving.icon_id).url, class:"bank-avatar-transaction"%>
           <%= render partial: 'transactions/record', locals: { transactions: transaction } %>
         </div>
       </div>
