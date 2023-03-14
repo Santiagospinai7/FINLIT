@@ -21,17 +21,17 @@
     </div>
   </div>
 </div>
-
+<% @learning_materials.each do |material| %>
 
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
       <div class="sub-learning">
         <div class="learning-description">
           <h3 class="title-learning">
-            Title INVESTMENT
+            Title: <%= material.title %>
             <br>
             <br>
-            Description
+            Description: <%= material.description %>
             <i class="fas fa-coins"></i>
             </h3>
         </div>
@@ -95,6 +95,7 @@
         </div>
       </div>
   </div>
+  <% end  %>
   <div class="tab-pane" id="pills-invest" role="tabpanel" aria-labelledby="pills-invest-tab" tabindex="0">
       <div class="sub-learning">
         <div class="learning-description">
