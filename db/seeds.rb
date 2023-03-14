@@ -146,11 +146,15 @@ LearningMaterial.create(title: "12 principles
 
 LearningMaterial.create(title: "What can I do With £50?",
   description: "An insight into the volatile world of penny stocks and the money you can make with just £50",
+<<<<<<< HEAD
   topic_material_id: investment.id,
   explanation: "Saving means not spending a portion of your
   income, in other words putting some money aside.
   Your money is therefore safe and available, but
   its value decreases each year by the level of inflation",
+=======
+  topic_material_id: investment.id
+>>>>>>> d726ea2249e604a31a1de2a2c794a148ed3a49e4
 )
 
 banking = TopicMaterial.create(topic_name: "banking")
