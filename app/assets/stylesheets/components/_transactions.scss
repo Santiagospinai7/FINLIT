@@ -34,7 +34,6 @@
   // border-radius: 4rem 4rem 0 0 ;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(102,51,238,1) 78%, rgba(255,255,255,1)100%);
-
   position: fixed;
   left: 0;
   bottom: 0;
@@ -203,8 +202,10 @@
 }
 
 .bank-avatar-transaction {
-  width: 4%;
-  max-width: 4%;
+  // width: 4%;
+  // max-width: 4%;
+  width: 3rem;
+  height: 3rem;
   position: absolute;
   border-radius: 50%;
   object-fit: cover;
@@ -282,7 +283,6 @@
   width: 80%;
   padding: 4rem 0;
   border-radius: 2rem;
-
 }
 
 .transactions-list-master {
@@ -290,7 +290,7 @@
   align-items: center;
   flex-wrap: wrap;
   width: 70%;
-  margin: 0 auto; /* Add this */
+  margin: 0 auto;
 }
 
 .transactions-card {
@@ -577,7 +577,7 @@ section{
 
 .btn-pluss-wrapper-transactions:hover{
   .btn-pluss-transactions{
-    width: 120px;
+    width: 140px;
     //height: 120px;
     border-radius: 15px;
     padding-bottom: 5px;

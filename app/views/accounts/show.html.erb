@@ -1,4 +1,3 @@
-<%# <p style="color: green"><%= notice %></p> %>
 <div class="background-gradient-master-transactions">
   <div class="background-gradient-container-transactions"></div>
   <div class="shadow-gradient"></div>
@@ -31,37 +30,37 @@
   </div>
 </div>
 <%# ----------- SCROLLER ANIMATION ------------ %>
-      <div class="scroller-wheel">
-    <a href="javascript:;" class="scroll-down mouse effect1">
-      <span id="scroll-down-span"></span>
-    </a>
-  </div>
-  <p id="scroll-p">View Transactions</p>
-  <div class="container-scroll">
-    <div id="typewriter-output"></div>
-    <span id="cursor"></span>
-  </div>
-  <script>
-    setTimeout(function() {
-      document.getElementById("scroll-p").style.display = "block";
-      document.getElementById("scroll-p").style.opacity = 0;
+<div class="scroller-wheel">
+  <a href="javascript:;" class="scroll-down mouse effect1">
+    <span id="scroll-down-span"></span>
+  </a>
+</div>
+<p id="scroll-p">View Transactions</p>
+<div class="container-scroll">
+  <div id="typewriter-output"></div>
+  <span id="cursor"></span>
+</div>
+<script>
+  setTimeout(function() {
+    document.getElementById("scroll-p").style.display = "block";
+    document.getElementById("scroll-p").style.opacity = 0;
 
-      setTimeout(function() {
-        document.getElementById("scroll-p").style.transition = "opacity 3s ease-in";
-        document.getElementById("scroll-p").style.opacity = 1;
-      }, 10);
-    }, 2000);
     setTimeout(function() {
-      document.querySelector(".scroller-wheel").style.display = "block";
-      document.querySelector(".scroller-wheel").style.opacity = 0;
+      document.getElementById("scroll-p").style.transition = "opacity 3s ease-in";
+      document.getElementById("scroll-p").style.opacity = 1;
+    }, 10);
+  }, 2000);
+  setTimeout(function() {
+    document.querySelector(".scroller-wheel").style.display = "block";
+    document.querySelector(".scroller-wheel").style.opacity = 0;
 
-      setTimeout(function() {
-        document.querySelector(".scroller-wheel").style.transition = "opacity 3s ease-in";
-        document.querySelector(".scroller-wheel").style.opacity = 1;
-      }, 10);
-    }, 1000);
-  </script>
-  <%# ----------- SCROLLER ANIMATION END ------------ %>
+    setTimeout(function() {
+      document.querySelector(".scroller-wheel").style.transition = "opacity 3s ease-in";
+      document.querySelector(".scroller-wheel").style.opacity = 1;
+    }, 10);
+  }, 1000);
+</script>
+<%# ----------- SCROLLER ANIMATION END ------------ %>
 <div class="background-gradient-master-transactions-bottom">
   <div class="background-gradient-container-transactions-bottom"></div>
 </div>
@@ -85,7 +84,7 @@
       </div>
       <div class="transactions-list-master">
         <div class="transactions-card">
-          <img class="bank-avatar-transaction" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
+          <%= cl_image_tag Icon.find(@account.icon_id).url, class:"bank-avatar-transaction"%>
           <%= render partial: 'transactions/transaction', locals: { transactions: transaction } %>
         </div>
       </div>

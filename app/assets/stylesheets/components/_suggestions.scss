@@ -230,9 +230,43 @@ $borderW: 0.3rem;
   }
 }
 
-// --------------- Bouncing Tool Tip ---------------
+// --------------- Bouncing Bubble ---------------
 
+.speech-bubble {
+  animation: bounce2 2s ease infinite;
+  background: #535353;
+  color: rgba(202,202,202,1);
+  display: inline-block;
+	font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.5em;
+  margin-bottom: 1em;
+	padding: 0 0.8em;
+	position: absolute;
+  top: -115%;
+  left: 40.3%;
+	text-align: center;
+  border-radius: 1rem;
+	vertical-align: top;
+		min-width: 7em;
+}
+.speech-bubble:after {
+	border: 1em solid transparent;
+	border-top-color: #535353;
+	content: '';
+	margin-left: -1em;
+	position: absolute;
+		top: 98%;
+		left: 50%;
+	width: 0;
+	height: 0;
+}
 
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
 
 // ------------------ CHAT MESSAGES ------------------
 
