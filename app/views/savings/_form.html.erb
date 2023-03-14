@@ -4,12 +4,12 @@
     <div class="form-inputs">
         <%= f.input :saving_name %>
         <%= f.input :balance %>
-        <%= f.input :saving_goal %>
+        <%=  f.input :saving_goal %>
         <%= f.input :time_goal, as: :date %>
         <%= f.association :icon,
                         as: :radio_buttons,
-                        collection: Icon.all.map { |icon| [".", " ", style: "background-image: url(#{cl_image_path(icon.url)});"] },                       
-                        input_html: { 
+                        collection: Icon.all.map { |icon| [".", " ", style: "background-image: url(#{cl_image_path(icon.url)});"] },
+                        input_html: {
                         class: "icon-radio"
                         }
         %>
@@ -18,4 +18,5 @@
         <%= f.button :submit %>
     </div>
     <% end %>
+
 </div>

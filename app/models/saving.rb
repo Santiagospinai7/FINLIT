@@ -4,6 +4,7 @@ class Saving < ApplicationRecord
   belongs_to :icon
 
   validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  validates :balance, numericality: { less_than: :saving}
 
   after_initialize :init
 

@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :account, optional: true
   belongs_to :saving, optional: true
-  
+
   validates :operation_type, presence: true
   # validates :date, presence: true
   # validates :amount, presence: true, numericality: { other_than: 0 }
@@ -18,6 +18,10 @@ class Transaction < ApplicationRecord
       [date.strftime("%Y-%m-%d"), amount]
     end.to_h
 
+    transactions_by_balance = transactions_by_date
+
+    transactions_by_balance.transform_values!  {| val| val = account.balance.to_i + val.to_i}
+    return transactions_by_balance
     return formatted_transactions_by_date
   end
 
@@ -26,7 +30,7 @@ class Transaction < ApplicationRecord
   end
 
   private
-  
+
   def account_or_saving_present
     if account_id.blank? && saving_id.blank?
       errors.add(:base, "Either account or savings must be present")
