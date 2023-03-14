@@ -1,3 +1,11 @@
+<script>
+  const trigger = document.getElementById('trigger');
+  const searchBorder = document.querySelector('.search__border');
+
+  trigger.addEventListener('click', function() {
+    searchBorder.classList.toggle('hidden');
+  });
+</script>
 <div class="search-header">
   <h1 class="transactions-title">Suggestions</h1>
 </div>
@@ -17,14 +25,13 @@
         <button type="submit" id="submit-btn">
           <img id="search-img" title="Search" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png" hidden>
         </button>
+        <div class="loader d-none" data-openai-target="loader">
+          <p class="loader-text"></p>
+        </div>
         <div class="search__close"></div>
         <div class="chat-container-master">
-          <div className="loader">
-              <p className="loader-text"></p>
-          </div>
           <div class="chat-container" data-controller="hover3d">
             <img class="budgetbot" data-hover3d-target="card" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678661063/original-035e87c5a88c791e04d7aa20039bcc55_2-2_gweqmn.png">
-            <%# <p><span id="typed-text" data-controller="typed"></span></p> %>
             <div data-controller="typed">
               <p data-typed-target="text" id="typed-text"></p>
             </div>
