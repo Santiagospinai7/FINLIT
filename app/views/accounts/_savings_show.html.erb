@@ -24,9 +24,9 @@
       <%# ---------- %>
     </div>
   </div>
-  <div class="graph-pie">
-    <%= pie_chart Account.saving_chart(@account), donut: true, height: '400px', width: '300px', colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
-  </div>
+<div class="graph-pie">
+  <%= pie_chart Account.saving_chart(@account), donut: true, height: '400px', width: '300px', colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
+</div>
   <%# <p id="saved-title-show">Saved<br>£<span class="account-card-balance"><%= Account.get_porcentage(@account) %>
 </div>
 <div class="background-gradient-master-transactions">
