@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_112534) do
     t.integer "account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "saving_goal"
     t.bigint "icon_id", null: false
     t.index ["icon_id"], name: "index_accounts_on_icon_id"
     t.index ["user_id"], name: "index_accounts_on_user_id"
@@ -129,9 +128,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_112534) do
 
   create_table "transactions", force: :cascade do |t|
     t.string "category"
-    t.integer "amount"
+    t.decimal "amount"
     t.date "date"
-    t.bigint "account_id", null: false
+    t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "operation_type"
