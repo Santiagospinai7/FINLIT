@@ -139,7 +139,6 @@ LearningMaterial.create(title: "12 principles
 
 LearningMaterial.create(title: "What can I do With £50?",
   description: "An insight into the volatile world of penny stocks and the money you can make with just £50",
-  ex
   topic_material_id: investment.id
 )
 

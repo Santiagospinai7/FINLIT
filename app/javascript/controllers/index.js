@@ -28,5 +28,8 @@ application.register("select-accounts", SelectAccountsController)
 import SetAmountController from "./set_amount_controller"
 application.register("set-amount", SetAmountController)
 
+import TypedController from "./typed_controller"
+application.register("typed", TypedController)
+
 import UnsplashController from "./unsplash_controller"
 application.register("unsplash", UnsplashController)

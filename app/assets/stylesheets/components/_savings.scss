@@ -132,3 +132,58 @@ h2.savings-card{
   font-weight: 600;
   font-size: 1rem;
 }
+
+
+// ----------------- New Savings Card -----------------
+
+#saving_saving_name {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+#saving_balance {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+#saving_saving_goal {
+  background-color: #1d1d1d !important;
+  color: rgb(202, 202, 202) !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(202, 202, 202) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.new-saving-container {
+  margin-bottom: 5%;
+  margin-top: 4%;
+  width: 40%;
+  background-color: #1d1d1d;
+  color: rgb(202, 202, 202);
+  padding: 3rem;
+  border-radius: 3rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+
+.saving-title {
+  text-align: center;
+}
+
+#saving_time_goal_1i, #saving_time_goal_2i, #saving_time_goal_3i {
+  border-radius: 1rem !important;
+}

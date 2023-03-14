@@ -10,21 +10,29 @@
     <form id="chat-form" data-openai-target="form">
       <div class="search">
         <input type="checkbox" id="trigger" class="search__checkbox"/>
-        <label class="search__label-init" for="trigger"></label>
+        <label class="search__label-init" for="trigger" title="Search"></label>
         <label class="search__label-active" for="trigger"></label>
         <div class="search__border"></div>
         <input type="text" class="search__input" data-openai-target="input" id="user-input"/>
         <button type="submit" id="submit-btn">
-          <img id="search-img" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png" hidden>
+          <img id="search-img" title="Search" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678361784/icons8-search-100_msg4yj.png" hidden>
         </button>
         <div class="search__close"></div>
         <div class="chat-container-master">
           <div className="loader">
               <p className="loader-text"></p>
           </div>
-          <div class="chat-container">
-            <img class="budgetbot" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678661063/original-035e87c5a88c791e04d7aa20039bcc55_2-2_gweqmn.png">
-            <p data-openai-target="chat" id="chat-content"><span class="intro-msg">Hi, I'm BudgetBot!</span><br><span class="intro-msg-content">Ask me anything related to personal finance, investing or budgeting!</span></p>
+          <div class="chat-container" data-controller="hover3d">
+            <img class="budgetbot" data-hover3d-target="card" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678661063/original-035e87c5a88c791e04d7aa20039bcc55_2-2_gweqmn.png">
+            <%# <p><span id="typed-text" data-controller="typed"></span></p> %>
+            <div data-controller="typed">
+              <p data-typed-target="text" id="typed-text"></p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p data-openai-target="chat" id="chat-content"><span class="intro-msg-content">Ask me anything related to personal finance, investing or budgeting!</span></p>
           </div>
         </div>
       </div>
