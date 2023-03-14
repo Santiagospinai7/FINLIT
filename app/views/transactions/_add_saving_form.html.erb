@@ -2,10 +2,13 @@
   <%= link_to "< Back to Accounts", savings_path, class: "back-account-btn" %>
 </div>
 <%= simple_form_for [account, transaction] do |f| %>
-  <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
-  <%= f.input :amount %>
+  <%= f.input :operation_type, input_html: { data: {set_amount_target: "typeInput"} } %>
+  <%= f.input :amount, as: :decimal, input_html: { data: { set_amount_target: "amountInput", action: "input->set-amount#amountChanging" }}  %>
   <%= f.input :date, as: :date %>
   <div class="form-actions">
-    <%= f.button :submit, value: "Add" %>
+    <%= f.button :submit, value: "Add", data: {
+                  set_amount_target: "buttonCreate",
+                  action: "mouseenter->set-amount#buttonHover mouseleave->set-amount#buttonMouseLeft"
+                } %>
   </div>
 <% end %>
