@@ -1,6 +1,9 @@
 <div class="log-in-master">
-  <div class="log-in-container">
-      <h2>New saving</h2>
+  <div class="new-saving-container">
+      <h2 class="saving-title">New saving</h2>
+      <br>
+      <br>
       <%= render "form", saving: @saving %>
   </div>
+  <%= link_to "< Back to Accounts", savings_path, class: "back-account-btn" %>
 </div>

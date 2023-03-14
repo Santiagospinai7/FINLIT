@@ -43,15 +43,29 @@ export default class extends Controller {
       const messageContent = data.choices[0].message.content;
       const lines = messageContent.split('\n').filter(line => line.trim() !== ''); // Add filter to remove empty lines
       const formattedLines = lines.map(line => {
-        if (/^\d+\./.test(line)) {
-          return `<p class="chat-bubbles">• ${line}</p>`;
+        if (/^\d+\.\s*/.test(line)) {
+          return `• ${line.substring(line.indexOf(".") + 1)}\n`;
         }
-        return `<p class="chat-bubbles">${line}</p>`;
+        return line + '\n';
       });
       const formattedContent = formattedLines.join('');
-      this.chatTarget.innerHTML = formattedContent;
+      this.chatTarget.innerHTML = '';
+      let i = 0;
+      const typingEffect = setInterval(() => {
+        if (i < formattedContent.length) {
+          if (formattedContent.charAt(i) === '\n') {
+            this.chatTarget.innerHTML += '<br/>';
+          } else {
+            this.chatTarget.innerHTML += formattedContent.charAt(i);
+          }
+          i++;
+        } else {
+          clearInterval(typingEffect);
+        }
+      }, 50);
     })
     .catch(error => console.error(error));
+
   }
 }
 
@@ -63,7 +77,7 @@ export default class extends Controller {
 // import { Controller } from "@hotwired/stimulus"
 
 // export default class extends Controller {
-//   static targets = [ "form", "container", "chat", "input" ]
+//   static targets = [ "form", "container", "chat", "input", "loader" ]
 //   static values = {
 //     key: String
 //   }
@@ -105,14 +119,28 @@ export default class extends Controller {
 //       const messageContent = data.choices[0].message.content;
 //       const lines = messageContent.split('\n').filter(line => line.trim() !== ''); // Add filter to remove empty lines
 //       const formattedLines = lines.map(line => {
-//         if (/^\d+\./.test(line)) {
-//           return `<p class="chat-bubbles">• ${line}</p>`;
+//         if (/^\d+\.\s*/.test(line)) {
+//           return `• ${line.substring(line.indexOf(".") + 1)}\n`;
 //         }
-//         return `<p class="chat-bubbles">${line}</p>`;
+//         return line + '\n';
 //       });
 //       const formattedContent = formattedLines.join('');
-//       this.chatTarget.innerHTML = formattedContent;
+//       this.chatTarget.innerHTML = '';
+//       let i = 0;
+//       const typingEffect = setInterval(() => {
+//         if (i < formattedContent.length) {
+//           if (formattedContent.charAt(i) === '\n') {
+//             this.chatTarget.innerHTML += '<br/>';
+//           } else {
+//             this.chatTarget.innerHTML += formattedContent.charAt(i);
+//           }
+//           i++;
+//         } else {
+//           clearInterval(typingEffect);
+//         }
+//       }, 50);
 //     })
 //     .catch(error => console.error(error));
+
 //   }
 // }
