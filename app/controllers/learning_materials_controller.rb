@@ -25,7 +25,7 @@ class LearningMaterialsController < ApplicationController
     @learning_materials = LearningMaterial.find(params[:id])
   end
 
-  def updated
+  def update
     learning_materials = LearningMaterial.find(params[:id])
     learning_materials.update(learning_materials_params)
 

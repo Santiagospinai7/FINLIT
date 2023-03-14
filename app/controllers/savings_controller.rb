@@ -26,6 +26,9 @@ class SavingsController < ApplicationController
 
   def create
     @saving = Saving.new(saving_params)
+    icon_id = params[:saving]["icon_id"]
+    icon = icon_id.blank? ? (Icon.all).sample : Icon.find(icon_id)
+    @saving.icon_id = icon.id
     @saving.user_id = current_user.id
     @saving.save
 
