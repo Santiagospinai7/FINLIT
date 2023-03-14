@@ -2,22 +2,24 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "title", "link", "source"]
-  data = [];
+  static values = {
+    key: String
+  }
 
   connect() {
-    console.log("Searching for News!");
-    const rapidKey = process.env.RAPID_ACCESS_KEY;
-    console.log(rapidKey);
+    console.log(this.keyValue);
+    const accessKey = this.keyValue;
+    console.log("SUCCESS ~CONNECTED~");
     fetch("https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news", {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": rapidKey,
+        "X-RapidAPI-Key": accessKey,
         "X-RapidAPI-Host": "yahoo-finance15.p.rapidapi.com"
       }
     })
       .then(response => response.json())
       .then(data => {
-        this.data = data;
+        this.dataVar = data;
         console.log("Finding Data...")
         const firstNewsItem = data[0];
         const firstNewsLink = data[0].link;
@@ -32,9 +34,10 @@ export default class extends Controller {
 
   refresh() {
     console.log("click");
-    const shuffledData = this.shuffle(this.data); // shuffle the data array
+    const shuffledData = this.shuffle(this.dataVar); // shuffle the data array
     const randomIndex = Math.floor(Math.random() * shuffledData.length);
     const randomNewsItem = shuffledData[randomIndex];
+    console.log("SHuffle data", randomNewsItem)
     const randomNewsLink = randomNewsItem.link;
     const randomNewsSource = randomNewsItem.source;
     this.titleTarget.innerText = randomNewsItem.title;

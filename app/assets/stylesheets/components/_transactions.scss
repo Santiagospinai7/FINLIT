@@ -65,6 +65,8 @@
   width: 30%; /* Change the width to a percentage that will allow space for the graph image */
   min-width: 300px; /* Set a minimum width to ensure it doesn't become too small */
   background-color: #1d1d1d;
+  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1678617678/pattern_circles-4_1_1_20-20_0_1__ffffff00_8059d436_aj75q1.png");
+  background-size: 80%;
   color: rgb(202, 202, 202);
   padding: 2rem;
   border-radius: 2rem;
@@ -280,6 +282,7 @@
   width: 80%;
   padding: 4rem 0;
   border-radius: 2rem;
+
 }
 
 .transactions-list-master {
