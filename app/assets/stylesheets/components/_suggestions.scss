@@ -230,6 +230,10 @@ $borderW: 0.3rem;
   }
 }
 
+// --------------- Bouncing Tool Tip ---------------
+
+
+
 // ------------------ CHAT MESSAGES ------------------
 
 .chat-bubble {
@@ -339,8 +343,9 @@ $borderW: 0.3rem;
 
 // ------------- LOADER -------------
 .loader {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+  scale: 2;
   border-radius: 50%;
   display: block;
   margin:15px auto;
@@ -350,8 +355,8 @@ $borderW: 0.3rem;
   box-sizing: border-box;
   animation: shadowPulse 2s linear infinite;
   position: fixed;
-  bottom: 4.5%;
-  left: 88.5%;
+  bottom: -460.5%;
+  left: 36.5%;
 }
 
 .loader-text {
@@ -365,14 +370,14 @@ $borderW: 0.3rem;
 @keyframes shadowPulse {
   33% {
     background: #FFF;
-    box-shadow: -24px 0 #31bd4f, 24px 0 #FFF;
+    box-shadow: -24px 0 #4e20cc, 24px 0 #FFF;
   }
   66% {
-    background: #31bd4f;
+    background: #4e20cc;
     box-shadow: -24px 0 #FFF, 24px 0 #FFF;
   }
   100% {
     background: #FFF;
-    box-shadow: -24px 0 #FFF, 24px 0 #31bd4f;
+    box-shadow: -24px 0 #FFF, 24px 0 #4e20cc;
   }
 }

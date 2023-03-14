@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = [ "text" ];
 
   connect() {
-    console.log("typed controller connected");
     let i = 0;
     let text = "Hi, I'm BudgetBot!";
     let speed = 50;
