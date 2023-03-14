@@ -41,16 +41,73 @@
   border-radius: 2rem;
   padding: 1rem;
   // line-height: 30px;
+  width: 50vw;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .title-learning {
   margin-bottom: 10px;
+  color: white
 }
 
 .topic-learning {
   margin-top: 20%;
+  color: white
 }
 
 .learn-icons{
   margin-top: 5%;
+}
+
+.learnbox{
+  background-color: #06060670;
+  margin-top: 5%;
+  width: 50vw;
+  text-align: left;
+  font-size: 2rem;
+  color: #fff;
+  border: 0.3rem solid #535353;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-left: 25%;
+}
+
+.titlebox{
+  margin: 4px;
+  border-bottom: solid white 4px;
+  border: 0.3rem solid #535353;
+  border-radius: 2rem;
+  padding: 1rem;
+  background-image: url('../images/title.jpg');
+}
+
+.textbox{
+  margin: 4px;
+  border-bottom: solid white 4px;
+  border: 0.3rem solid #535353;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.bookmarkbox{
+  margin: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-hold{
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+}
+
+.nav-item{
+  justify-content: space-between;
+  margin: 16px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: #16fd0d00;
 }

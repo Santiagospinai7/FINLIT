@@ -1,3 +1,3 @@
 class TopicMaterial < ApplicationRecord
-  belongs_to :Learning_material
+  has_many :learning_materials
 end
