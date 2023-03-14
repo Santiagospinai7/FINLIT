@@ -18,6 +18,7 @@ class QuizzesController < ApplicationController
       redirect_to quiz_path(quiz_params)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   def edit

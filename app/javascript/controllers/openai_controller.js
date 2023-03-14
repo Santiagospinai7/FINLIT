@@ -16,10 +16,12 @@ export default class extends Controller {
     trigger.addEventListener('change', () => {
       img.hidden = !trigger.checked;
     });
+
   }
 
   submit(event) {
     event.preventDefault();
+    this.loaderTarget.classList.remove('d-none');
     const accessKey = this.keyValue;
     console.log("SUCCESS ~CONNECTED~");
     const userInput = this.inputTarget.value;
@@ -48,6 +50,7 @@ export default class extends Controller {
         }
         return line + '\n';
       });
+      this.loaderTarget.classList.add('d-none');
       const formattedContent = formattedLines.join('');
       this.chatTarget.innerHTML = '';
       let i = 0;
