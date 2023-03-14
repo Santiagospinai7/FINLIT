@@ -3,7 +3,8 @@ class Account < ApplicationRecord
   belongs_to :icon
   has_many :transactions, dependent: :destroy
 
-  validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  # validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  validates :balance, presence: true
 
   after_initialize :init
 

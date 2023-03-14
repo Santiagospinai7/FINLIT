@@ -3,7 +3,8 @@ class Saving < ApplicationRecord
   has_many :transactions, dependent: :destroy
   belongs_to :icon
 
-  validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  # validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  validates :balance, presence: true
 
   after_initialize :init
 
