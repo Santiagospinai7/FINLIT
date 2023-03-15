@@ -3,18 +3,17 @@
 
   <div class="titlebox">
 
-    <h2>Title</h2>
+    <h2><%= @learning_material.title %></h2>
   </div>
 
 <div class="flex-hold">
     <div class="textbox">
-      <h3>A commercial bank is a financial institution that provides services like loans, certificates of deposits, savings bank accounts bank overdrafts, etc. to its customers.
-      </h3>
+      <h3><%= @learning_material.description %></h3>
     </div>
 
     <div class="bookmarkbox">
-      <i class="fa-regular fa-plus"></i>
-      <i class="fa-regular fa-bookmark"></i>
+      <%# <i class="fa-regular fa-plus"></i>
+      <i class="fa-regular fa-bookmark"></i> %>
     </div>
   </div>
 </div>

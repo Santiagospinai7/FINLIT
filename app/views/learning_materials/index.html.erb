@@ -5,7 +5,7 @@
       <h2>
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Investment</button>
+            <button class="nav-link active" id="pills-investments-tab" data-bs-toggle="pill" data-bs-target="#pills-investments" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Investment</button>
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-saving-tab" data-bs-toggle="pill" data-bs-target="#pills-saving" type="button" role="tab" aria-controls="pills-savings" aria-selected="false">Saving</button>
@@ -21,10 +21,10 @@
     </div>
   </div>
 </div>
-<% @learning_materials.each do |material| %>
 
 <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+<% @learning_materials.each_with_index do |material, index| %>
+  <div class="tab-pane fade show <%=index == 0 ? "active" : ""%>" id="pills-<%=material.topic_material.topic_name%>" role="tabpanel" aria-labelledby="pills-<%=material.topic_material.topic_name%>-tab" tabindex="0">
       <div class="sub-learning">
         <div class="learning-description">
           <h3 class="title-learning">
@@ -32,95 +32,23 @@
             <br>
             <br>
             Description: <%= material.description %>
-            <i class="fas fa-coins"></i>
-            </h3>
-        </div>
-        <div class="icon-plus">
-          <div class="learning-plus" style= "d-flex">
-            <h4 class="topic-learning">
-            Topic Read 3 mins </h4>
-          </div>
-          <div class="learn-icons">
-            <i class="fa-regular fa-plus"></i>
-            <i class="fa-regular fa-bookmark"></i>
-          </div>
-          <div class="add-btn-flex">
-          <%= link_to "+", learning_material_path(material.id), :class => "add-btn", :title => "Learn >", :method => :get %>
-        </div>
-        </div>
-      </div>
-  </div>
-  <div class="tab-pane" id="pills-saving" role="tabpanel" aria-labelledby="pills-saving-tab" tabindex="0">
-    <div class="sub-learning">
-      <div class="learning-description">
-        <h3 class="title-learning">
-          Title: <%= material.title %>
-          <br>
-          <br>
-          Description: <%= material.description %>
-          <i class="fas fa-coins"></i>
+            <%# <i class="fas fa-coins"></i>%>
           </h3>
-      </div>
-      <div class="icon-plus">
-        <div class="learning-plus" style= "d-flex">
-          <h4 class="topic-learning">
-          Topic Read 3 mins </h4>
-        </div>
-        <div class="learn-icons">
-          <i class="fa-regular fa-plus"></i>
-          <i class="fa-regular fa-bookmark"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane" id="pills-banking" role="tabpanel" aria-labelledby="pills-banking-tab" tabindex="0">
-      <div class="sub-learning">
-          <div class="learning-description">
-            <h3 class="title-learning">
-              Title: <%= material.title %>
-              <br>
-              <br>
-              Description: <%= material.description %>
-              <i class="fas fa-coins"></i>
-              </h3>
-          </div>
-          <div class="icon-plus">
-              <div class="learning-plus" style= "d-flex">
-                <h4 class="topic-learning">
-                Topic Read 3 mins </h4>
-              </div>
-                <div class="learn-icons">
-                  <i class="fa-regular fa-plus"></i>
-                  <i class="fa-regular fa-bookmark"></i>
-                </div>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="tab-pane" id="pills-debt" role="tabpanel" aria-labelledby="pills-debt-tab" tabindex="0">
-      <div class="sub-learning">
-        <div class="learning-description">
-          <h3 class="title-learning">
-            Title: <%= material.title %>
-            <br>
-            <br>
-            Description: <%= material.description %>
-            <i class="fas fa-coins"></i>
-            </h3>
         </div>
         <div class="icon-plus">
           <div class="learning-plus" style= "d-flex">
             <h4 class="topic-learning">
             Topic Read 3 mins </h4>
           </div>
-          <div class="learn-icons">
+          <%# <div class="learn-icons">
             <i class="fa-regular fa-plus"></i>
             <i class="fa-regular fa-bookmark"></i>
-          </div>
+          </div> %>
+          <div class="add-btn-flex">
+          <%= button_to "+", learning_material_path(material.id), :class => "add-btn", :title => "Learn More", :method => :get %>
+        </div>
         </div>
       </div>
   </div>
+  <% end  %>
 </div>
-<% end  %>
