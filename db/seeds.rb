@@ -30,7 +30,7 @@ end
 puts "users created"
 
 puts "create icons"
-incons = ["saving_icon", "wallet_icon"]
+incons = ["saving_icon", "wallet_icon", "icon_1", "icon_2", "icon_3", "icon_4"]
 incons.each do |icon|
   Icon.create(url: icon)
 end

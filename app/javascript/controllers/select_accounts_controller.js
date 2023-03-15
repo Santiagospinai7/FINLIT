@@ -5,11 +5,6 @@ export default class extends Controller {
   static targets = ["form", "switch", "grid", "type", "btn"]
 
   connect() {
-    console.log("is connected to select account js")
-    // console.log(this.switchTarget)
-    // console.log(this.titleTarget.innerText)
-    // console.log(this.gridTarget)
-    // console.log(this.btnTarget)
     this.btnTarget.hidden = true
   }
 
@@ -20,6 +15,5 @@ export default class extends Controller {
 
   displayAccounts() {
     this.btnTarget.click()
-    // console.log(this.typeTarget.innerText)
   }
 }
