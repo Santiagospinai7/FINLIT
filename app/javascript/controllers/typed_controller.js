@@ -24,14 +24,3 @@ export default class extends Controller {
     typeWriter();
   }
 }
-
-
-// export default class extends Controller {
-//   connect() {
-//     new Typed(this.element, {
-//       strings: ["Hi, I'm BudgetBot!"],
-//       typeSpeed: 50,
-//       loop: false,
-//     })
-//   }
-// }
