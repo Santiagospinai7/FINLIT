@@ -218,11 +218,12 @@
 
 .intro-accounts-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: left;
+  width: 100%;
 }
 
-.intro-accounts-card p {
+.intro-accounts-card {
   margin-top: 0.7rem;
 }
 
