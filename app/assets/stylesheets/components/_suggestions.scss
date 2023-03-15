@@ -415,3 +415,9 @@ $borderW: 0.3rem;
     box-shadow: -24px 0 #FFF, 24px 0 #4e20cc;
   }
 }
+
+@media (min-width: 1850px) {
+  #chat-content {
+    width: 67vw;
+  }
+}
