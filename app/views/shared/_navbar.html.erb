@@ -4,10 +4,10 @@
   <% end %>
   <div class="navbar-finlit">
     <ul class="nav-elements" data-controller="navbar">
+      <%= link_to "/", class: "nav-buttons", data: { navbar_target: "home" } do %><li class="nav-item"> 🏠 </li><% end%>
       <%= link_to dashboard_path, class: "nav-buttons", data: { navbar_target: "dashboard" } do %><li class="nav-item">Dashboard</li><% end%>
       <%= link_to accounts_path, class: "nav-buttons", data: { navbar_target: "accounts" } do %><li class="nav-item">Accounts</li><% end%>
       <%= link_to savings_path, class: "nav-buttons", data: { navbar_target: "savings" } do %><li class="nav-item">Savings</li><% end%>
-      <%= link_to "#", class: "nav-buttons", data: { navbar_target: "learning" } do %><li class="nav-item">Learning</li><% end%>
       <%= link_to suggestions_path, class: "nav-buttons", data: { navbar_target: "suggestion" } do %><li class="nav-item">Suggestions</li><% end%>
     </ul>
   </div>
