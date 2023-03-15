@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
-  static targets = ["dashboard", "accounts", "savings", "learning", "suggestion"]
+  static targets = ["dashboard", "accounts", "savings", "home", "suggestion"]
 
   connect() {
     const currentUrl = window.location.pathname;
@@ -10,10 +10,21 @@ export default class extends Controller {
 
     links.forEach((link) => {
       const linkUrl = link.getAttribute('href');
-      if (currentUrl.includes(linkUrl)) {
-        link.classList.add('nav-buttons-active');
+      if (currentUrl.length > 1) {
+        if (currentUrl.includes(linkUrl) && linkUrl != "/") {
+          console.log(linkUrl)
+          console.log(currentUrl)
+
+          link.classList.add('nav-buttons-active');
+        } else {
+          link.classList.remove('nav-buttons-active');
+        }
       } else {
-        link.classList.remove('nav-buttons-active');
+        if (currentUrl === linkUrl) {
+          link.classList.add('nav-buttons-active');
+        } else {
+          link.classList.remove('nav-buttons-active');
+        }
       }
     });
   }
