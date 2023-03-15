@@ -1,6 +1,25 @@
-<% if @transaction.account_id == nil %>
-  <%= render "edit_saving", transaction: @transaction %>
-<% else %>
-  <%= render "edit_account", transaction: @transaction %>
-<% end %>
+<div class="log-in-master">
+  <div  data-controller="set-amount" class="create-account-container" data-set-amount-target="card">
+    <% if @account.class == Saving %>
+      <h1 class="title-text">Edit Saving Record</h1>
+    <% else %>
+      <h1 class="title-text">Edit Account Transaction</h1> 
+    <% end %>
 
+    <div class="switch-button-transaction">
+      <div class="switch-option" data-set-amount-target="switchButtons"> 
+        <input type="radio" name="switch-option" id="income-option" checked>
+        <label class="option-label-transaction-income" for="income-option" data-action="click->set-amount#setIncome">Income</label>
+        <input type="radio" name="switch-option" id="expense-option">
+        <label class="option-label-transaction-expense" for="expense-option" data-action="click->set-amount#setExpense">Expense</label>
+      </div>
+    </div>
+
+    <% if @transaction.account_id == nil %>
+      <%= render "edit_saving", account: @account, transaction: @transaction %>
+    <% else %>
+      <%# <%= render "edit_account", transaction: @transaction %>
+      <%= render "account_form", account: @account, transaction: @transaction %>
+    <% end %>
+  </div>
+</div>
