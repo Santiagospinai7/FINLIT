@@ -106,6 +106,15 @@
   color: #a4a4a4;
 }
 
+.nav-buttons-active {
+  color: #7443ef;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #7443ef;
+  filter: brightness(1.5);
+  border-radius: 0.9rem;
+}
+
 .nav-buttons:hover {
   color: #7443ef;
 }

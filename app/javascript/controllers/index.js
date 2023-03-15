@@ -16,6 +16,9 @@ application.register("hello", HelloController)
 import Hover3dController from "./hover3d_controller"
 application.register("hover3d", Hover3dController)
 
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
+
 import NewsController from "./news_controller"
 application.register("news", NewsController)
 

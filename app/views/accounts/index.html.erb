@@ -6,9 +6,6 @@
     <div data-controller="select-accounts">
       <div class="accounts-menu">
         <div class="accounts-title-row">
-          <%# <div>
-            <h1 class="accounts-title" data-select-accounts-target="title">Accounts</h1>
-          </div> %>
           <div>
             <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
               <%= select_tag :query,
