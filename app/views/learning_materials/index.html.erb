@@ -44,6 +44,9 @@
             <i class="fa-regular fa-plus"></i>
             <i class="fa-regular fa-bookmark"></i>
           </div>
+          <div class="add-btn-flex">
+          <%= link_to "+", learning_material_path(material.id), :class => "add-btn", :title => "Learn >", :method => :get %>
+        </div>
         </div>
       </div>
   </div>
