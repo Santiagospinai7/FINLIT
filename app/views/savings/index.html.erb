@@ -24,7 +24,7 @@
       <div id="accounts">
         <div class="account-grid-container" data-select-accounts-target="grid">
           <% if @savings.length <= 0 %>
-            <div class = "account-grid-item">
+            <div class = "savings-grid-item">
               <%= link_to new_saving_path, class: "account-link" do %>
                 <div class="intro-accounts-card">
                     <p>Let's create a new <strong>Saving!</strong></p>
@@ -35,7 +35,7 @@
             </div>
           <% else %>
             <% @savings.each do |saving| %>
-              <div class="account-card">
+              <div class="savings-card">
                 <div class="acc-btn-flex">
                   <%# ---------- %>
                   <div class="btn-pluss-master">

@@ -1,12 +1,13 @@
 <div id="<%= dom_id saving %>">
   <% if @achive %>
     <div class="intro-accounts-card">
-        <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-accounts"%>
-        <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
+    <div class="intro-savings-card">
+      <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-savings"%>
+      <p class="savings-card-p"><strong>Saving:</strong><br><%= saving.saving_name %></p>
     </div>
     <div>
     <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
-    <p><strong>Your already achieve your saving goal, congrats! 🤑🍾</strong></p>
+    <p><strong>Your already achieved your saving goal, congrats! 🤑🍾</strong></p>
     </div>
   <% else %>
     <div class="intro-accounts-card">
