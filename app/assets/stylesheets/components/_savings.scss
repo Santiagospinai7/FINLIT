@@ -133,6 +133,62 @@ h2.savings-card{
   font-size: 1rem;
 }
 
+.savings-grid-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 2rem 1rem;
+  width: 22rem;
+  min-width: 18rem;
+  max-width: 25rem;
+  background-color: #1d1d1d;
+  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1678617678/pattern_circles-4_1_1_20-20_0_1__ffffff00_8059d436_aj75q1.png");
+  background-size: cover;
+  color: rgb(202, 202, 202);
+  padding: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+}
+
+.savings-grid-item:hover {
+  color: rgb(202, 202, 202);
+}
+
+.bank-avatar-savings {
+  position: relative;
+  left: -5%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: -1%;
+  margin-left: 8%;
+  object-fit: cover;
+}
+
+.savings-card-p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 4%;
+  text-align: left;
+}
+
+.intro-savings-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  margin-top: 0.7rem;
+}
+
+.savings-card{
+  margin: 1rem;
+}
 
 // ----------------- New Savings Card -----------------
 

@@ -1,8 +1,9 @@
 <div id="<%= dom_id saving %>">
   <% if @achive %>
     <div class="intro-accounts-card">
-        <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-accounts"%>
-        <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
+    <div class="intro-savings-card">
+      <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-savings"%>
+      <p class="savings-card-p"><strong>Saving:</strong><br><%= saving.saving_name %></p>
     </div>
     <div>
     <p>Balance: <%= "£#{number_with_precision(saving.balance, precision: 2, delimiter: ',')}" %></p>

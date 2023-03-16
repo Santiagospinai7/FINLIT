@@ -1,4 +1,3 @@
-
 <div class="intro-accounts-card">
     <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/>
     <p><strong>Saving:</strong><br><%= @account.account_name %></p>
@@ -8,4 +7,3 @@
   <p>Goal: <%= "£#{number_with_precision(@account.saving_goal, precision: 2, delimiter: ',')}" %></p>
   <p>Saved: <%= Account.get_porcentage(@account) %>%</p>
 </div>
-
