@@ -12,9 +12,6 @@ export default class extends Controller {
       const linkUrl = link.getAttribute('href');
       if (currentUrl.length > 1) {
         if (currentUrl.includes(linkUrl) && linkUrl != "/") {
-          console.log(linkUrl)
-          console.log(currentUrl)
-
           link.classList.add('nav-buttons-active');
         } else {
           link.classList.remove('nav-buttons-active');
