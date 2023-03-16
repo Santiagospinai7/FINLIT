@@ -1,13 +1,23 @@
 <div id="<%= dom_id saving %>">
-  <div class="intro-accounts-card">
+  <% if @achive %>
+    <div class="intro-accounts-card">
     <div class="intro-savings-card">
       <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-savings"%>
       <p class="savings-card-p"><strong>Saving:</strong><br><%= saving.saving_name %></p>
     </div>
-  </div>
-  <div>
-  <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
-  <p>Goal: <%= "£#{number_with_delimiter(saving.saving_goal, :delimiter => ',')}" %></p>
-  <p>Saved: <%= Saving.get_porcentage(saving) %>%</p>
-  </div>
+    <div>
+    <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
+    <p><strong>Your already achieved your saving goal, congrats! 🤑🍾</strong></p>
+    </div>
+  <% else %>
+    <div class="intro-accounts-card">
+        <%= cl_image_tag Icon.find(saving.icon_id).url, class:"bank-avatar-accounts"%>
+        <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
+    </div>
+    <div>
+      <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
+      <p>Goal: <%= "£#{number_with_delimiter(saving.saving_goal, :delimiter => ',')}" %></p>
+      <p>Saved: <%= Saving.get_porcentage(saving) %>%</p>
+    </div>
+  <% end %>
 </div>

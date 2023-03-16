@@ -144,16 +144,31 @@
   margin: 0 !important;
 }
 
-.button-create-saving{
+.button-create-saving {
   text-decoration: none;
   background-color: #3C28B9;
   border-radius: 10px;
-  color: white;
+  color: rgb(202, 202, 202);
   padding: 8px;
   font-size: large;
   padding: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 18 !important;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.button-create-saving:hover {
+  background-color: #4f3ccc;
+  color: rgb(202, 202, 202);
+  filter: brightness(1.2);
+}
+
+.money-emoji {
+  font-size: 4.5rem;
+  margin-right: 0.5rem;
+  margin-top: 15%;
+  margin-bottom: -25%;
 }
 
 .container-master-dashboard {
