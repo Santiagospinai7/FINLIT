@@ -15,6 +15,17 @@ class Account < ApplicationRecord
     ["Current", "Saving", "Other"]
   end
 
+  def self.line_chart(account)
+    accounts = account.balance
+    account_by_date = account.group(:date).sum(:amount)
+
+    formatted__by_date = account_by_date.map do |date, amount|
+      [date.strftime("%Y-%m-%d"), amount]
+    end.to_h
+
+    return formatted_ac_by_date
+  end
+
   def updateBalance
     transactions = self.transactions
     transactions.each do |transaction|
