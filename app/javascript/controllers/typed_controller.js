@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = [ "text" ];
 
   connect() {
-    console.log("typed controller connected");
     let i = 0;
     let text = "Hi, I'm BudgetBot!";
     let speed = 50;
@@ -25,14 +24,3 @@ export default class extends Controller {
     typeWriter();
   }
 }
-
-
-// export default class extends Controller {
-//   connect() {
-//     new Typed(this.element, {
-//       strings: ["Hi, I'm BudgetBot!"],
-//       typeSpeed: 50,
-//       loop: false,
-//     })
-//   }
-// }

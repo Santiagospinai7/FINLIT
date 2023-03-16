@@ -21,6 +21,7 @@
   border-radius: 50%;
   margin: 0.5rem;
   margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 // ------------ SWTITCHER ------------
@@ -217,11 +218,12 @@
 
 .intro-accounts-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: left;
+  width: 100%;
 }
 
-.intro-accounts-card p {
+.intro-accounts-card {
   margin-top: 0.7rem;
 }
 
@@ -453,7 +455,7 @@ section{
   z-index: -5;
   position: absolute;
   top: 20%;
-  height: 110%;
+  height: 116%;
   width: 95%;
   border-radius: 0 0 4rem 4rem ;
   background: rgb(0,0,0);
@@ -604,6 +606,3 @@ section{
 .my-input {
   background-image: inherit;
 }
-
-
-

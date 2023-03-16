@@ -3,12 +3,21 @@
     <%= simple_form_for @saving do |f| %>
     <div class="form-inputs">
         <%= f.input :saving_name %>
+<<<<<<< HEAD
         <%= f.input :balance %>
         <%=  f.input :saving_goal %>
         <%= f.input :time_goal, as: :date %>
         <%= f.association :icon,
                         as: :radio_buttons,
                         collection: Icon.all.map { |icon| [".", " ", style: "background-image: url(#{cl_image_path(icon.url)});"] },
+=======
+        <%= f.input :balance, label: "Current Balance"%>
+        <%= f.input :saving_goal %>
+        <%= f.input :time_goal, as: :date %>
+        <%= f.association :icon,
+                        as: :radio_buttons,
+                        collection: Icon.all.map { |icon| [".", icon.id, style: "background-image: url(#{cl_image_path(icon.url)});"] },
+>>>>>>> main
                         input_html: {
                         class: "icon-radio"
                         }

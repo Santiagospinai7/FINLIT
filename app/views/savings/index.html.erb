@@ -23,24 +23,36 @@
       </div>
       <div id="accounts">
         <div class="account-grid-container" data-select-accounts-target="grid">
-          <% @savings.each do |saving| %>
-            <div class="account-card">
-              <div class="acc-btn-flex">
-                <%# ---------- %>
-                <div class="btn-pluss-master">
-                  <nav class="btn-pluss-wrapper-accounts">
-                    <div href="#" class="btn-pluss-accounts">
-                      <ul>
-                        <li><%= link_to "✏️  |  Edit", edit_saving_path(saving) %></li>
-                        <li><%= link_to "🗑️  |  Delete", saving_path(saving), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                      </ul>
-                    </div>
-                  </nav>
+          <% if @savings.length <= 0 %>
+            <div class = "account-grid-item">
+              <%= link_to new_saving_path, class: "account-link" do %>
+                <div class="intro-accounts-card">
+                    <p>Let's create a new <strong>Saving!</strong></p>
                 </div>
-               <%# ---------- %>
-              </div>
-                  <%= render "savings_card", saving: saving %>
+                <p>Create a saving and achive you goals! 🤑</p>
+                <%= button_to "Create!", new_account_path, class:"card-action-buttons",  :method => :get %>
+              <% end %>
             </div>
+          <% else %>
+            <% @savings.each do |saving| %>
+              <div class="account-card">
+                <div class="acc-btn-flex">
+                  <%# ---------- %>
+                  <div class="btn-pluss-master">
+                    <nav class="btn-pluss-wrapper-accounts">
+                      <div href="#" class="btn-pluss-accounts">
+                        <ul>
+                          <li><%= link_to "✏️  |  Edit", edit_saving_path(saving) %></li>
+                          <li><%= link_to "🗑️  |  Delete", saving_path(saving), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+                <%# ---------- %>
+                </div>
+                <%= render "savings_card", saving: saving %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>

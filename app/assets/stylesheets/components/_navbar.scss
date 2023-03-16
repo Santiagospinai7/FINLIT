@@ -49,9 +49,9 @@
 }
 
 .avatar:hover {
-  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 1);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 1);
+  box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 1);
   transition: all 0.6s ease-in-out;
 }
 
@@ -63,9 +63,9 @@
 }
 
 .dropdown-menu:hover {
-  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -webkit-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
+  -moz-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
+  box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
   transition: all 0.6s ease-in-out;
 }
 
@@ -88,6 +88,7 @@
   -webkit-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
   -moz-box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
   box-shadow: 0px 0px 57px 4px rgba(90, 45, 211, 0.77);
+  z-index: 10;
 }
 
 .nav-elements {
@@ -104,6 +105,15 @@
 .nav-buttons {
   text-decoration: none;
   color: #a4a4a4;
+}
+
+.nav-buttons-active {
+  color: #7443ef;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #7443ef;
+  filter: brightness(1.5);
+  border-radius: 0.9rem;
 }
 
 .nav-buttons:hover {

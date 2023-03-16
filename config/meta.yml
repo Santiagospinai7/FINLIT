@@ -1,0 +1,5 @@
+meta_product_name: "Finlit"
+meta_title: "Finlit - Learn today"
+meta_description: "App for financial literacy"
+meta_image: "finlit_logo.png" # should exist in `app/assets/images/`
+twitter_account: "@Finlit_app"   # required for Twitter Cards

@@ -90,12 +90,12 @@
 
 
 #income-option:checked + .option-label-transaction-income {
-  background-color: #6d5182;
+  background-color: rgb(10, 168, 45);
   border-radius: 1rem 0 0 1rem;
   left: 0;
-  -webkit-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  -moz-box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
-  box-shadow: 0px 0px 57px 4px rgba(87,8,148,1);
+  -webkit-box-shadow: 0px 0px 57px 4px rgb(8, 148, 52);
+  -moz-box-shadow: 0px 0px 57px 4px rgb(8, 148, 52);
+  box-shadow: 0px 0px 57px 4px rgb(8, 148, 52);
 }
 #expense-option:checked + .option-label-transaction-expense {
   background-color: #F44336;
@@ -197,6 +197,14 @@
 
 // .add-btn-new-transactions {
 //   margin-left: 3%;
+// }
+
+// .add-btn-new-transactions:hover {
+//   background-color:#444444 !important;
+//   border: 2px solid #08943b !important;
+//   -webkit-box-shadow: 0px 0px 57px 2px rgb(8, 148, 66) !important;
+//   -moz-box-shadow: 0px 0px 57px 2px rgb(8, 148, 90) !important;
+//   box-shadow: 0px 0px 57px 2px rgb(8, 148, 31) !important;
 // }
 
 // .container {

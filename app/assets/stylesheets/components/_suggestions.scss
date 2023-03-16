@@ -230,6 +230,44 @@ $borderW: 0.3rem;
   }
 }
 
+// --------------- Bouncing Bubble ---------------
+
+.speech-bubble {
+  animation: bounce2 2s ease infinite;
+  background: #535353;
+  color: rgba(202,202,202,1);
+  display: inline-block;
+	font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.5em;
+  margin-bottom: 1em;
+	padding: 0 0.8em;
+	position: absolute;
+  top: -115%;
+  left: 40.3%;
+	text-align: center;
+  border-radius: 1rem;
+	vertical-align: top;
+		min-width: 7em;
+}
+.speech-bubble:after {
+	border: 1em solid transparent;
+	border-top-color: #535353;
+	content: '';
+	margin-left: -1em;
+	position: absolute;
+		top: 98%;
+		left: 50%;
+	width: 0;
+	height: 0;
+}
+
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
 // ------------------ CHAT MESSAGES ------------------
 
 .chat-bubble {
@@ -339,8 +377,9 @@ $borderW: 0.3rem;
 
 // ------------- LOADER -------------
 .loader {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+  scale: 2;
   border-radius: 50%;
   display: block;
   margin:15px auto;
@@ -350,8 +389,8 @@ $borderW: 0.3rem;
   box-sizing: border-box;
   animation: shadowPulse 2s linear infinite;
   position: fixed;
-  bottom: 4.5%;
-  left: 88.5%;
+  bottom: -460.5%;
+  left: 36.5%;
 }
 
 .loader-text {
@@ -365,14 +404,20 @@ $borderW: 0.3rem;
 @keyframes shadowPulse {
   33% {
     background: #FFF;
-    box-shadow: -24px 0 #31bd4f, 24px 0 #FFF;
+    box-shadow: -24px 0 #4e20cc, 24px 0 #FFF;
   }
   66% {
-    background: #31bd4f;
+    background: #4e20cc;
     box-shadow: -24px 0 #FFF, 24px 0 #FFF;
   }
   100% {
     background: #FFF;
-    box-shadow: -24px 0 #FFF, 24px 0 #31bd4f;
+    box-shadow: -24px 0 #FFF, 24px 0 #4e20cc;
+  }
+}
+
+@media (min-width: 1850px) {
+  #chat-content {
+    width: 67vw;
   }
 }

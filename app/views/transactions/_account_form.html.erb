@@ -1,16 +1,15 @@
 <div>
-  <%= link_to "< Back to Accounts", account_path(account), class: "back-account-btn" %>
+  <%= link_to "< Back to Accounts", account_path(@account), class: "back-account-btn" %>
 </div>
-<%= simple_form_for [account, @transaction] do |f| %>
-  <%# <div class="switch-button-transaction"> %>
-    <%# <div class="switch-option"> %>
-      <%= f.input :operation_type, collection: ["Income", "Expense"], prompt: "Select an operation" %>
-    <%# </div> %>
-  <%# </div> %>
-  <%= f.input :category, collection: Transaction.categories, prompt: "Select a category" %>
-  <%= f.input :amount, as: :decimal, input_html: { data: { set_amount_target: "amountInput"}} %>
+<%= simple_form_for [@account, @transaction] do |f| %>
+  <%= f.input :operation_type, input_html: { data: {set_amount_target: "typeInput"} } %>
+  <%= f.input :category, collection: [" "], prompt: "Select a category", input_html: { data: { set_amount_target: "category" }}%>
+  <%= f.input :amount, as: :decimal, input_html: { data: { set_amount_target: "amountInput", action: "input->set-amount#amountChanging" }} %>
   <%= f.input :date, as: :date %>
-  <div class="form-actions">
-    <%= f.button :submit, value: "Create", class: "add-btn-new-transactions" %>
+  <div class="form-actions" >
+    <%= f.button :submit, value: "Create", class: "add-btn-new-transactions", data: {
+                  set_amount_target: "buttonCreate",
+                  action: "mouseenter->set-amount#buttonHover mouseleave->set-amount#buttonMouseLeft"
+                } %>
   </div>
 <% end %>

@@ -3,14 +3,13 @@ class Saving < ApplicationRecord
   has_many :transactions, dependent: :destroy
   belongs_to :icon
 
-  validates :balance, numericality: { greater_than_or_equal_to: 0 }
-  validates :balance, numericality: { less_than: :saving}
 
-  after_initialize :init
+  # validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  validates :balance, presence: true
 
-  def init         #will set the default value only if it's nil
-    self.icon_id ||= Icon.where(url: "wallet_icon") #let's you set a default association
-  end
+  validates :balance, comparison: { less_than: :saving_goal,
+    message: "saving goal should be less than your current balance."
+  }
 
   def self.saving_chart(account)
     balance = account.balance

@@ -42,7 +42,7 @@ class AccountsController < ApplicationController
   def create
     # raise
     @account = Account.new(account_params)
-    icon_id = params[:account]["icon_ids"]
+    icon_id = params[:account][:icon_id]
     icon = icon_id.blank? ? (Icon.all).sample : Icon.find(icon_id)
     @account.icon_id = icon.id
     @account.user_id = current_user.id
@@ -78,7 +78,7 @@ class AccountsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def account_params
-      params.require(:account).permit(:account_name, :account_type, :balance, :user_id, :account_number)
+      params.require(:account).permit(:account_name, :account_type, :balance, :user_id, :account_number, :icon_id)
     end
 
     def set_balance

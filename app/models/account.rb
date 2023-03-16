@@ -3,13 +3,8 @@ class Account < ApplicationRecord
   belongs_to :icon
   has_many :transactions, dependent: :destroy
 
-  validates :balance, numericality: { greater_than_or_equal_to: 0 }
-
-  after_initialize :init
-
-  def init         #will set the default value only if it's nil
-    self.icon_id ||= Icon.where(url: "wallet_icon") #let's you set a default association
-  end
+  # validates :balance, numericality: { greater_than_or_equal_to: 0 }
+  validates :balance, presence: true
 
   def self.account_types
     ["Current", "Saving", "Other"]

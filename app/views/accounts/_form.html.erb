@@ -19,8 +19,8 @@
         </div>
         <%= f.association :icon,
                         as: :radio_buttons,
-                        collection: Icon.all.map { |icon| [".", " ", style: "background-image: url(#{cl_image_path(icon.url)});"] },                       
-                        input_html: { 
+                        collection: Icon.all.map { |icon| [str="'", icon.id, { style: "background-image: url(#{cl_image_path(icon.url, :crop => :fill, :width => 50, :height => 50, :gravity => :auto)}); object-fit: cover; width: 50px; height: 50px;" }] },
+                        input_html: {
                         class: "icon-radio"
                         }
         %>

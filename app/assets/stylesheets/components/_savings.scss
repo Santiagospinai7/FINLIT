@@ -119,7 +119,7 @@ h2.savings-card{
   background-color: rgba(63, 63, 63, 0.694);
   border-radius: 1rem;
   padding: 1.4rem 1rem 0.5rem 1rem;
-  width: 90%;
+  width: 95%;
   text-align: center;
 }
 
@@ -186,4 +186,13 @@ h2.savings-card{
 
 #saving_time_goal_1i, #saving_time_goal_2i, #saving_time_goal_3i {
   border-radius: 1rem !important;
+}
+
+
+// ------------- Default savings card -------------
+
+.default-saving-card-text {
+  background-color: #414040bf;
+  padding: 1rem;
+  border-radius: 1rem;
 }

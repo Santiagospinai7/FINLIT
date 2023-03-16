@@ -13,6 +13,14 @@
   align-items: center;
 }
 
+.form-check {
+  margin-top: 0.5rem;
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  object-fit: cover;
+}
+
 .log-in-master a {
   text-decoration: none !important;
   color: rgb(202, 202, 202) !important;
