@@ -27,15 +27,25 @@ class TransactionsController < ApplicationController
     if params[:account_id].nil?
       @transaction = Transaction.new(transaction_params)
       @transaction.saving = @account
-      @transaction.save
+      # @transaction.save
 
-      redirect_to saving_path(@account.id)
+      if @transaction.save
+        redirect_to saving_path(@account.id)
+       else
+        render :new, status: :unprocessable_entity
+       end
+      # redirect_to saving_path(@account.id)
     else
       @transaction = Transaction.new(transaction_params)
       @transaction.account = @account
-      @transaction.save
+      # @transaction.save
 
-      redirect_to account_path(@account.id)
+      if @transaction.save
+        redirect_to account_path(@account.id)
+       else
+        render :new, status: :unprocessable_entity
+       end
+      # redirect_to account_path(@account.id)
     end
   end
 

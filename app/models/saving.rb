@@ -6,6 +6,10 @@ class Saving < ApplicationRecord
   # validates :balance, numericality: { greater_than_or_equal_to: 0 }
   validates :balance, presence: true
 
+  validates :balance, comparison: { less_than: :saving_goal,
+    message: "saving goal should be less than your current balance." 
+  }
+
   def self.saving_chart(account)
     balance = account.balance
     goal = account.saving_goal
