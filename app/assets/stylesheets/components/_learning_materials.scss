@@ -22,8 +22,9 @@
 }
 
 .learning-description{
-word-spacing: 8px;
-  margin: 8px;
+   margin: 8px;
+   justify-content: space-between;
+   gap: 10px;
 }
 
 .icon-plus{
@@ -80,15 +81,17 @@ word-spacing: 8px;
   border: 0.3rem solid #535353;
   border-radius: 2rem;
   padding: 1rem;
-  background-image: url('../images/title.jpg');
+  background-image: url(https://res.cloudinary.com/drifm7p5t/image/upload/v1678969842/christine-roy-ir5MHI6rPg0-unsplash_gihhsn.jpg);
+  height: 120px;
 }
 
 .textbox{
-  margin: 4px;
+  margin-top: 20px;
   border-bottom: solid white 4px;
   border: 0.3rem solid #535353;
   border-radius: 2rem;
   padding: 2rem;
+  width: auto;
 }
 
 .bookmarkbox{
