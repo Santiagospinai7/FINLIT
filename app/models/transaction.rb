@@ -35,21 +35,23 @@ class Transaction < ApplicationRecord
 
   def validate_savings_goal
     # Retrieve current savings balance and savings goal from Savings model
-    transactions = Saving.find(saving_id).transactions
-    savings_balance = Saving.find(saving_id).balance
-    transactions.map {  |transaction| savings_balance += transaction.amount  }
-    savings_goal = Saving.find(saving_id).saving_goal
+    if saving_id.present?
+      transactions = Saving.find(saving_id).transactions
+      savings_balance = Saving.find(saving_id).balance
+      transactions.map {  |transaction| savings_balance += transaction.amount  }
+      savings_goal = Saving.find(saving_id).saving_goal
 
-    # Retrieve new transaction amount
-    transaction_amount = amount
+      # Retrieve new transaction amount
+      transaction_amount = amount
 
-    # Calculate total savings balance after adding new transaction amount
-    total_savings_balance = savings_balance + transaction_amount
+      # Calculate total savings balance after adding new transaction amount
+      total_savings_balance = savings_balance + transaction_amount
 
-    # Compare total savings balance with savings goal
-    if total_savings_balance > savings_goal
-      # Add error message to errors object
-      errors.add(:amount, "exceeds savings goal")
+      # Compare total savings balance with savings goal
+      if total_savings_balance > savings_goal
+        # Add error message to errors object
+        errors.add(:amount, "exceeds savings goal")
+      end
     end
   end
 end
