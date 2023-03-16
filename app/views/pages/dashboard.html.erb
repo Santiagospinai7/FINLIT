@@ -15,7 +15,7 @@
             <%= link_to accounts_path, class: "account-link" do %>
               <div class="balance-card">
                 <p class="balance-total-card">Balance</p>
-                <p class="balance-total-card"><%= "£#{number_with_delimiter(@accounts_money, :delimiter => ',')}" %></p>
+                <p class="balance-total-card"><%= "£#{number_with_precision(@accounts_money, precision: 2, delimiter: ',')}" %></p>
               </div>
             <% end %>
           <% else %>
@@ -50,7 +50,7 @@
                     <%= pie_chart @saving_chart, donut: true, height: '100px', legend: false, colors: ["#794CF0", "#4C4B4E"], library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 0}}, plotOptions: { pie: { dataLabels: { enabled: false }}} } %>
                   </div>
                   <div class="saving-msg">
-                    <p id="amount"><strong><%= "£#{number_with_delimiter(@saving_gap, :delimiter => ',')}" %></strong></p>
+                    <p id="amount"><strong><%= "£#{number_with_precision(@saving_gap, precision: 2, delimiter: ',')}" %></strong></p>
                     <p id="text">Remaining to reach your goal</p>
                     <p id="motivational-msg">You've got this! 🙌🏽</p>
                   </div>

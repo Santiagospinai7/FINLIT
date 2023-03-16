@@ -2,6 +2,6 @@
     <ul class="transactions-list-data">
       <li class="transactions-category-master"><strong>Category:</strong><br><%= transactions.category %><li>
       <li class="transactions-date-master"><strong>Date:</strong><br><%= transactions.date %><li>
-      <li class="transactions-price-master"><h5><span class="transactions-price"></span><%= "£#{number_with_delimiter(transactions.amount, :delimiter => ',')}" %></h5><li>
+      <li class="transactions-price-master"><h5><span class="transactions-price"></span><%= "£#{number_with_precision(transactions.amount, precision: 2, delimiter: ',')}" %></h5><li>
     </ul>
 </div>

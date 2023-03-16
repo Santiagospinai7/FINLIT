@@ -3,10 +3,11 @@
     <div class="intro-accounts-card">
         <%= cl_image_tag Icon.find(account.icon_id).url, class:"bank-avatar-accounts"%>
         <%# <img class="bank-avatar-accounts" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1678225833/Full_Black_BG-W-P0.05_zyr5xs.png"/> %>
-        <p><strong>Account:</strong><br><%= account.account_name %></p>
+        <p><strong>Account:</strong> <%= account.account_name %></p>
+        <p><strong>Type:</strong> <%= account.account_type %></p>
     </div>
     <% account.updateBalance %>
-    <p>Balance<br><span class="account-card-balance"><%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %></span></p>
+    <p>Balance<br><span class="account-card-balance"><%= "£#{number_with_precision(account.balance, precision: 2, delimiter: ',')}" %></span></p>
   <% end %>
   <%= button_to "+ Add", new_account_transaction_path(account), class:"card-action-buttons",  :method => :get %>
 </div>

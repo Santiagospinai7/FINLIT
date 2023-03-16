@@ -5,7 +5,7 @@
         <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
     </div>
     <div>
-    <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
+    <p>Balance: <%= "£#{number_with_precision(saving.balance, precision: 2, delimiter: ',')}" %></p>
     <p><strong>Your already achieve your saving goal, congrats! 🤑🍾</strong></p>
     </div>
   <% else %>
@@ -14,8 +14,8 @@
         <p><strong>Saving:</strong><br><%= saving.saving_name %></p>
     </div>
     <div>
-      <p>Balance: <%= "£#{number_with_delimiter(saving.balance, :delimiter => ',')}" %></p>
-      <p>Goal: <%= "£#{number_with_delimiter(saving.saving_goal, :delimiter => ',')}" %></p>
+      <p>Balance: <%= "£#{number_with_precision(saving.balance, precision: 2, delimiter: ',')}" %></p>
+      <p>Goal: <%= "£#{number_with_precision(saving.saving_goal, precision: 2, delimiter: ',')}" %></p>
       <p>Saved: <%= Saving.get_porcentage(saving) %>%</p>
     </div>
   <% end %>

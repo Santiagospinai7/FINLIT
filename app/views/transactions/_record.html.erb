@@ -1,6 +1,6 @@
 <div id="<%= dom_id transactions %>">
   <ul class="transactions-list-data">
     <li><strong>Date:</strong><br><%= transactions.date %><li>
-    <li><h5><span class="transactions-price"></span><%= "£#{number_with_delimiter(transactions.amount, :delimiter => ',')}" %></h5><li>
+    <li><h5><span class="transactions-price"></span><%= "£#{number_with_precision(transactions.amount, precision: 2, delimiter: ',')}" %></h5><li>
   </ul>
 </div>
