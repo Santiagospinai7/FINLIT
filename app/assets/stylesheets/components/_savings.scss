@@ -178,12 +178,20 @@ h2.savings-card{
   text-align: left;
 }
 
+.intro-savings-card-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
 .intro-savings-card {
   display: flex;
   flex-direction: row;
   justify-content: left;
   width: 100%;
-  margin-top: 0.7rem;
 }
 
 .savings-card{
