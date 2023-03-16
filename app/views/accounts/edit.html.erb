@@ -5,8 +5,8 @@
       <%= simple_form_for @account, data: { account_card_target: "form" } do |f| %>
         <div class="form-inputs">
           <%= f.input :account_name %>
-          <%= f.input :account_type, 
-                      collection: ['Current account', 'Cash', 'Credit card', 'Investment'], 
+          <%= f.input :account_type,
+                      collection: ['Current account', 'Cash', 'Credit card', 'Investment'],
                       prompt: "Select a type",
                       input_html: { data: { account_card_target: 'input', action: "change->account-card#accountType" } } %>
           <%= f.input :balance %>
@@ -14,8 +14,8 @@
         </div>
         <%= f.association :icon,
                         as: :radio_buttons,
-                        collection: Icon.all.map { |icon| [".", icon.id, style: "background-image: url(#{cl_image_path(icon.url)});"] },                       
-                        input_html: { 
+                        collection: Icon.all.map { |icon| [".", icon.id, style: "background-image: url(#{cl_image_path(icon.url)});"] },
+                        input_html: {
                         class: "icon-radio"
                         }
         %>
