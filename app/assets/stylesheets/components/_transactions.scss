@@ -193,12 +193,13 @@
 // ----- BANK AVATAR -----
 
 .bank-avatar {
-  width: 30%;
-  height: 30%;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 2rem;
   margin-top: -10%;
+  object-fit: cover;
 }
 
 .bank-avatar-transaction {

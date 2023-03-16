@@ -26,12 +26,12 @@
             <div class = "account-grid-item">
               <%= link_to new_account_path, class: "account-link" do %>
                 <div class="intro-accounts-card">
-                    <p>Let's create a new <strong>Account!</strong></p>
+                    <h4>Let's create a new <strong>Account!</strong></h4>
+                    <h6>Create an account an track your money 🤯</h6>
                 </div>
-                <p>Create an account an track your money 🤯</p>
                 <%= button_to "Create!", new_account_path, class:"card-action-buttons",  :method => :get %>
               <% end %>
-            </div> 
+            </div>
           <% else %>
             <% @accounts.each do |account| %>
               <div class="account-card">
