@@ -13,6 +13,8 @@ class SavingsController < ApplicationController
   def show
     if current_user.id == @saving.user_id
       @transactions = @saving.transactions
+      
+      @achive = (@saving.balance >= @saving.saving_goal)
     end
   end
 
@@ -30,9 +32,11 @@ class SavingsController < ApplicationController
     icon = icon_id.blank? ? (Icon.all).sample : Icon.find(icon_id)
     @saving.icon_id = icon.id
     @saving.user_id = current_user.id
-    @saving.save
-
+   if @saving.save
     redirect_to savings_path
+   else
+    render :new, status: :unprocessable_entity
+   end 
   end
 
   def update
