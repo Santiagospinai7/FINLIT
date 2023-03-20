@@ -5,7 +5,7 @@ class LearningMaterialsController < ApplicationController
   end
 
   def show
-    @learning_materials = LearningMaterial.find(params[:id])
+    @learning_material = LearningMaterial.find(params[:id])
   end
 
   def new

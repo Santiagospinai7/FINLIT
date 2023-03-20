@@ -1,1 +1,51 @@
-<h1>Learning Materials</h1>
+<div>
+  <h1 style="margin: 64px">Learning Materials</h1>
+  <div class="learning-title">
+    <div class="learning-subtitle">
+      <h2>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="topic-item" role="presentation">
+            <button class="nav-link active" id="pills-investments-tab" data-bs-toggle="pill" data-bs-target="#pills-investments" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Investment</button>
+          </li>
+          <li class="topic-item" role="presentation">
+            <button class="nav-link" id="pills-saving-tab" data-bs-toggle="pill" data-bs-target="#pills-saving" type="button" role="tab" aria-controls="pills-savings" aria-selected="false">Saving</button>
+          </li>
+          <li class="topic-item" role="presentation">
+            <button class="nav-link" id="pills-banking-tab" data-bs-toggle="pill" data-bs-target="#pills-banking" type="button" role="tab" aria-controls="pills-banking" aria-selected="false">Banking</button>
+          </li>
+          <li class="topic-item" role="presentation">
+            <button class="nav-link" id="pills-debt-tab" data-bs-toggle="pill" data-bs-target="#pills-debt" type="button" role="tab" aria-controls="pills-debt" aria-selected="false">Debt</button>
+          </li>
+        </ul>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="pills-tabContent">
+<% @learning_materials.each_with_index do |material, index| %>
+  <div class="tab-pane fade show <%=index == 0 ? "active" : ""%>" id="pills-<%=material.topic_material.topic_name%>" role="tabpanel" aria-labelledby="pills-<%=material.topic_material.topic_name%>-tab" tabindex="0">
+      <div class="sub-learning">
+        <div class="learning-description">
+          <h3 class="title-learning">
+           <%= material.title %>
+          </h3>
+          <h4>
+           <br>
+            <br>
+           <%= material.description %>
+          </h4>
+        </div>
+        <div class="icon-plus">
+          <div class="learning-plus" style= "d-flex">
+            <h4 class="topic-learning">
+            Topic Read 3 mins </h4>
+          </div>
+          <div class="add-btn-flex">
+          <%= button_to "+", learning_material_path(material.id), :class => "add-btn", :title => "Learn More", :method => :get %>
+        </div>
+        </div>
+      </div>
+  </div>
+  <% end  %>
+</div>

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
-  static targets = ["dashboard", "accounts", "savings", "home", "suggestion"]
+  static targets = ["dashboard", "accounts", "savings", "home", "learningMaterial", "suggestion"]
 
   connect() {
     const currentUrl = window.location.pathname;
