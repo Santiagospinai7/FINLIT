@@ -9,6 +9,6 @@
     <strong>Number:</strong> <%= account.account_number %>
   </p>
   <p data-select-accounts-target="type">
-    <strong>Balance:</strong> <%= "£#{number_with_delimiter(account.balance, :delimiter => ',')}" %>
+    <strong>Balance:</strong> <%= "£#{number_with_precision(account.balance, precision: 2, delimiter: ',')}" %>
   </p>
 </div>

@@ -17,7 +17,6 @@ class AccountsController < ApplicationController
     elsif params[:query] == "Savings"
       redirect_to controller: :savings, action: :index  
     end
-
   end
 
   # GET /accounts/1 or /accounts/1.json

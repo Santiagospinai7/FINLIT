@@ -359,10 +359,12 @@
   list-style: none;
 }
 
-.transactions-price {
-  color: rgb(202, 202, 202);
-  font-size: 0.7rem;
-  font-weight: 400;
+.transactions-price-green {
+  color: rgb(0, 205, 44);
+}
+
+.transactions-price-red {
+  color: rgb(205, 0, 0);
 }
 
 .transactions-price-master {
