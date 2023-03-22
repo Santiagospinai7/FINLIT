@@ -6,10 +6,6 @@ class Account < ApplicationRecord
   # validates :balance, numericality: { greater_than_or_equal_to: 0 }
   validates :balance, presence: true
 
-  def self.account_types
-    ["Current", "Saving", "Other"]
-  end
-
   def updateBalance
     transactions = self.transactions
     transactions.each do |transaction|
