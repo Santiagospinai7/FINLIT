@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 Account.destroy_all
 User.destroy_all
 
@@ -34,7 +30,6 @@ incons = ["saving_icon", "wallet_icon", "icon_1", "icon_2", "icon_3", "icon_4"]
 incons.each do |icon|
   Icon.create(url: icon)
 end
-
 puts "icons created"
 
 puts "creating learning materials"
@@ -163,7 +158,5 @@ LearningMaterial.create(title: "investment banking",
 )
 
 puts "learning materials created"
-
-
 
 puts "finalize seeds"
