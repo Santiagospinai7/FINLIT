@@ -622,3 +622,20 @@ section{
   padding: 0;
   z-index: 0;
 }
+
+// ------------- Grid accounts -------------
+.record-accounts-grid {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+// ------------- Accounts cards -------------
+
+.record-accounts-card {
+  background-color: purple;
+}
+
+.record-accounts-card > p {
+  color: white;
+}

@@ -1,1 +1,14 @@
+# Display all the user accounts with the current balance of each one.
+# could set the amount of the user want to pass between the account and the saving.
+# Update the accont current balance.
+
 <h1>Display accounts</h1>
+<div class="record-accounts-grid">
+  <% accounts.each do |account| %>
+    <div class="record-accounts-card">
+      <p><strong>Name:</strong> <%= account.account_name %></p>
+      <p><strong>Type:</strong> <%= account.account_type%></p>
+      <input type="range" min="0" max="<%= account.balance %>" value="0">
+    </div>
+  <% end %>
+</div>

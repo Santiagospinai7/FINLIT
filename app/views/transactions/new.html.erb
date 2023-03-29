@@ -22,5 +22,7 @@
     <% end %>
   </div>
 
-  <%= render "accounts", account: @account, transaction: @transaction %>
+  <% if @account.class == Saving %>
+    <%= render "accounts", accounts: @user_accounts %>
+  <% end %>
 </div>

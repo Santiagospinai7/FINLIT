@@ -15,6 +15,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/new
   def new
     @transaction = @account.transactions.new
+    @user_accounts = Account.where(user_id: current_user.id)
   end
 
   # GET /transactions/1/edit
