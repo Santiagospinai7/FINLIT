@@ -1,5 +1,5 @@
-<div class="log-in-master">
-  <div  data-controller="set-amount" class="create-account-container" data-set-amount-target="card">
+<div class="log-in-master" data-controller="set-amount">
+  <div class="create-account-container" data-set-amount-target="card">
     <% if @account.class == Saving %>
       <h1 class="title-text">New Record</h1>
     <% else %>
@@ -21,4 +21,6 @@
       <%= render "account_form", account: @account, transaction: @transaction %>
     <% end %>
   </div>
+
+  <%= render "accounts", account: @account, transaction: @transaction %>
 </div>

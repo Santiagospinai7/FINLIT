@@ -12,5 +12,4 @@ class Account < ApplicationRecord
       self.balance += transaction.amount
     end
   end
-
 end
